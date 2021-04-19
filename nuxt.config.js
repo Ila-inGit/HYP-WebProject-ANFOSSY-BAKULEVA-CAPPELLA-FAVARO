@@ -1,6 +1,6 @@
 export default {
   ssr: true,
-  target: 'static',
+  target: 'server',
   env: {
     BASE_URL: 'https://test-polimi.herokuapp.com', // Production URL
     // BASE_URL: '', // Development URL
