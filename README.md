@@ -18,3 +18,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+FOR THE DATABASE CONNECTION:
+SUSTITUTE THIS LINE IN THE FILE "db-conn" WITH YOUR DATABASE URL
+const db = new Sequelize('postgres://postgres:ADMIN@localhost:PORT/DATABASENAME')
