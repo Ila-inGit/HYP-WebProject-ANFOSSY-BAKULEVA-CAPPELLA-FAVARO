@@ -15,10 +15,11 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# for the database connection:
+1)Create the database through PgAdmin
+2)SUSTITUTE THIS LINE IN THE FILE "db-conn" WITH YOUR DATABASE URL
+const db = new Sequelize('postgres://postgres:ADMIN@localhost:PORT/DATABASENAME');
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
-FOR THE DATABASE CONNECTION:
-SUSTITUTE THIS LINE IN THE FILE "db-conn" WITH YOUR DATABASE URL
-const db = new Sequelize('postgres://postgres:ADMIN@localhost:PORT/DATABASENAME')
