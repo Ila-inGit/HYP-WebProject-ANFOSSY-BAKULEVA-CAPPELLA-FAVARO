@@ -2,14 +2,17 @@
   <div>
     <the-header></the-header>
     <Nuxt />
+    <the-footer></the-footer>
   </div>
 </template>
 
 <script>
 import TheHeader from '~/components/TheHeader.vue'
+import TheFooter from '~/components/Footer.vue'
 export default {
   components: {
     TheHeader,
+    TheFooter,
   },
 }
 </script>

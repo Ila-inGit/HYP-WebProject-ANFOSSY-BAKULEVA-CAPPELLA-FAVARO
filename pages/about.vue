@@ -25,6 +25,7 @@
 
 <script>
 export default {
+  layout: 'Layout',
   head() {
     return {
       title: 'A WebSite - About',

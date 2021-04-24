@@ -31,6 +31,7 @@ export default {
   components: {
     ArticleMini,
   },
+  layout: 'Layout',
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/articles`)
     const articles = data

@@ -1,19 +1,17 @@
 <template>
-  <header class="header">
-    <div class="header-content">
-      <div class="title"><h3>WebSite</h3></div>
-      <nav class="right">
-        <div
-          v-for="(item, itemIndex) of menuOptions"
-          :key="'menu-item-' + itemIndex"
-          class="menu-item"
-        >
-          <nuxt-link :to="item.path">
-            {{ item.name }}
-          </nuxt-link>
-        </div>
-      </nav>
-    </div>
+  <header class="topnav">
+    <a><h2>WebSite</h2></a>
+    <nav class="right">
+      <div
+        v-for="(item, itemIndex) of menuOptions"
+        :key="'menu-item-' + itemIndex"
+        class="a"
+      >
+        <nuxt-link :to="item.path">
+          {{ item.name }}
+        </nuxt-link>
+      </div>
+    </nav>
   </header>
 </template>
 
@@ -41,20 +39,6 @@ export default {
 </script>
 
 <style>
-.header {
-  height: 70px;
-  background: black;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-}
-.header-content {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  align-items: center;
-}
 .right {
   display: flex;
   justify-content: space-between;
@@ -65,5 +49,29 @@ export default {
 .title {
   font-size: 1.3rem;
   margin-bottom: 5px;
+}
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  flex: auto;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  flex: auto;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 </style>
