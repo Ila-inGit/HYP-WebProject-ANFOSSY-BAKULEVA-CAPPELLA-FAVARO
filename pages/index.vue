@@ -1,13 +1,11 @@
 <template>
-  <div class="container">
-    <div>
-      <TopbarLogo />
-    </div>
-  </div>
+  <div class="container"></div>
 </template>
 
 <script>
-export default {}
+export default {
+  layout: 'PageLayout',
+}
 </script>
 
 <style>

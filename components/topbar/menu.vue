@@ -1,9 +1,9 @@
 <template>
   <div class="menu">
     <div v-for="item in sections" :key="item.key">
-      <h1>{{ item.displayText }}</h1>
+      <h1 class="menuTitle">{{ item.displayText }}</h1>
       <div v-for="elem in item.content" :key="elem">
-        <p>{{ elem }}</p>
+        <p class="textMenu">{{ elem }}</p>
       </div>
     </div>
   </div>
@@ -43,5 +43,18 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+.menuTitle {
+  color: white;
+  text-decoration-thickness: 3;
+}
+
+.textMenu {
+  color: white;
+  padding: 6px;
+}
+.textMenu:hover {
+  background-color: #ddd;
+  color: black;
 }
 </style>

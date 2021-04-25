@@ -4,13 +4,13 @@
       rel="stylesheet"
       href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons"
     />
-    <div class="TitleContainer">
+    <div class="titleContainer">
       <img
-        class="Logo"
+        class="logo"
         src="https://childreninspiredbyyoga.com/wp-content/uploads/2014/01/spider-pose-blog-header.png"
       />
-      <h1 class="Title">Surf the Spider House</h1>
-      <button class="Button" @click="showMenu = !showMenu">&#9776;</button>
+      <h1 class="title">Surf the Spider House</h1>
+      <button class="button" @click="showMenu = !showMenu">&#9776;</button>
     </div>
     <div :hidden="!showMenu">
       <TopbarMenu />
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style>
-.TitleContainer {
+.titleContainer {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -36,27 +36,36 @@ export default {
   width: 100vw;
 }
 
-.Title {
+.title {
   display: flex;
   align-self: center;
 
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 5vh;
-  color: #35495e;
+  color: #ffffff;
   letter-spacing: 1px;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
-.Logo {
+.logo {
   height: 100%;
   width: auto;
+  border: #333 solid;
 }
 
-.Button {
+.button {
   display: flex;
   align-self: center;
   font-size: 5vh;
   background-color: transparent;
   border-color: transparent;
+  color: #ffffff;
+}
+
+.button:hover {
+  background-color: #ddd;
+  color: black;
 }
 </style>
