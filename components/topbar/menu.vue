@@ -1,7 +1,9 @@
 <template>
   <div class="menu">
     <div v-for="item in sections" :key="item.key">
-      <h1 class="menuTitle">{{ item.displayText }}</h1>
+      <h1 class="menuTitle" @click="goTo(`/ourWorkfields`)">
+        {{ item.displayText }}
+      </h1>
       <div v-for="elem in item.content" :key="elem">
         <p class="textMenu">{{ elem }}</p>
       </div>
@@ -35,6 +37,11 @@ export default {
       },
     ],
   }),
+  methods: {
+    goTo(path) {
+      this.$router.push({ path })
+    },
+  },
 }
 </script>
 
@@ -47,6 +54,9 @@ export default {
 .menuTitle {
   color: white;
   text-decoration-thickness: 3;
+}
+.menuTitle:hover {
+  cursor: pointer;
 }
 
 .textMenu {
