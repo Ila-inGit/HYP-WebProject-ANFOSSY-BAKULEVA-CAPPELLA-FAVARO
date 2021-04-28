@@ -42,15 +42,17 @@ export default {
   z-index: 10;
 }
 .btn {
-  padding: 5px 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.418);
   border: 1px solid transparent;
   margin: 5px 10px;
   color: #fff;
-  height: 50px;
+  height: 40px;
   width: 50px;
   position: absolute;
   margin-top: -25px;
+  font-size: small;
+  font-style: italic;
   z-index: 2;
 }
 .btn:hover {

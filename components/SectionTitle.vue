@@ -43,7 +43,6 @@ h5 {
   padding: 10px;
   border: 2px solid grey;
   border-radius: 4px;
-  max-width: 98%;
   align-self: auto;
   text-align: start;
   background-color: rgb(15, 15, 15);
