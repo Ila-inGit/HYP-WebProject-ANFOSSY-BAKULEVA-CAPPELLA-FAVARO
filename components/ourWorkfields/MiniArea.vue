@@ -7,7 +7,10 @@
       </div>
       <p>{{ description }}</p>
       <div class="flex-box2">
-        <button-with-text :title="'Learn more'"></button-with-text>
+        <button-with-text
+          :title="'Learn more'"
+          @click="goTo(`/area`)"
+        ></button-with-text>
       </div>
     </div>
   </div>
@@ -32,6 +35,11 @@ export default {
       type: String,
       default: () =>
         'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
+    },
+  },
+  methods: {
+    goTo(path) {
+      this.$router.push({ path })
     },
   },
 }

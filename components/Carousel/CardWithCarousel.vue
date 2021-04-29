@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <carousel>
       <carousel-slide
         v-for="slide in slides"
@@ -81,5 +81,8 @@ export default {
 .carousel-slider img {
   width: 100%;
   height: 100%;
+}
+.wrapper {
+  padding: 10px;
 }
 </style>

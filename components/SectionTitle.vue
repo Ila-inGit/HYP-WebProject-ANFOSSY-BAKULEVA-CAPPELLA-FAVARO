@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-box">
+  <div class="flex-box" :style="style">
     <div class="title-card">
       <h1>
         {{ title }}
@@ -33,16 +33,30 @@ export default {
       default: () =>
         'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
     },
+    bgColor: {
+      type: String,
+      default: () => '#0f0f0f',
+    },
+    textColor: {
+      type: String,
+      default: () => '#f0f8ff',
+    },
+  },
+  computed: {
+    style() {
+      return {
+        'background-color': this.bgColor,
+        color: this.textColor,
+      }
+    },
   },
 }
 </script>
 <style scoped>
 h1 {
-  color: aliceblue;
   padding-left: 10px;
 }
 h2 {
-  color: aliceblue;
   font-style: italic;
   padding-left: 20px;
 }
@@ -60,8 +74,7 @@ h2 {
 .flex-box {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(15, 15, 15);
   border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 #0000004d;
 }
 </style>
