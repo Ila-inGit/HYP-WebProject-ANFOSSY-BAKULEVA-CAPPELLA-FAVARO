@@ -60,12 +60,10 @@ export default {
 }
 
 .mini-area {
-  border: 2px solid #e7e7e7;
   border-radius: 4px;
   padding: 0.4rem;
 }
 .mini-area:hover {
   color: #008cba;
-  border-color: #008cba;
 }
 </style>

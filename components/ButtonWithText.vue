@@ -1,5 +1,5 @@
 <template>
-  <button class="button button1">{{ title }}</button>
+  <button class="button-with-text button1">{{ title }}</button>
 </template>
 
 <script>
@@ -14,13 +14,13 @@ export default {
 </script>
 
 <style>
-.button {
+.button-with-text {
   border: none;
   color: white;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;

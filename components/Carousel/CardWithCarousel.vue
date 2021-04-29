@@ -38,8 +38,10 @@ export default {
 .carousel {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 200px;
+  width: 400px;
   z-index: 10;
+  padding: 10px;
 }
 .btn {
   padding: 5px;
