@@ -3,18 +3,18 @@
     <h1>
       {{ title }}
     </h1>
-    <h5>
+    <h2>
       {{ subtitle }}
-    </h5>
-    <card-with-carousel></card-with-carousel>
+    </h2>
+    <!-- <card-with-carousel></card-with-carousel> -->
   </div>
 </template>
 
 <script>
-import CardWithCarousel from '~/components/carousel/CardWithCarousel'
+// import CardWithCarousel from '~/components/carousel/CardWithCarousel'
 export default {
   components: {
-    CardWithCarousel,
+    // CardWithCarousel,
   },
   props: {
     title: {
@@ -33,7 +33,7 @@ h1 {
   color: aliceblue;
   padding-left: 10px;
 }
-h5 {
+h2 {
   color: aliceblue;
   font-style: italic;
   padding-left: 20px;

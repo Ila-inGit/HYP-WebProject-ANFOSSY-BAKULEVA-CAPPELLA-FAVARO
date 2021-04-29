@@ -8,13 +8,22 @@
     </div>
     <section class="areas-grid">
       <div class="mini-area">
-        <mini-area></mini-area>
+        <mini-area
+          :title="'Area title first'"
+          :description="'Description for the first'"
+        ></mini-area>
       </div>
       <div class="mini-area">
-        <mini-area></mini-area>
+        <mini-area
+          :title="'Area title second'"
+          :description="'Description for the second'"
+        ></mini-area>
       </div>
       <div class="mini-area">
-        <mini-area></mini-area>
+        <mini-area
+          :title="'Area title third'"
+          :description="'Description for the third'"
+        ></mini-area>
       </div>
     </section>
   </main>
@@ -43,7 +52,7 @@ export default {
 <style scoped>
 .areas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 3fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 3fr));
   grid-auto-rows: auto;
   gap: 10px;
   padding: 5px;
@@ -51,13 +60,12 @@ export default {
 }
 
 .mini-area {
-  cursor: pointer;
   border: 2px solid #e7e7e7;
   border-radius: 4px;
   padding: 0.4rem;
 }
 .mini-area:hover {
-  color: rgb(36, 82, 207);
-  border-color: rgb(36, 82, 207);
+  color: #008cba;
+  border-color: #008cba;
 }
 </style>
