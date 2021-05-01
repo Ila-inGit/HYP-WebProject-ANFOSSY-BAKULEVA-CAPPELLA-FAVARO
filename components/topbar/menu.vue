@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <div v-for="item in sections" :key="item.key">
-      <h1 class="menuTitle" @click="goTo(`/ourWorkfields`)">
+      <h1 class="menuTitle" @click="goTo(item.key)">
         {{ item.displayText }}
       </h1>
       <div v-for="elem in item.content" :key="elem">
@@ -14,16 +14,22 @@
 <script>
 export default {
   data: () => ({
+    paths: [
+      ['about', '/'], //  TODO
+      ['areas', '/ourWorkfields'],
+      ['products', '/products'], // TODO
+      ['people', '/'], // TODO
+    ],
     sections: [
       {
         key: 'about',
         displayText: 'About us',
-        content: ['placeholder', 'placeholder', 'placeholder'],
+        content: ['placeholder1', 'placeholder2', 'placeholder3'],
       },
       {
         key: 'areas',
         displayText: 'Areas',
-        content: ['placeholder', 'placeholder', 'placeholder'],
+        content: ['placeholder1', 'placeholder2', 'placeholder3'],
       },
       {
         key: 'products',
@@ -33,12 +39,18 @@ export default {
       {
         key: 'people',
         displayText: 'People',
-        content: ['placeholder', 'placeholder', 'placeholder'],
+        content: ['placeholder1', 'placeholder2', 'placeholder3'],
       },
     ],
   }),
+
   methods: {
-    goTo(path) {
+    goTo(section) {
+      let path = 'error'
+      this.$data.paths.forEach((element) => {
+        if (element[0] === section) path = element[1]
+      })
+      console.log('Pushing section ' + section + ' @ ' + path)
       this.$router.push({ path })
     },
   },
