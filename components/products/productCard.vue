@@ -1,7 +1,9 @@
 <template>
   <div class="card" @click="$emit('click')">
-    <h1>{{ product.title }}</h1>
-    <p>{{ product.description }}</p>
+    <div class="card-info">
+      <h1>{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+    </div>
     <img v-bind:src="product.image" alt="product image" class="imageCard" />
   </div>
 </template>
