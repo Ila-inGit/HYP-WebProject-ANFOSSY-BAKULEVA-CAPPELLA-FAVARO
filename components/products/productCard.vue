@@ -1,9 +1,7 @@
 <template>
   <div class="card" @click="$emit('click')">
-    <div class="cardInfo">
-      <h1>{{ product.title }}</h1>
-      <p>{{ product.description }}</p>
-    </div>
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.description }}</p>
     <img v-bind:src="product.image" alt="product image" class="imageCard" />
   </div>
 </template>
@@ -45,13 +43,11 @@ export default {
   justify-content: space-between;
   margin: 1%;
 }
-
 .cardInfo {
   display: flex;
   flex-direction: column;
   height: auto;
 }
-
 .cardTitle {
   display: flex;
   justify-content: center;

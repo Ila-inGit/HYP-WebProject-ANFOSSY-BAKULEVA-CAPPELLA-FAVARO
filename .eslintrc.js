@@ -15,8 +15,12 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
-    "prettier/prettier": ["error", {
-     "endOfLine":"auto"
-   }],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+    'object-shorthand': 0,
   },
 }

@@ -1,10 +1,10 @@
 export
 <template>
   <div>
-    <div class="intro">
-      <h1>Products</h1>
-      <p>This is a description of the products</p>
-    </div>
+    <info-container
+      v-bind:title="'Products'"
+      v-bind:description="'This is a description of the products'"
+    />
     <product-card
       v-for="product in products"
       :key="product.id"
@@ -17,10 +17,12 @@ export
 <script>
 import db from 'static/fake_db.json'
 import productCard from '~/components/products/productCard.vue'
+import InfoContainer from '~/components/infoContainer.vue'
 
 export default {
   components: {
     productCard,
+    InfoContainer,
   },
   layout: 'PageLayout',
 
@@ -41,11 +43,5 @@ export default {
 <style>
 .div {
   width: 100%;
-}
-
-.intro {
-  background: #444;
-  color: white;
-  padding: 5vh;
 }
 </style>
