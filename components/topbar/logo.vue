@@ -10,10 +10,10 @@
         src="https://childreninspiredbyyoga.com/wp-content/uploads/2014/01/spider-pose-blog-header.png"
       />
       <h1 class="title">Surf the Spider House</h1>
-      <button class="button" @click="showMenu = !showMenu">&#9776;</button>
+      <button class="button" @click="invertVisibility">&#9776;</button>
     </div>
-    <div :hidden="!showMenu" @click="showMenu = false">
-      <TopbarMenu />
+    <div :hidden="!showMenu">
+      <TopbarMenu @my-click="invertVisibility" />
     </div>
   </div>
 </template>
@@ -23,6 +23,15 @@ export default {
   data: () => ({
     showMenu: false,
   }),
+
+  methods: {
+    invertVisibility() {
+      this.showMenu = !this.showMenu
+    },
+    onClickChild() {
+      console.log('iaskjhfrisjdfh')
+    },
+  },
 }
 </script>
 

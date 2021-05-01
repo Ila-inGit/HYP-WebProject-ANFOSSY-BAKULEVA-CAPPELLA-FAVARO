@@ -50,7 +50,7 @@ export default {
       this.$data.paths.forEach((element) => {
         if (element[0] === section) path = element[1]
       })
-      this.$emit('click', false)
+      this.$emit('my-click')
       console.log('Pushing section ' + section + ' @ ' + path)
       this.$router.push({ path })
     },
