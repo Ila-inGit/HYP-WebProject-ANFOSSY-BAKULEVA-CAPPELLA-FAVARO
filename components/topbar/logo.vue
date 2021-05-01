@@ -12,7 +12,7 @@
       <h1 class="title">Surf the Spider House</h1>
       <button class="button" @click="showMenu = !showMenu">&#9776;</button>
     </div>
-    <div :hidden="!showMenu">
+    <div :hidden="!showMenu" @click="showMenu = false">
       <TopbarMenu />
     </div>
   </div>
