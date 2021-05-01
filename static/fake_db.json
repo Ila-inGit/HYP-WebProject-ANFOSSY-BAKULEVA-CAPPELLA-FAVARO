@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "title": "Pebbles",
+        "description": "Amazing tool to create circles on water.\nYes, it's plenty on the river, but ours are better.",
+        "longDescription": "The pebbles are incredibly old, but also absolutely versatile. This is the long description of this product",
+        "image": "https://picsum.photos/seed/234/300/300",
+        "areaId": "0",
+        "people": []
+    },
+    {
+        "id": "2",
+        "title": "Dogs",
+        "description": "Don't you love dogs?",
+        "longDescription": "Dogs are a man's best friend. This is the long description of this product",
+        "image": "https://picsum.photos/seed/57/300/300",
+        "areaId": "0",
+        "people": []
+    },
+    {
+        "id": "3",
+        "title": "Bananas, a bit too ripe",
+        "description": "You can still remove the dark parts",
+        "longDescription": "If you don't like bananas, try apples. This is the long description of this product",
+        "image": "https://picsum.photos/seed/3467/300/300",
+        "areaId": "0",
+        "people": []
+    }
+]
