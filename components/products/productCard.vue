@@ -1,18 +1,15 @@
 <template>
-  <div class="card">
+  <div class="card" @click="$emit('click')">
     <div class="cardInfo">
       <h1>{{ product.title }}</h1>
       <p>{{ product.description }}</p>
-      <button-with-text v-bind:title="'more'" class="cardTitle" />
     </div>
     <img v-bind:src="product.image" alt="product image" class="imageCard" />
   </div>
 </template>
 
 <script>
-import ButtonWithText from '../ButtonWithText.vue'
 export default {
-  components: { ButtonWithText },
   props: {
     product: {
       title: {

@@ -1,51 +1,51 @@
 export
 <template>
   <div>
-    <h1>Look at all those products!</h1>
+    <div class="intro">
+      <h1>Products</h1>
+      <p>This is a description of the products</p>
+    </div>
     <product-card
       v-for="product in products"
-      :key="product"
+      :key="product.id"
       v-bind:product="product"
+      @click="goToProduct(product.id)"
     />
   </div>
 </template>
 
 <script>
+import db from 'static/fake_db.json'
 import productCard from '~/components/products/productCard.vue'
+
 export default {
   components: {
     productCard,
   },
   layout: 'PageLayout',
-  data: () => ({
-    // TODO: replace with DB
-    products: [
-      {
-        title: 'Pebbles',
-        description:
-          "Amazing tool to create circles on water.\nYes, it's plenty on the river, but ours are better.",
-        image: 'https://picsum.photos/seed/234/300/300',
-        page: 'link',
-      },
-      {
-        title: 'Dogs',
-        description: "Don't you love dogs?",
-        image: 'https://picsum.photos/seed/57/300/300',
-        page: 'link',
-      },
-      {
-        title: 'Bananas, a bit too ripe',
-        description: 'You can still remove the dark parts',
-        image: 'https://picsum.photos/seed/3467/300/300',
-        page: 'link',
-      },
-    ],
-  }),
+
+  data() {
+    return { products: db }
+  },
+  methods: {
+    goToProduct(id) {
+      this.$router.push({
+        path: 'productPresentation',
+        query: { productId: id },
+      })
+    },
+  },
 }
 </script>
 
 <style>
 .div {
   width: 100%;
+}
+
+.intro {
+  background: #444;
+  color: white;
+  padding: 5vh;
 }
 </style>
