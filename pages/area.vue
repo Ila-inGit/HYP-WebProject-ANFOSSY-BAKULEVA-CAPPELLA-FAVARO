@@ -12,6 +12,11 @@
         :text-color="'#f0f8ff'"
         :title="'Products'"
       ></card-with-video>
+      <card-with-team
+        :bg-color="'#1e0045'"
+        :text-color="'#f0f8ff'"
+        :title="'Working Team'"
+      ></card-with-team>
     </div>
   </main>
 </template>
@@ -20,10 +25,12 @@
 <script>
 import SectionTitle from '~/components/SectionTitle.vue'
 import CardWithVideo from '~/components/CardWithVideo.vue'
+import CardWithTeam from '~/components/CardWithTeam.vue'
 export default {
   components: {
     SectionTitle,
     CardWithVideo,
+    CardWithTeam,
   },
   layout: 'PageLayout',
   props: {

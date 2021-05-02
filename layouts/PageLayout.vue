@@ -25,7 +25,4 @@ html {
 a {
   color: white;
 }
-img {
-  width: 100%;
-}
 </style>

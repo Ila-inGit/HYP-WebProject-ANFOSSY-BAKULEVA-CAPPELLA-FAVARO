@@ -4,7 +4,7 @@
       <h1>{{ product.title }}</h1>
       <p>{{ product.description }}</p>
     </div>
-    <img v-bind:src="product.image" alt="product image" class="imageCard" />
+    <img :src="product.image" alt="product image" class="imageCard" />
   </div>
 </template>
 
@@ -14,15 +14,15 @@ export default {
     product: {
       title: {
         type: String,
-        default: '',
+        default: () => '',
       },
       description: {
         type: String,
-        default: '',
+        default: () => '',
       },
       image: {
         type: String,
-        default: '',
+        default: () => '',
       },
     },
   },

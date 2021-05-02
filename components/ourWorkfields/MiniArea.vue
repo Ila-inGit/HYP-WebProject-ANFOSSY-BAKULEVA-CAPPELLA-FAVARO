@@ -1,6 +1,6 @@
 <template>
   <div class="mini-area">
-    <div class="card">
+    <div class="card-area">
       <div class="flex-box">
         <h3>{{ title }}</h3>
         <img class="mini-image" :src="image" alt="alternatetext" />
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style scoped>
-.card {
+.card-area {
   padding: 20px 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
