@@ -1,3 +1,7 @@
+<!--
+  logo + company name + menu icon
+-->
+
 <template>
   <div>
     <link

@@ -1,16 +1,19 @@
+<!--
+  page of a single product
+-->
+
 <template>
   <div>
-    <info-container
-      v-bind:title="product.title"
-      v-bind:description="product.longDescription"
-    />
+    <section-title :title="product.title" :subtitle="product.description" />
   </div>
 </template>
 
 <script>
 import db from 'static/fake_db.json'
+import SectionTitle from '~/components/SectionTitle.vue'
 
 export default {
+  components: { SectionTitle },
   layout: 'PageLayout',
 
   data() {
@@ -19,7 +22,7 @@ export default {
       descrpition: '',
       image: '',
     }
-    db.forEach((element) => {
+    db.products.forEach((element) => {
       if (element.id === this.$router.currentRoute.query.productId) {
         product = element
       }

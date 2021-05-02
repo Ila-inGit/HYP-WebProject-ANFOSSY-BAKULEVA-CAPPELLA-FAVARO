@@ -1,3 +1,6 @@
+<!--
+  title of the section + short description of it
+-->
 <template>
   <div class="flex-box" :style="style">
     <div class="title-card">

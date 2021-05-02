@@ -1,14 +1,18 @@
+<!--
+  page with list of products
+-->
+
 export
 <template>
   <div>
-    <info-container
-      v-bind:title="'Products'"
-      v-bind:description="'This is a description of the products'"
+    <SectionTitle
+      :title="'Products'"
+      :subtitle="'This is a description of the products'"
     />
-    <product-card
+    <intro-card
       v-for="product in products"
       :key="product.id"
-      v-bind:product="product"
+      :product="product"
       @click="goToProduct(product.id)"
     />
   </div>
@@ -16,18 +20,16 @@ export
 
 <script>
 import db from 'static/fake_db.json'
-import productCard from '~/components/products/productCard.vue'
-import InfoContainer from '~/components/infoContainer.vue'
+import introCard from '~/components/IntroCard'
 
 export default {
   components: {
-    productCard,
-    InfoContainer,
+    introCard,
   },
   layout: 'PageLayout',
 
   data() {
-    return { products: db }
+    return { products: db.products }
   },
   methods: {
     goToProduct(id) {

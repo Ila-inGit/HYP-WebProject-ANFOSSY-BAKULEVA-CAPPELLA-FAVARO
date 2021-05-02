@@ -1,3 +1,6 @@
+<!--
+  ignore, old stuff we can trash
+-->
 <template>
   <div>
     <Nuxt />

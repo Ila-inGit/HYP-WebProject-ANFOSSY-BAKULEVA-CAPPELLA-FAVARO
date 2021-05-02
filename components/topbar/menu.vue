@@ -1,3 +1,7 @@
+<!--
+  menu with links to group of topic pages
+-->
+
 <template>
   <div class="menu">
     <div v-for="item in sections" :key="item.key">
@@ -15,9 +19,9 @@
 export default {
   data: () => ({
     paths: [
-      ['about', '/'], //  TODO
-      ['areas', '/ourWorkfields'],
-      ['products', '/products'], // TODO
+      ['about', '/'], //  TODO insert the path
+      ['areas', '/areas/ourWorkfields'],
+      ['products', '/products/products'],
       ['people', '/'], // TODO
     ],
     sections: [

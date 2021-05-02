@@ -1,3 +1,6 @@
+<!--
+  homepage
+-->
 <template>
   <div class="container"></div>
 </template>

@@ -1,3 +1,6 @@
+<!--
+  wrapper of the logo
+-->
 <template>
   <header class="topnav">
     <logo></logo>
