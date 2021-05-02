@@ -36,12 +36,14 @@ export default {
   },
   data() {
     const items = []
-    if (this.childType === 'product')
+    if (this.childType === 'product') {
+      // TODO other cases
       db.products.forEach((element) => {
         if (this.childIds.includes(element.id)) {
           items.push(element)
         }
       })
+    }
     return { items: items }
   },
   computed: {

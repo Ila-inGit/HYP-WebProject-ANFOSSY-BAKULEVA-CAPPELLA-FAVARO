@@ -16,13 +16,15 @@
         :child-type="'product'"
         :bg-color="'#12253f'"
         :text-color="'#f0f8ff'"
-        :title="'Products'"
+        :title="'Products in this area'"
       ></card-with-video>
-      <card-with-team
+      <card-without-video
+        :child-ids="area.people"
+        :child-type="'people'"
         :bg-color="'#1e0045'"
         :text-color="'#f0f8ff'"
         :title="'Working Team'"
-      ></card-with-team>
+      ></card-without-video>
     </div>
   </main>
 </template>
@@ -31,12 +33,12 @@
 import db from 'static/fake_db.json'
 import SectionTitle from '~/components/SectionTitle.vue'
 import CardWithVideo from '~/components/CardWithVideo.vue'
-import CardWithTeam from '~/components/CardWithTeam.vue'
+import CardWithoutVideo from '~/components/CardWithoutVideo.vue'
 export default {
   components: {
     SectionTitle,
     CardWithVideo,
-    CardWithTeam,
+    CardWithoutVideo,
   },
   layout: 'PageLayout',
   props: {
