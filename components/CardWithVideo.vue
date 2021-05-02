@@ -13,7 +13,7 @@
       <div class="row">
         <div v-for="prod in areaProducts" :key="prod.id" class="prod-card">
           <h3>{{ prod.title }}</h3>
-          <h4>{{ prod.description }}</h4>
+          <p>{{ prod.description }}</p>
           <button-with-text :title="'Learn more'"></button-with-text>
         </div>
       </div>
@@ -84,6 +84,7 @@ iframe {
 .prod-card {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   padding-left: 30px;
   padding-right: 30px;
   align-self: stretch;
@@ -98,6 +99,7 @@ iframe {
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 h1 {
   padding-left: 20px;
