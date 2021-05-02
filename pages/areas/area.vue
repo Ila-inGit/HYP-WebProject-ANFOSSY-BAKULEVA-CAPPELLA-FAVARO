@@ -12,7 +12,8 @@
         :text-color="'#0f0f0f'"
       ></section-title
       ><card-with-video
-        :area-products-ids="area.products"
+        :child-ids="area.products"
+        :child-type="'product'"
         :bg-color="'#12253f'"
         :text-color="'#f0f8ff'"
         :title="'Products'"
@@ -25,7 +26,6 @@
     </div>
   </main>
 </template>
-// todo routing
 
 <script>
 import db from 'static/fake_db.json'

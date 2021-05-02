@@ -57,5 +57,17 @@
                 "3"
             ]
         }
+    ],
+    "peple": [
+        {
+            "id": "1",
+            "name": "Giovanni",
+            "description": "I have hobbies that you don't want to know about"
+        },
+        {
+            "id": "2",
+            "name": "Henry",
+            "description": "Giovanni scares the hell out of me"
+        }
     ]
 }
