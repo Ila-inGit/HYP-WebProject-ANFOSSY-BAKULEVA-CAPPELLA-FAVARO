@@ -22,7 +22,7 @@ export default {
       ['about', '/'], //  TODO insert the path
       ['areas', '/areas/ourWorkfields'],
       ['products', '/products/products'],
-      ['people', '/peoples/people'],
+      ['people', '/peoples/peoples'],
     ],
     sections: [
       {
