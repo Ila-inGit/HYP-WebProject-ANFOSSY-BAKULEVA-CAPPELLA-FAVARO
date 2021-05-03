@@ -1,3 +1,7 @@
+<!--
+> shows a video, a title of the section, and a list of items
+-->
+
 <template>
   <div class="flex-box" :style="style">
     <iframe
@@ -17,14 +21,17 @@ import db from 'static/fake_db.json'
 
 export default {
   props: {
+    // ids of items to display
     childIds: {
       type: Array,
       default: () => [],
     },
+    // people, area, product
     childType: {
       type: String,
       default: () => '',
     },
+    // title of the section
     title: { type: String, default: () => '' },
     bgColor: { type: String, default: () => '#0f0f0f' },
     image: {
@@ -32,18 +39,23 @@ export default {
       default: () =>
         'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
     },
-    textColor: { type: String, default: () => '#f0f844' },
+    textColor: { type: String, default: () => '#ffffff' },
   },
   data() {
     const items = []
+    let candidates = []
     if (this.childType === 'product') {
-      // TODO other cases
-      db.products.forEach((element) => {
-        if (this.childIds.includes(element.id)) {
-          items.push(element)
-        }
-      })
+      candidates = db.products
+    } else if (this.childType === 'area') {
+      candidates = db.areas
+    } else if (this.childType === 'people') {
+      candidates = db.people
     }
+    candidates.forEach((element) => {
+      if (this.childIds.includes(element.id)) {
+        items.push(element)
+      }
+    })
     return { items: items }
   },
   computed: {

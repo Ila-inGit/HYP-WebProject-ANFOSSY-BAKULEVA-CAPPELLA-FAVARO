@@ -12,7 +12,7 @@ export
     <intro-card
       v-for="product in products"
       :key="product.id"
-      :product="product"
+      :item="product"
       @click="goToProduct(product.id)"
     />
   </div>

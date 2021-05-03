@@ -1,5 +1,6 @@
 <!-- 
-    shows the items passed as props
+> shows the list of items passed as props
+> displays the essential data: title/name, image, short description
 -->
 <template>
   <div class="row">
@@ -23,8 +24,9 @@ export default {
     ButtonWithText,
   },
   props: {
+    // a list of items to display
     relatedItems: {
-      type: Array,
+      type: Array[{ title: String, description: String, image: String }],
       default: () => [],
     },
   },
@@ -39,24 +41,26 @@ export default {
   padding-left: 30px;
   padding-right: 30px;
   justify-content: space-between;
-  width: 20%;
+  max-width: 30vw;
 }
 
 .row {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
-  width: 100%;
+  align-items: stretch;
 }
 .img-and-desc {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: auto;
+  height: auto;
 }
 img {
   display: flex;
   margin: 10px;
-  width: 100%;
+  width: 10vw;
 }
 </style>
