@@ -1,4 +1,4 @@
-<!-- 
+<!--
 > shows the list of items passed as props
 > displays the essential data: title/name, image, short description
 -->
@@ -42,7 +42,7 @@ export default {
     goToPage(id) {
       let url = '/'
       if (this.itemType === 'people') {
-        url = '/' // TODO
+        url = '/peoples/people'
       } else if (this.itemType === 'area') {
         url = '/areas/area'
       } else if (this.itemType === 'product') {
@@ -76,7 +76,7 @@ export default {
 .img-and-desc {
   display: flex;
   flex-direction: row;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   max-width: 20vw;
   height: 100%;
 }

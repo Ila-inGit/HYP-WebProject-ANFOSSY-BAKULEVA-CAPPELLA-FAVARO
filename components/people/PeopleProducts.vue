@@ -45,6 +45,20 @@ iframe {
   border: transparent;
 }
 
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.small-column {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 h1 {
   padding-left: 10px;
   display: block;

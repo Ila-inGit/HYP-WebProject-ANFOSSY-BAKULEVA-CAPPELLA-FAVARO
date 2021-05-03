@@ -1,7 +1,7 @@
 <template>
   <div class="flex-box" :style="style">
     <div class="row">
-      <div class="column">
+      <div class="small-column">
         <h1>{{ title1 }}</h1>
         <h2>{{ description }}</h2>
       </div>
@@ -53,7 +53,14 @@ export default {
 }
 
 .column {
-  width: 50%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.small-column {
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
