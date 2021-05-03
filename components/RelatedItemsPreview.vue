@@ -10,7 +10,10 @@
         <div>
           <h3>{{ it.title }}</h3>
           <p>{{ it.description }}</p>
-          <button-with-text :title="'Learn more'"></button-with-text>
+          <button-with-text
+            :title="'Learn more'"
+            @click.native="goToPage(it.id)"
+          />
         </div>
       </div>
     </div>
@@ -29,6 +32,24 @@ export default {
       type: Array[{ title: String, description: String, image: String }],
       default: () => [],
     },
+    // the type of the elements passed (people, area, product)
+    itemType: {
+      type: String,
+      default: () => '',
+    },
+  },
+  methods: {
+    goToPage(id) {
+      let url = '/'
+      if (this.itemType === 'people') {
+        url = '/' // TODO
+      } else if (this.itemType === 'area') {
+        url = '/areas/area'
+      } else if (this.itemType === 'product') {
+        url = '/products/productPresentation'
+      }
+      this.$router.push({ path: url, query: { id: id } })
+    },
   },
 }
 </script>
@@ -42,6 +63,7 @@ export default {
   padding-right: 30px;
   justify-content: space-between;
   max-width: 30vw;
+  height: 100%;
 }
 
 .row {
@@ -54,13 +76,17 @@ export default {
 .img-and-desc {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: auto;
-  height: auto;
+  flex-wrap: no-wrap;
+  max-width: 20vw;
+  height: 100%;
 }
 img {
   display: flex;
   margin: 10px;
   width: 10vw;
+  align-self: center;
+}
+p {
+  max-width: 100%;
 }
 </style>

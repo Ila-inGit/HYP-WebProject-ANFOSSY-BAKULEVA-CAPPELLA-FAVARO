@@ -34,7 +34,7 @@ export default {
       image: '',
     }
     db.products.forEach((element) => {
-      if (element.id === this.$router.currentRoute.query.productId) {
+      if (element.id === this.$router.currentRoute.query.id) {
         product = element
       }
     })

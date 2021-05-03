@@ -6,7 +6,7 @@
     <div>
       <h1>{{ title }}</h1>
     </div>
-    <related-items-preview :related-items="items" />
+    <related-items-preview :related-items="items" :item-type="childType" />
   </div>
 </template>
 
