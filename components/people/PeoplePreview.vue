@@ -4,7 +4,7 @@
 <template>
   <div class="row">
     <div v-for="it in relatedItems" :key="it.id" class="item-card">
-      <h2>{{ it.title }}</h2>
+      <h2 @click="goToPeople(it.id)">{{ it.title }}</h2>
       <div class="img-and-desc">
         <img
           v-if="it.image != ''"
