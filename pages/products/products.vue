@@ -12,7 +12,7 @@ export
     <intro-card
       v-for="product in products"
       :key="product.id"
-      :product="product"
+      :item="product"
       @click="goToProduct(product.id)"
     />
   </div>
@@ -35,7 +35,7 @@ export default {
     goToProduct(id) {
       this.$router.push({
         path: 'productPresentation',
-        query: { productId: id },
+        query: { id: id },
       })
     },
   },

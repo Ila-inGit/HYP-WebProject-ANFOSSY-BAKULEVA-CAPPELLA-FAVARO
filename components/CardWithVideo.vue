@@ -1,3 +1,7 @@
+<!--
+> shows a video, a title of the section, and a list of items
+-->
+
 <template>
   <div class="flex-box" :style="style">
     <iframe
@@ -5,47 +9,35 @@
       height="315"
       src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
     />
-    <div class="column">
-      <h1>{{ title }}</h1>
-      <related-items-preview :related-items="items" />
-    </div>
+    <CardWithoutVideo
+      :child-ids="childIds"
+      :child-type="childType"
+      :bg-color="bgColor"
+      :text-color="textColor"
+      :title="title"
+    />
   </div>
 </template>
 
 <script>
-import db from 'static/fake_db.json'
-
 export default {
   props: {
+    // ids of items to display
     childIds: {
       type: Array,
       default: () => [],
     },
+    // people, area, product
     childType: {
       type: String,
       default: () => '',
     },
+    // title of the section
     title: { type: String, default: () => '' },
     bgColor: { type: String, default: () => '#0f0f0f' },
-    image: {
-      type: String,
-      default: () =>
-        'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
-    },
-    textColor: { type: String, default: () => '#f0f844' },
+    textColor: { type: String, default: () => '#ffffff' },
   },
-  data() {
-    const items = []
-    if (this.childType === 'product') {
-      // TODO other cases
-      db.products.forEach((element) => {
-        if (this.childIds.includes(element.id)) {
-          items.push(element)
-        }
-      })
-    }
-    return { items: items }
-  },
+
   computed: {
     style() {
       return { 'background-color': this.bgColor, color: this.textColor }

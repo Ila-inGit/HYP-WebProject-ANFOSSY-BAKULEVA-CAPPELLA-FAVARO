@@ -1,20 +1,21 @@
 <!--
-    A card to introduce a topic in a list
+> A card to introduce a topic
+> shows essential data, meant to be presented in a list
 -->
 <template>
   <div class="card" @click="$emit('click')">
     <div class="card-info">
-      <h1>{{ product.title }}</h1>
-      <p>{{ product.description }}</p>
+      <h1>{{ item.title }}</h1>
+      <p>{{ item.description }}</p>
     </div>
-    <img :src="product.image" alt="product image" class="imageCard" />
+    <img :src="item.image" alt="item image" class="imageCard" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    product: {
+    item: {
       title: {
         type: String,
         default: '',
@@ -47,6 +48,9 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   margin: 1%;
+}
+.card:hover {
+  color: #008cba;
 }
 .cardInfo {
   display: flex;

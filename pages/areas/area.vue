@@ -63,7 +63,7 @@ export default {
       image: '',
     }
     db.areas.forEach((element) => {
-      if (element.id === this.$router.currentRoute.query.areaId) {
+      if (element.id === this.$router.currentRoute.query.id) {
         area = element
       }
     })
