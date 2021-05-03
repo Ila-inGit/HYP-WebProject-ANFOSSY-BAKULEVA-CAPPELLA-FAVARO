@@ -2,13 +2,15 @@
   <div class="tabs">
     <ul class="tabs-list">
       <li class="active" @onclick="openPart('Presentation')">
-        <a href="#tab1">Presentation</a>
+        <a href="#Presentation">Presentation</a>
       </li>
-      <li @onclick="openPart('tab1')">
-        <a href="#tab2" @onclick="openPart('Working Areas')">Working Areas</a>
+      <li @onclick="openPart('Working Areas')">
+        <a href="#Working Areas" @onclick="openPart('Working Areas')">
+          Working Areas
+        </a>
       </li>
-      <li @onclick="openPart('tab1')">
-        <a href="#tab3" @onclick="openPart('Developed Products')">
+      <li @onclick="openPart('Developed Products')">
+        <a href="#Developed Products" @onclick="openPart('Developed Products')">
           Developed Products
         </a>
       </li>
@@ -31,14 +33,7 @@
 <script>
 export default {
   methods: {
-    openPart(part) {
-      let i
-      const x = document.getElementsByClassName('active')
-      for (i = 0; i < x.length; i++) {
-        x[i].className = 'none'
-      }
-      document.getElementById(part).style.display = 'block'
-    },
+    openPart(part) {},
   },
 }
 </script>
