@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Carousel from '~/components/carousel/Carousel'
-import CarouselSlide from '~/components/carousel/CarouselSlide'
+import Carousel from '/components/Carousel/Carousel'
+import CarouselSlide from '/components/Carousel/CarouselSlide'
 export default {
   components: {
     Carousel,

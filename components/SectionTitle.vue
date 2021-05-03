@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CardWithCarousel from '~/components/carousel/CardWithCarousel'
+import CardWithCarousel from '~/components/Carousel/CardWithCarousel'
 export default {
   components: {
     CardWithCarousel,
