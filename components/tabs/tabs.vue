@@ -41,9 +41,11 @@ export default {
   width: 60%;
   height: auto;
   margin: 0 auto;
+  display: inline;
 }
 
 .tabs li {
+  display: inline;
   width: 150px;
   float: left;
   margin: 0 2px 0 0;
@@ -58,6 +60,7 @@ export default {
   color: black !important;
 }
 .tabs li a {
+  display: inline;
   text-decoration: none;
   color: #1c1b1b;
 }
@@ -66,6 +69,7 @@ export default {
   cursor: pointer;
 }
 .tabs ul {
+  display: inline;
   list-style: none;
   margin: 0;
   padding: 0;
