@@ -71,19 +71,19 @@ export default {
   padding: 0;
 }
 
+.tabs-details {
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  border-radius: 3px;
+  padding: 20px 15px;
+  background-color: #fdfdff;
+  color: darkslategray;
+  clear: both;
+}
+
 .tabs a {
   display: inline;
   color: black !important;
-}
-
-@media screen and (max-width: 360px) {
-  .tabs {
-    margin: 0;
-    width: 150%;
-  }
-
-  .tabs li {
-    width: 80px;
-  }
 }
 </style>
