@@ -9,7 +9,9 @@ async function init() {
   // Call the init function that returns the Database
   const db = await initializeDatabase()
   // Let's extract all the objects we need to perform queries inside the endpoints
-  const { Article, Comment } = db._tables
+  const { Person, Product, Area } = db._tables
+
+  /*
   // API to get all the articles
   app.get('/articles', async (req, res) => {
     const articles = await Article.findAll()
@@ -32,6 +34,7 @@ async function init() {
         'https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/google-display-ads-example-2-final.png?oV7qevVB2XtFyF_O64TG6L27AFM3M2oL&itok=TBfuuTM_',
     })
   })
+  */
 }
 
 init()

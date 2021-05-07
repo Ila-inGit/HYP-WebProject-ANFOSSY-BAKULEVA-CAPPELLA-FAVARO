@@ -1,7 +1,19 @@
+/* eslint-disable no-console */
 const { Sequelize, DataTypes } = require('sequelize')
+const json = require('../static/fake_db.json')
 
 // Development
-const db = new Sequelize('postgres://postgres:postgres@localhost:5432/hyp')
+// const db = new Sequelize( 
+//   'postgres://postgres:@127.0.0.1:5432/hyp-spider'
+// )
+const db = new Sequelize({
+  host: 'localhost',
+  port: 5432,
+  dialect: 'postgres',
+  database: 'test',
+  username: 'group',
+  password: 'banana',
+})
 // Production
 // const pg = require('pg')
 // pg.defaults.ssl = true
@@ -14,83 +26,114 @@ const db = new Sequelize('postgres://postgres:postgres@localhost:5432/hyp')
  * Function to define the structure of the database
  */
 function defineDatabaseStructure() {
-  const Article = db.define(
-    'article',
+  const Person = db.define(
+    'person',
     {
-      title: DataTypes.STRING,
-      content: DataTypes.TEXT,
-      summary: DataTypes.STRING,
+      name: DataTypes.STRING,
+      role: DataTypes.STRING,
+      bio: DataTypes.TEXT,
+      email: DataTypes.STRING,
       image: DataTypes.STRING,
     },
-    {
-      underscored: true,
-    }
+    { underscored: true }
   )
-  const Comment = db.define(
-    'comment',
+
+  const Product = db.define(
+    'product',
     {
-      content: DataTypes.TEXT,
-      image: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      name: DataTypes.STRING,
+      shortDescription: DataTypes.TEXT,
+      longDescription: DataTypes.TEXT,
+      image: DataTypes.STRING,
     },
-    {
-      underscored: true,
-    }
+    { underscored: true }
   )
-  // Creating the 1 -> N association between Article and Comment
-  // More on association: https://sequelize.org/master/manual/assocs.html
-  Article.hasMany(Comment, { foreignKey: 'article_id' })
+  const Area = db.define(
+    'area',
+    {
+      name: DataTypes.STRING,
+      shortDescription: DataTypes.TEXT,
+      longDescription: DataTypes.TEXT,
+      image: DataTypes.STRING,
+    },
+    { underscored: true }
+  )
+
+  const PersonProduct = db.define('person_product', {}, { underscored: true })
+
+  Area.hasMany(Product)
+  Product.belongsTo(Area)
+  Area.hasMany(Person)
+  Person.belongsTo(Area, {
+    as: 'worksIn',
+    foreignKey: {
+      name: 'worksInArea',
+    },
+  })
+  Person.belongsToMany(Product, { through: PersonProduct })
+  Product.belongsToMany(Person, { through: PersonProduct })
+
   db._tables = {
-    Article,
-    Comment,
+    Person,
+    Product,
+    Area,
   }
 }
 
 /**
- * Function to insert some fake info in the database
+ * Function to insert some info in the database
  */
-async function insertFakeData() {
-  const { Article, Comment } = db._tables
-  // Create the first Article
-  const firstArticle = await Article.create({
-    title: 'Such good article',
-    summary: 'This is the summary of the first good article',
-    content: 'The content of the first article',
-    image:
-      'https://www.meme-arsenal.com/memes/98c0fb217e3b35d20518647668cea5dc.jpg',
+async function initializeData() {
+  const { Person, Product, Area } = db._tables
+  await json.product.forEach((item) => {
+    Product.create({
+      name: item.name,
+      shortDescription: item.description,
+      longDescription: item.longDescription,
+      image: item.image,
+    })
   })
-  await Article.create({
-    title: 'Why Fallout 76 is broken',
-    summary: '..no really... why?',
-    content:
-      'After more than 50 hours plundering the irradiated wasteland of Fallout 76, the greatest mystery still lingering is who this mutated take on Fallout is intended for. Like many of Vault-Tec’s underground bunkers, Bethesda’s multiplayer riff on its post-nuclear RPG series is an experiment gone awry. There are bright spots entangled in this mass of frustratingly buggy and sometimes conflicting systems, but what fun I was able to salvage from the expansive but underpopulated West Virginia map was consistently overshadowed by the monotony of its gathering and crafting treadmill.\nOn the surface, Fallout 76 is another dose of Bethesda’s tried-and-true open-world RPG formula on a larger-than-ever map that’s begging to be explored. As you emerge from Vault 76 you’ll start in a relatively peaceful forest and venture out into more dangerous pockets of the irradiated wasteland. My favorite is traveling the lengths of the Cranberry Bog, where the pinkish-red fields are seemingly inviting from afar but turn out to be full of a snaking system of trenches and alien forests that hide the worst horrors of the wasteland, but there are many more.',
-    image:
-      'https://www.meme-arsenal.com/memes/925f3e6e213ebe0bc196d379a7281ee8.jpg',
+  await json.area.forEach((item) => {
+    Area.create({
+      name: item.name,
+      shortDescription: item.description,
+      longDescription: item.longDescription,
+      image: item.image,
+    })
   })
-  const comment1 = await Comment.create({
-    content: 'Great article! Keep posting',
-  })
-  const comment2 = await Comment.create({
-    content: 'Such Doge.',
+  await json.person.forEach((item) => {
+    Person.create({
+      name: item.name,
+      role: item.role,
+      bio: item.description,
+      email: item.contacts,
+      image: item.image,
+      worksInArea: item.area,
+    })
   })
 
   // Adding the first comment to the first article
-  await firstArticle.addComment(comment1.id)
-  // Adding the second comment to the first article
-  await firstArticle.addComment(comment2.id)
+  // await firstArticle.addComment(comment1.id)
 }
+
 /**
  * Function to initialize the database. This is exported and called in the main api.js file
  */
 async function initializeDatabase() {
+  console.log('Initializing DB... ')
+  try {
+    await db.authenticate()
+    console.log('Connected to DB')
+  } catch (error) {
+    console.error('Unable to connect to DB: ', error)
+  }
   // Call the function for the database structure definition
   defineDatabaseStructure()
   // Synchronize Sequelize with the actual database
   await db.sync({ force: true })
   // Call the function to insert some fake data
-  await insertFakeData()
+  await initializeData()
+  console.log('DB ready')
   return db
 }
 
