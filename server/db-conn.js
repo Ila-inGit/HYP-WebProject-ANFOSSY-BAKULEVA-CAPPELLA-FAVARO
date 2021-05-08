@@ -3,7 +3,7 @@ const { Sequelize, DataTypes } = require('sequelize')
 const json = require('../static/fake_db.json')
 
 // Development
-// const db = new Sequelize( 
+// const db = new Sequelize(
 //   'postgres://postgres:@127.0.0.1:5432/hyp-spider'
 // )
 const db = new Sequelize({
@@ -13,6 +13,9 @@ const db = new Sequelize({
   database: 'test',
   username: 'group',
   password: 'banana',
+  define: {
+    freezeTableName: true,
+  },
 })
 // Production
 // const pg = require('pg')
@@ -59,24 +62,38 @@ function defineDatabaseStructure() {
     { underscored: true }
   )
 
+  /*
+   * The relations between tables are based on the assumption of ids from 1 to whatever
+   * Is it nice? No. Do I care? No
+   */
   const PersonProduct = db.define('person_product', {}, { underscored: true })
 
   Area.hasMany(Product)
-  Product.belongsTo(Area)
+  Product.belongsTo(Area, {
+    foreignKey: {
+      name: 'belongsToArea',
+    },
+  })
   Area.hasMany(Person)
   Person.belongsTo(Area, {
-    as: 'worksIn',
     foreignKey: {
       name: 'worksInArea',
     },
   })
-  Person.belongsToMany(Product, { through: PersonProduct })
-  Product.belongsToMany(Person, { through: PersonProduct })
+  Person.belongsToMany(Product, {
+    through: PersonProduct,
+    foreignKey: { name: 'hasDeveloper' },
+  })
+  Product.belongsToMany(Person, {
+    through: PersonProduct,
+    foreignKey: { name: 'worksOn' },
+  })
 
   db._tables = {
     Person,
     Product,
     Area,
+    PersonProduct,
   }
 }
 
@@ -84,21 +101,22 @@ function defineDatabaseStructure() {
  * Function to insert some info in the database
  */
 async function initializeData() {
-  const { Person, Product, Area } = db._tables
-  await json.product.forEach((item) => {
-    Product.create({
-      name: item.name,
-      shortDescription: item.description,
-      longDescription: item.longDescription,
-      image: item.image,
-    })
-  })
+  const { Person, Product, Area, PersonProduct } = db._tables
   await json.area.forEach((item) => {
     Area.create({
       name: item.name,
       shortDescription: item.description,
       longDescription: item.longDescription,
       image: item.image,
+    })
+  })
+  await json.product.forEach((item) => {
+    Product.create({
+      name: item.name,
+      shortDescription: item.description,
+      longDescription: item.longDescription,
+      image: item.image,
+      belongsToArea: item.areas,
     })
   })
   await json.person.forEach((item) => {
@@ -111,9 +129,14 @@ async function initializeData() {
       worksInArea: item.area,
     })
   })
-
-  // Adding the first comment to the first article
-  // await firstArticle.addComment(comment1.id)
+  await json.product.forEach((product) => {
+    product.people.forEach((person) => {
+      PersonProduct.create({
+        worksOn: product.id,
+        hasDeveloper: person,
+      })
+    })
+  })
 }
 
 /**

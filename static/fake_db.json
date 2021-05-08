@@ -1,99 +1,68 @@
 {
     "product": [
         {
-            "id": "1",
+            "id": 1,
             "name": "Pebbles",
             "description": "Amazing tool to create circles on water.\nYes, it's plenty on the river, but ours are better.",
             "longDescription": "The pebbles are incredibly old, but also absolutely versatile. This is the long description of this product",
             "image": "https://picsum.photos/seed/234/300/300",
-            "areas": [
-                "1"
-            ],
+            "areas": 1,
             "people": [
-                "1",
-                "2"
+                1,
+                2
             ]
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "Dogs",
             "description": "Don't you love dogs?",
             "longDescription": "Dogs are a man's best friend. This is the long description of this product",
             "image": "https://picsum.photos/seed/57/300/300",
-            "areas": [
-                "2"
-            ],
+            "areas": 2,
             "people": [
-                "1",
-                "2"
+                1,
+                2
             ]
         },
         {
-            "id": "3",
+            "id": 3,
             "name": "Bananas, a bit too ripe",
             "description": "You can still remove the dark parts",
             "longDescription": "If you don't like bananas, try apples. This is the long description of this product",
             "image": "https://picsum.photos/seed/3467/300/300",
-            "areas": [
-                "3"
-            ],
+            "areas": 3,
             "people": [
-                "1",
-                "2"
+                1,
+                2
             ]
         }
     ],
     "area": [
         {
-            "id": "1",
+            "id": 1,
             "name": "area1",
             "description": "description of area 1",
             "longDescription": "this is going to be a long description",
-            "products": [
-                "1",
-                "2",
-                "3"
-            ],
-            "people": [
-                "1",
-                "2"
-            ],
             "image": "https://picsum.photos/seed/347670/300/300"
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "area2",
             "description": "description of area 2",
             "longDescription": "this is going to be a long description",
-            "products": [
-                "2",
-                "3"
-            ],
-            "people": [
-                "1",
-                "2"
-            ],
             "image": "https://picsum.photos/seed/34770/300/300"
         },
         {
-            "id": "3",
+            "id": 3,
             "name": "area3",
             "description": "description of area 3",
             "longDescription": "this is going to be a long description",
-            "products": [
-                "1",
-                "3"
-            ],
-            "people": [
-                "1",
-                "2"
-            ],
             "image": "https://picsum.photos/seed/37670/300/300"
         }
     ],
     "person": [
         {
-            "id": "1",
+            "id": 1,
             "name": "Giovanni",
             "role": "CEO",
             "contacts": "mail@mail.me",
@@ -102,7 +71,7 @@
             "area": 1
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "Henry",
             "role": "CEO",
             "contacts": "notmail@mail.me",
