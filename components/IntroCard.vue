@@ -5,29 +5,27 @@
 <template>
   <div class="card" @click="$emit('click')">
     <div class="card-info">
-      <h1>{{ item.title }}</h1>
-      <p>{{ item.description }}</p>
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
     </div>
-    <img :src="item.image" alt="item image" class="imageCard" />
+    <img :src="image" alt="item image" class="imageCard" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    item: {
-      title: {
-        type: String,
-        default: '',
-      },
-      description: {
-        type: String,
-        default: '',
-      },
-      image: {
-        type: String,
-        default: '',
-      },
+    title: {
+      type: String,
+      default: 'Somebody forgot the title :)',
+    },
+    description: {
+      type: String,
+      default: 'Somebody forgot the description',
+    },
+    image: {
+      type: String,
+      default: '',
     },
   },
 }

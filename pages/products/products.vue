@@ -1,25 +1,26 @@
 <!--
   page with list of products
 -->
-
 export
 <template>
   <div>
     <SectionTitle
       :title="'Products'"
-      :subtitle="'This is a description of the products'"
+      :subtitle="'Our products are amazing! Have a look'"
     />
     <intro-card
       v-for="product in products"
       :key="product.id"
-      :item="product"
+      :title="product.name"
+      :description="product.shortDescription"
+      :image="product.image"
       @click="goToProduct(product.id)"
     />
   </div>
 </template>
 
 <script>
-import db from 'static/fake_db.json'
+import axios from 'axios'
 import introCard from '~/components/IntroCard'
 
 export default {
@@ -28,8 +29,10 @@ export default {
   },
   layout: 'PageLayout',
 
-  data() {
-    return { products: db.products }
+  async asyncData() {
+    const { data } = await axios.get(`http://localhost:3000/api/product_list`)
+    const products = data
+    return { products }
   },
   methods: {
     goToProduct(id) {
