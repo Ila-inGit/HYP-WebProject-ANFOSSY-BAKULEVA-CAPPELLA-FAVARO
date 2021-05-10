@@ -3,7 +3,7 @@ export default {
   target: 'server',
   env: {
     // BASE_URL: 'https://test-polimi.herokuapp.com', Production URL
-    BASE_URL: '', // Development URL
+    BASE_URL: 'http://localhost:3000', // Development URL
   },
   serverMiddleware: [
     {

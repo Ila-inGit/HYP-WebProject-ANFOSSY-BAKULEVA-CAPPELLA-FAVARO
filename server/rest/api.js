@@ -8,10 +8,8 @@ app.use(express.json())
 async function init() {
   // Call the init function that returns the Database
   const db = await initializeDatabase()
-  // Let's extract all the objects we need to perform queries inside the endpoints
-  // const Person = db._tables.Person
+
   const Product = db._tables.Product
-  // const Area = db._tables.Area
 
   // API to get all products
   app.get('/product_list', async (req, res) => {

@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 const { Sequelize, DataTypes } = require('sequelize')
-const json = require('../static/fake_db.json')
 
 // Development
 // const db = new Sequelize(
@@ -30,120 +29,87 @@ const db = new Sequelize({
  */
 function defineDatabaseStructure() {
   const Person = db.define(
-    'person',
+    'people',
     {
-      name: DataTypes.STRING,
-      role: DataTypes.STRING,
-      bio: DataTypes.TEXT,
-      email: DataTypes.STRING,
-      image: DataTypes.STRING,
+      ID: { type: DataTypes.INTEGER, primaryKey: true },
+      Name: DataTypes.STRING,
+      Role: DataTypes.STRING,
+      Bio: DataTypes.TEXT,
+      Email: DataTypes.STRING,
+      Picture: DataTypes.STRING,
     },
-    { underscored: true }
+    { timestamps: false }
   )
 
   const Product = db.define(
-    'product',
+    'products',
     {
-      name: DataTypes.STRING,
-      shortDescription: DataTypes.TEXT,
-      longDescription: DataTypes.TEXT,
-      image: DataTypes.STRING,
+      ID: { type: DataTypes.INTEGER, primaryKey: true },
+      Title: DataTypes.STRING,
+      Short: DataTypes.TEXT,
+      Long: DataTypes.TEXT,
+      Image: DataTypes.STRING,
     },
-    { underscored: true }
+    { timestamps: false }
   )
   const Area = db.define(
-    'area',
+    'areas',
     {
-      name: DataTypes.STRING,
-      shortDescription: DataTypes.TEXT,
-      longDescription: DataTypes.TEXT,
-      image: DataTypes.STRING,
+      Id: { type: DataTypes.INTEGER, primaryKey: true },
+      Title: DataTypes.STRING,
+      Short: DataTypes.TEXT,
+      Long: DataTypes.TEXT,
+      Image: DataTypes.STRING,
     },
-    { underscored: true }
+    { timestamps: false }
   )
 
-  /*
-   * The relations between tables are based on the assumption of ids from 1 to whatever
-   * Is it nice? No. Do I care? No
-   */
-  const PersonProduct = db.define('person_product', {}, { underscored: true })
+  const Development = db.define('development')
+  const Work = db.define('work')
+  const Offer = db.define('offer')
 
-  Area.hasMany(Product)
-  Product.belongsTo(Area, {
-    foreignKey: {
-      name: 'belongsToArea',
-    },
-  })
-  Area.hasMany(Person)
-  Person.belongsTo(Area, {
-    foreignKey: {
-      name: 'worksInArea',
-    },
-  })
   Person.belongsToMany(Product, {
-    through: PersonProduct,
-    foreignKey: { name: 'hasDeveloper' },
+    through: Development,
+    foreignKey: { name: 'ID_Person' },
   })
   Product.belongsToMany(Person, {
-    through: PersonProduct,
-    foreignKey: { name: 'worksOn' },
+    through: Development,
+    foreignKey: { name: 'ID_Product' },
+  })
+
+  Product.belongsToMany(Area, {
+    through: Offer,
+    foreignKey: { name: 'ID_Product' },
+  })
+
+  Area.belongsToMany(Product, {
+    through: Offer,
+    foreignKey: { name: 'ID_Area' },
+  })
+
+  Area.belongsToMany(Person, {
+    through: Work,
+    foreignKey: { name: 'ID_Area' },
+  })
+  Person.belongsToMany(Area, {
+    through: Offer,
+    foreignKey: { name: 'ID_Person' },
   })
 
   db._tables = {
     Person,
     Product,
     Area,
-    PersonProduct,
+    Development,
+    Work,
+    Offer,
   }
-}
-
-/**
- * Function to insert some info in the database
- */
-async function initializeData() {
-  const { Person, Product, Area, PersonProduct } = db._tables
-  await json.area.forEach((item) => {
-    Area.create({
-      name: item.name,
-      shortDescription: item.description,
-      longDescription: item.longDescription,
-      image: item.image,
-    })
-  })
-  await json.product.forEach((item) => {
-    Product.create({
-      name: item.name,
-      shortDescription: item.description,
-      longDescription: item.longDescription,
-      image: item.image,
-      belongsToArea: item.areas,
-    })
-  })
-  await json.person.forEach((item) => {
-    Person.create({
-      name: item.name,
-      role: item.role,
-      bio: item.description,
-      email: item.contacts,
-      image: item.image,
-      worksInArea: item.area,
-    })
-  })
-  await json.product.forEach((product) => {
-    product.people.forEach((person) => {
-      PersonProduct.create({
-        worksOn: product.id,
-        hasDeveloper: person,
-      })
-    })
-  })
 }
 
 /**
  * Function to initialize the database. This is exported and called in the main api.js file
  */
 async function initializeDatabase() {
-  console.log('Initializing DB... ')
   try {
     await db.authenticate()
     console.log('Connected to DB')
@@ -152,10 +118,6 @@ async function initializeDatabase() {
   }
   // Call the function for the database structure definition
   defineDatabaseStructure()
-  // Synchronize Sequelize with the actual database
-  await db.sync({ force: true })
-  // Call the function to insert some fake data
-  await initializeData()
   console.log('DB ready')
   return db
 }

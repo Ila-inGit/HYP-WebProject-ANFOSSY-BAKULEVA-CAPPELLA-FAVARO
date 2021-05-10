@@ -10,11 +10,11 @@ export
     />
     <intro-card
       v-for="product in products"
-      :key="product.id"
-      :title="product.name"
-      :description="product.shortDescription"
-      :image="product.image"
-      @click="goToProduct(product.id)"
+      :key="product.ID"
+      :title="product.Title"
+      :description="product.Short"
+      :image="product.Image"
+      @click="goToProduct(product.ID)"
     />
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
   layout: 'PageLayout',
 
   async asyncData() {
-    const { data } = await axios.get(`http://localhost:3000/api/product_list`)
+    const { data } = await axios.get(`${process.env.BASE_URL}/api/product_list`)
     const products = data
     return { products }
   },
