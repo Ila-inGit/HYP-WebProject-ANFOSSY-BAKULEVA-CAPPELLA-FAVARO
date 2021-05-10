@@ -38,12 +38,8 @@ export default {
   display: flex;
   height: auto;
   width: auto;
-  padding-right: 5%;
-  padding-left: 5%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  border-style: solid;
-  border: 1% px #999;
+  padding: 1% 5%;
+  border: solid #999;
   border-radius: 10px;
   flex-direction: row;
   justify-content: space-between;

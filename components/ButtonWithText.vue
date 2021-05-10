@@ -26,6 +26,7 @@ export default {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
 .button1 {
   background-color: white;
   color: black;
