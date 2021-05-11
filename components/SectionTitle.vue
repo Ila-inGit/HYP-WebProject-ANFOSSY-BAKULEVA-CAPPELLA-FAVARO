@@ -25,7 +25,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: () => '',
+      default: () => 'Error',
     },
     subtitle: {
       type: String,

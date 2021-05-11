@@ -6,21 +6,23 @@
   <main class="container">
     <div>
       <section-title
-        :title="area.title"
-        :subtitle="area.description"
+        :title="area.Title"
+        :subtitle="area.Long"
         :bg-color="'#f0f8ff'"
         :text-color="'#0f0f0f'"
       ></section-title
       ><card-with-video
-        :child-ids="area.products"
+        :parent-id="area.ID"
+        :parent-type="'area'"
         :child-type="'product'"
         :bg-color="'#12253f'"
         :text-color="'#f0f8ff'"
         :title="'Products in this area'"
       ></card-with-video>
       <card-without-video
-        :child-ids="area.people"
-        :child-type="'people'"
+        :parent-id="area.ID"
+        :parent-type="'area'"
+        :child-type="'person'"
         :bg-color="'#1e0045'"
         :text-color="'#f0f8ff'"
         :title="'Working Team'"
@@ -30,7 +32,7 @@
 </template>
 
 <script>
-import db from 'static/fake_db.json'
+import axios from 'axios'
 import SectionTitle from '~/components/SectionTitle.vue'
 import CardWithVideo from '~/components/CardWithVideo.vue'
 import CardWithoutVideo from '~/components/CardWithoutVideo.vue'
@@ -56,18 +58,11 @@ export default {
         'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
     },
   },
-  data() {
-    let area = {
-      title: "Please, don't play with URLs...",
-      descrpition: '',
-      image: '',
-    }
-    db.areas.forEach((element) => {
-      if (element.id === this.$router.currentRoute.query.id) {
-        area = element
-      }
-    })
-    return { area: area }
+  async asyncData({ route }) {
+    const { id } = route.query
+    const { data } = await axios.get(`${process.env.BASE_URL}/api/area/${id}`)
+    const area = data
+    return { area }
   },
 }
 </script>

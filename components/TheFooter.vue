@@ -3,16 +3,16 @@
     <NuxtLink class="a" to="/">Home page</NuxtLink>
     <div>
       <a @click="openpopup">Share</a>
-      <popup :popup-data="popupData"></popup>
+      <!--<popup :popup-data="popupData"></popup>-->
     </div>
   </div>
 </template>
 
 <script>
-import Popup from '~/components/contacts/PopUp.vue'
+// import Popup from '~/components/contacts/PopUp.vue'
 export default {
   components: {
-    popup: Popup,
+    // popup: Popup,
   },
   data() {
     return {

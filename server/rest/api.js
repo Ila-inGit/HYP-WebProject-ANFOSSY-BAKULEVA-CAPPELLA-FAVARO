@@ -17,6 +17,18 @@ async function init() {
     return res.json(products)
   })
 
+  // API to get all areas
+  app.get('/area_list', async (req, res) => {
+    const areas = await Area.findAll()
+    return res.json(areas)
+  })
+
+  // API to get all people
+  app.get('/person_list', async (req, res) => {
+    const people = await Person.findAll()
+    return res.json(people)
+  })
+
   // API to get a product given an id
   app.get('/product/:id', async (req, res) => {
     const { id } = req.params
@@ -26,6 +38,28 @@ async function init() {
       },
     })
     return res.json(product)
+  })
+
+  // API to get an area given an id
+  app.get('/area/:id', async (req, res) => {
+    const { id } = req.params
+    const area = await Area.findOne({
+      where: {
+        ID: id,
+      },
+    })
+    return res.json(area)
+  })
+
+  // API to get a person given an id
+  app.get('/product/:id', async (req, res) => {
+    const { id } = req.params
+    const person = await Person.findOne({
+      where: {
+        ID: id,
+      },
+    })
+    return res.json(person)
   })
 
   // API to get items related to the parent

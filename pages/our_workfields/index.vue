@@ -10,16 +10,17 @@
     />
     <intro-card
       v-for="area in areas"
-      :key="area.id"
-      :item="area"
-      @click="goToArea(area.id)"
+      :key="area.ID"
+      :title="area.Title"
+      :description="area.Short"
+      :image="area.Image"
+      @click="goToArea(area.ID)"
     />
   </main>
 </template>
 
 <script>
-// import axios from 'axios'
-import db from 'static/fake_db.json'
+import axios from 'axios'
 import SectionTitle from '~/components/SectionTitle.vue'
 import IntroCard from '~/components/IntroCard.vue'
 export default {
@@ -28,21 +29,15 @@ export default {
     IntroCard,
   },
   layout: 'PageLayout',
-  data() {
-    return { areas: db.areas }
+  async asyncData() {
+    const { data } = await axios.get(`${process.env.BASE_URL}/api/area_list`)
+    const areas = data
+    return { areas }
   },
   methods: {
     goToArea(id) {
       this.$router.push({ path: this.$route.path + '/area', query: { id: id } })
     },
   },
-
-  // async asyncData({ $axios }) {
-  //   const { data } = await $axios.get(`${process.env.BASE_URL}/api/articles`)
-  //   const articles = data
-  //   return {
-  //     articles,
-  //   }
-  // },
 }
 </script>
