@@ -21,19 +21,19 @@ export default {
         displayText: 'About us',
       },
       {
-        key: '/areas/ourWorkfields',
+        key: '/our_workfields',
         displayText: 'Our Workfields',
       },
       {
-        key: '/products/products',
+        key: '/products',
         displayText: 'What we offer',
       },
       {
-        key: 'people',
+        key: '/our_team',
         displayText: 'Our Team',
       },
       {
-        key: '/contact us',
+        key: '/contact_us',
         displayText: 'Contact us',
       },
     ],

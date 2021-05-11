@@ -6,21 +6,25 @@
     </div>
     <div>
       <img :src="people.image" alt="people image" class="imageCard" />
-      <div class="button-with-text">
-        <button-with-text
-          :title="'See more'"
-          @click.native="goToPeople(people.id)"
-        />
-      </div>
+      <nuxt-link
+        :to="{
+          path: $route.path + '/presentation',
+          query: { peopleId: people.id },
+        }"
+      >
+        <div class="button-with-text">
+          <button-with-text :title="'See more'" />
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonWithText from '~/components/ButtonWithText'
+// import ButtonWithText from '~/components/ButtonWithText'
 export default {
   components: {
-    ButtonWithText,
+    // ButtonWithText,
   },
   props: {
     relatedItems: {
@@ -55,14 +59,6 @@ export default {
     },
     bgColor: { type: String, default: () => '#fdfdfd' },
     textColor: { type: String, default: () => '#131212' },
-  },
-  methods: {
-    goToPeople(id) {
-      this.$router.push({
-        path: 'peopleDescription',
-        query: { peopleId: id },
-      })
-    },
   },
 }
 </script>

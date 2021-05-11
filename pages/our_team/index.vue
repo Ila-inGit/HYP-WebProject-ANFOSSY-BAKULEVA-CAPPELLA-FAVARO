@@ -1,5 +1,5 @@
 <!--
-  page with list of products
+  page with list of people
 -->
 
 export

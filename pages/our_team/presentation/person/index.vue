@@ -16,14 +16,14 @@
       <people-about
         :title1="'About ' + people.title"
         :description="people.description"
-        :peopleId="this.$router.currentRoute.query.peopleId"
+        :people-id="$router.currentRoute.query.peopleId"
         :bg-color="'#0f0f0f'"
         :text-color="'#f0f8ff'"
         :title="'Working Area'"
       ></people-about>
       <people-products
         :title="'Developed products'"
-        :peopleId="this.$router.currentRoute.query.peopleId"
+        :people-id="$router.currentRoute.query.peopleId"
         :bg-color="'#0f0f0f'"
         :text-color="'#f0f8ff'"
       ></people-products>

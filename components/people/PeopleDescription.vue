@@ -1,21 +1,27 @@
 <template>
   <div class="card">
     <div>
-      <div class="previous-button">
-        <button-with-text
-          class="border-previous"
-          :title="'Previous'"
-          @click.native="goToPeople(people.id - 1)"
-        />
+      <nuxt-link
+        :to="{
+          path: $route.path + '/person',
+          query: { peopleId: people.id - 1 },
+        }"
+      >
+        <div class="previous-button">
+          <button-with-text class="border-previous" :title="'Previous'" />
+        </div>
+      </nuxt-link>
+    </div>
+    <nuxt-link
+      :to="{
+        path: $route.path + '/person',
+        query: { peopleId: people.id + 1 },
+      }"
+    >
+      <div class="next-button">
+        <button-with-text class="border-next" :title="'Next'" />
       </div>
-    </div>
-    <div class="next-button">
-      <button-with-text
-        class="border-next"
-        :title="'Next'"
-        @click.native="goToPeople(people.id + 1)"
-      />
-    </div>
+    </nuxt-link>
     <img :src="people.image" alt="people image" class="imageCard" />
     <div class="card-info">
       <h1>
@@ -23,12 +29,16 @@
       </h1>
       <h2>{{ people.position }}</h2>
       <h2>{{ people.description }}</h2>
-      <div class="button-with-text">
-        <button-with-text
-          :title="'See more'"
-          @click.native="goToPeople(people.id)"
-        />
-      </div>
+      <nuxt-link
+        :to="{
+          path: $route.path + '/person',
+          query: { peopleId: people.id },
+        }"
+      >
+        <div class="button-with-text">
+          <button-with-text :title="'See more'" />
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>

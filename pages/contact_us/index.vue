@@ -14,7 +14,7 @@
       </div>
       <div class="card-contacts">
         <div>
-          <h2>Our officies</h2>
+          <h2>Our offices</h2>
         </div>
         <ContactCard :first="firstAddress" :second="secondAddress" />
       </div>
@@ -54,7 +54,7 @@ export default {
         buttonTitle: 'Directions',
       },
       secondAddress: {
-        title: 'New York Office address',
+        title: 'Milan Office address',
         buttonTitle: 'Directions',
       },
     }

@@ -37,7 +37,7 @@ export default {
             currentRoute.indexOf(item) + item.length
           )
           // select the name to display
-          crumb.name = item.replace('%20', ' ')
+          crumb.name = item.replace('_', ' ')
 
           console.log(
             '-> path: ' +

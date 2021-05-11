@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     goToArea(id) {
-      this.$router.push({ path: 'area', query: { id: id } })
+      this.$router.push({ path: this.$route.path + '/area', query: { id: id } })
     },
   },
 

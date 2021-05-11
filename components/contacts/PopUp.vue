@@ -32,7 +32,7 @@ export default {
 <style>
 #popup {
   background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 100%;
@@ -53,6 +53,10 @@ export default {
   color: black;
   top: 30%;
 }
+#popup > #popup .inner {
+  position: fixed;
+}
+
 #popup .inner .body-pop {
   height: 50px;
   padding-left: 10px;
