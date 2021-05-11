@@ -1,11 +1,39 @@
 <template>
   <div class="footer">
     <NuxtLink class="a" to="/">Home page</NuxtLink>
+    <div>
+      <a @click="openpopup">Share</a>
+      <popup :popup-data="popupData"></popup>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Popup from '~/components/contacts/PopUp.vue'
+export default {
+  components: {
+    popup: Popup,
+  },
+  data() {
+    return {
+      popupData: {
+        header: 'Share Link',
+        footer: 'Surf the spider house inc.',
+        body: '',
+        display: 'none',
+      },
+    }
+  },
+  mounted() {
+    this.popupData.display = 'block'
+  },
+  methods: {
+    openpopup() {
+      this.popupData.body = window.location.origin + this.$route.path
+      this.popupData.display = 'block'
+    },
+  },
+}
 </script>
 
 <style>
@@ -22,6 +50,7 @@ export default {}
   overflow: hidden;
   background-color: #333;
   flex: auto;
+  color: white;
 }
 /* footer links */
 .footer a {
