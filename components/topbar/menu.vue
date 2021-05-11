@@ -5,7 +5,12 @@
 <template>
   <div class="menu">
     <div v-for="item in sections" :key="item.key">
-      <nuxt-link :to="item.key" class="menuTitle" style="text-decoration: none">
+      <nuxt-link
+        :to="item.key"
+        class="menuTitle"
+        style="text-decoration: none"
+        @click.native="$emit('close')"
+      >
         <h2>{{ item.displayText }}</h2>
       </nuxt-link>
     </div>

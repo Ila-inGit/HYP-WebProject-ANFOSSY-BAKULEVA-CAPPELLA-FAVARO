@@ -17,7 +17,7 @@
       <button class="button" @click="invertVisibility">&#9776;</button>
     </div>
     <div :hidden="!showMenu">
-      <TopbarMenu @my-click="invertVisibility" />
+      <TopbarMenu @close="invertVisibility" />
     </div>
     <breadcrumbs />
   </div>
@@ -36,9 +36,6 @@ export default {
   methods: {
     invertVisibility() {
       this.showMenu = !this.showMenu
-    },
-    onClickChild() {
-      console.log('cat god is watching you')
     },
   },
 }
