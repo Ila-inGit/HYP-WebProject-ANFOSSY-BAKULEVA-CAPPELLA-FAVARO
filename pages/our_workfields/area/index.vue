@@ -11,22 +11,23 @@
         :bg-color="'#f0f8ff'"
         :text-color="'#0f0f0f'"
       ></section-title
-      ><card-with-video
+      ><related-items-preview
         :parent-id="area.ID"
         :parent-type="'area'"
         :child-type="'product'"
         :bg-color="'#12253f'"
         :text-color="'#f0f8ff'"
         :title="'Products in this area'"
-      ></card-with-video>
-      <card-without-video
+        :show-video="true"
+      />
+      <related-items-preview
         :parent-id="area.ID"
         :parent-type="'area'"
         :child-type="'person'"
         :bg-color="'#1e0045'"
         :text-color="'#f0f8ff'"
         :title="'Working Team'"
-      ></card-without-video>
+      />
     </div>
   </main>
 </template>
@@ -34,13 +35,11 @@
 <script>
 import axios from 'axios'
 import SectionTitle from '~/components/SectionTitle.vue'
-import CardWithVideo from '~/components/CardWithVideo.vue'
-import CardWithoutVideo from '~/components/CardWithoutVideo.vue'
+import RelatedItemsPreview from '~/components/RelatedItemsPreview.vue'
 export default {
   components: {
     SectionTitle,
-    CardWithVideo,
-    CardWithoutVideo,
+    RelatedItemsPreview,
   },
   layout: 'PageLayout',
   props: {

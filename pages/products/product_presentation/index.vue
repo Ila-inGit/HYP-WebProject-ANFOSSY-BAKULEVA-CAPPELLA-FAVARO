@@ -5,13 +5,14 @@
 <template>
   <div>
     <section-title :title="product.Title" :subtitle="product.Long" />
-    <card-with-video
+    <related-items-preview
       :parent-id="product.ID"
       :parent-type="'product'"
       :child-type="'area'"
       :title="'More about this area'"
+      :show-video="true"
     />
-    <card-without-video
+    <related-items-preview
       :parent-id="product.ID"
       :parent-type="'product'"
       :child-type="'person'"
@@ -23,10 +24,10 @@
 <script>
 import axios from 'axios'
 import SectionTitle from '~/components/SectionTitle.vue'
-import CardWithVideo from '~/components/CardWithVideo.vue'
+import RelatedItemsPreview from '~/components/RelatedItemsPreview.vue'
 
 export default {
-  components: { SectionTitle, CardWithVideo },
+  components: { SectionTitle, RelatedItemsPreview },
   layout: 'PageLayout',
   async asyncData({ route }) {
     const { id } = route.query

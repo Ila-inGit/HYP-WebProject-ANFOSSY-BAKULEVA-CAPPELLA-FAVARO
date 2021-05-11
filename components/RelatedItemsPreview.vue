@@ -3,17 +3,33 @@
 > displays the essential data: title/name, image, short description
 -->
 <template>
-  <div class="row">
-    <div v-for="it in items" :key="it.ID" class="item-card">
-      <div class="img-and-desc">
-        <img v-if="it.Image != ''" :src="it.Image" />
-        <div>
-          <h3>{{ it.Title }}</h3>
-          <p>{{ it.Short }}</p>
-          <button-with-text
-            :title="'Learn more'"
-            @click.native="goToPage(it.id)"
+  <div>
+    <div class="flex-box" :style="style">
+      <div class="main-container">
+        <!-- video (optional) -->
+        <div v-if="showVideo" class="flex-box" :style="style">
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
           />
+        </div>
+        <!-- Title of the section -->
+
+        <h1>{{ title }}</h1>
+      </div>
+      <div class="row">
+        <div v-for="it in items" :key="it.ID" class="item-card">
+          <div class="img-and-desc">
+            <img v-if="it.Image != ''" :src="it.Image" />
+            <div>
+              <h3>{{ it.Title }}</h3>
+              <p>{{ it.Short }}</p>
+              <button-with-text
+                :title="'Learn more'"
+                @click.native="goToPage(it.id)"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -28,14 +44,23 @@ export default {
     ButtonWithText,
   },
   props: {
+    title: { type: String, default: () => '' },
     parentId: { type: Number, default: () => 0 },
     parentType: { type: String, default: () => '' },
     childType: { type: String, default: () => '' },
+    bgColor: { type: String, default: () => '#000000' },
+    textColor: { type: String, default: () => '#ffffff' },
+    showVideo: { type: Boolean, default: false },
   },
   data() {
     return {
       items: [],
     }
+  },
+  computed: {
+    style() {
+      return { 'background-color': this.bgColor, color: this.textColor }
+    },
   },
   created() {
     this.fetchData()
@@ -80,15 +105,35 @@ export default {
 </script>
 
 <style scoped>
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 5vh;
+  margin: 2%;
+}
+
+.video {
+  display: flex;
+  width: 30vw;
+  height: auto;
+}
+
 .item-card {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 30px;
   justify-content: space-between;
   max-width: 30vw;
-  height: 100%;
+  height: auto;
 }
 
 .row {
@@ -97,6 +142,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
+  align-self: center;
 }
 .img-and-desc {
   display: flex;
@@ -111,6 +157,10 @@ img {
   width: 10vw;
   align-self: center;
 }
+h1 {
+  padding-left: 20px;
+}
+
 p {
   max-width: 100%;
 }
