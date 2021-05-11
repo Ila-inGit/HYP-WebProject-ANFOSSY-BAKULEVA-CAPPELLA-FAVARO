@@ -10,9 +10,9 @@
       src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
     />
     <CardWithoutVideo
-      :child-ids="childIds"
+      :parent-id="parentId"
+      :parent-type="parentType"
       :child-type="childType"
-      :bg-color="bgColor"
       :text-color="textColor"
       :title="title"
     />
@@ -23,18 +23,22 @@
 export default {
   props: {
     // ids of items to display
-    childIds: {
-      type: Array,
-      default: () => [],
+    parentId: {
+      type: Number,
+      default: 0,
     },
-    // people, area, product
+    parentType: {
+      type: String,
+      default: () => '',
+    },
+    // person, area, product
     childType: {
       type: String,
       default: () => '',
     },
     // title of the section
     title: { type: String, default: () => '' },
-    bgColor: { type: String, default: () => '#0f0f0f' },
+    bgColor: { type: String, default: () => '#000000' },
     textColor: { type: String, default: () => '#ffffff' },
   },
 

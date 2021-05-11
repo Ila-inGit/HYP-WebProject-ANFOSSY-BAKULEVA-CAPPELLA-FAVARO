@@ -4,41 +4,38 @@
 
 <template>
   <div>
-    <section-title :title="product.title" :subtitle="product.description" />
+    <section-title :title="product.Title" :subtitle="product.Long" />
     <card-with-video
-      :child-ids="product.areas"
+      :parent-id="product.ID"
+      :parent-type="'product'"
       :child-type="'area'"
       :title="'More about this area'"
     />
     <card-without-video
-      :child-ids="product.people"
-      :child-type="'people'"
+      :parent-id="product.ID"
+      :parent-type="'product'"
+      :child-type="'person'"
       :title="'People involved'"
     />
   </div>
 </template>
 
 <script>
-import db from 'static/fake_db.json'
+import axios from 'axios'
 import SectionTitle from '~/components/SectionTitle.vue'
 import CardWithVideo from '~/components/CardWithVideo.vue'
 
 export default {
   components: { SectionTitle, CardWithVideo },
   layout: 'PageLayout',
-
-  data() {
-    let product = {
-      title: "Please, don't play with URLs...",
-      descrpition: '',
-      image: '',
-    }
-    db.products.forEach((element) => {
-      if (element.id === this.$router.currentRoute.query.id) {
-        product = element
-      }
-    })
-    return { product: product }
+  async asyncData({ route }) {
+    const { id } = route.query
+    const { data } = await axios.get(
+      `${process.env.BASE_URL}/api/product/${id}`
+    )
+    const product = data
+    if (product.Bio) product.Long = product.Bio
+    return { product }
   },
 }
 </script>

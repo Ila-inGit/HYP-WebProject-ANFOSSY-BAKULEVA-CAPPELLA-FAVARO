@@ -31,7 +31,7 @@ function defineDatabaseStructure() {
   const Person = db.define(
     'people',
     {
-      ID: { type: DataTypes.INTEGER, primaryKey: true },
+      ID: { type: DataTypes.SMALLINT, primaryKey: true },
       Name: DataTypes.STRING,
       Role: DataTypes.STRING,
       Bio: DataTypes.TEXT,
@@ -44,7 +44,7 @@ function defineDatabaseStructure() {
   const Product = db.define(
     'products',
     {
-      ID: { type: DataTypes.INTEGER, primaryKey: true },
+      ID: { type: DataTypes.SMALLINT, primaryKey: true },
       Title: DataTypes.STRING,
       Short: DataTypes.TEXT,
       Long: DataTypes.TEXT,
@@ -55,7 +55,7 @@ function defineDatabaseStructure() {
   const Area = db.define(
     'areas',
     {
-      Id: { type: DataTypes.INTEGER, primaryKey: true },
+      ID: { type: DataTypes.SMALLINT, primaryKey: true },
       Title: DataTypes.STRING,
       Short: DataTypes.TEXT,
       Long: DataTypes.TEXT,
@@ -92,7 +92,7 @@ function defineDatabaseStructure() {
     foreignKey: { name: 'ID_Area' },
   })
   Person.belongsToMany(Area, {
-    through: Offer,
+    through: Work,
     foreignKey: { name: 'ID_Person' },
   })
 

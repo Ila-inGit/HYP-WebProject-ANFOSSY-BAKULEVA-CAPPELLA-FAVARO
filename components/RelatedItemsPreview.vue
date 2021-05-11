@@ -4,12 +4,12 @@
 -->
 <template>
   <div class="row">
-    <div v-for="it in relatedItems" :key="it.id" class="item-card">
+    <div v-for="it in items" :key="it.ID" class="item-card">
       <div class="img-and-desc">
-        <img v-if="it.image != ''" :src="it.image" />
+        <img v-if="it.Image != ''" :src="it.Image" />
         <div>
-          <h3>{{ it.title }}</h3>
-          <p>{{ it.description }}</p>
+          <h3>{{ it.Title }}</h3>
+          <p>{{ it.Short }}</p>
           <button-with-text
             :title="'Learn more'"
             @click.native="goToPage(it.id)"
@@ -21,23 +21,26 @@
 </template>
 
 <script>
+import axios from 'axios'
 import ButtonWithText from '~/components/ButtonWithText.vue'
 export default {
   components: {
     ButtonWithText,
   },
   props: {
-    // a list of items to display
-    relatedItems: {
-      type: Array[{ title: String, description: String, image: String }],
-      default: () => [],
-    },
-    // the type of the elements passed (people, area, product)
-    itemType: {
-      type: String,
-      default: () => '',
-    },
+    parentId: { type: Number, default: () => 0 },
+    parentType: { type: String, default: () => '' },
+    childType: { type: String, default: () => '' },
   },
+  data() {
+    return {
+      items: [],
+    }
+  },
+  created() {
+    this.fetchData()
+  },
+
   methods: {
     goToPage(id) {
       let url = '/'
@@ -49,6 +52,28 @@ export default {
         url = '/products/productPresentation'
       }
       this.$router.push({ path: url, query: { id: id } })
+    },
+    async fetchData() {
+      const getReq = `${process.env.BASE_URL}/api/relatedItems/${this.parentId}/${this.parentType}/${this.childType}`
+      const { data } = await axios.get(getReq)
+      let items = []
+      if (this.childType === 'person') {
+        items = data[0].people
+      } else if (this.childType === 'area') {
+        items = data[0].areas
+      } else if (this.childType === 'product') {
+        items = data[0].products
+      } else {
+        alert(`ERROR: child type ${this.childType} not valid`)
+      }
+
+      // have all the used key with the same name
+      items.forEach((element) => {
+        if (element.Picture) element.Image = element.Picture
+        if (element.Name) element.Title = element.Name
+        if (element.Role) element.Short = element.Role
+      })
+      this.items = items
     },
   },
 }

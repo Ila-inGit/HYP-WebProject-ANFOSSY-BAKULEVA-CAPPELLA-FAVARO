@@ -6,21 +6,27 @@
     <div>
       <h1>{{ title }}</h1>
     </div>
-    <related-items-preview :related-items="items" :item-type="childType" />
+    <related-items-preview
+      :parent-id="parentId"
+      :parent-type="parentType"
+      :child-type="childType"
+    />
   </div>
 </template>
 
 // todo a for for each prod/component
 <script>
-import db from 'static/fake_db.json'
 import RelatedItemsPreview from './RelatedItemsPreview.vue'
 export default {
   components: { RelatedItemsPreview },
   props: {
-    // ids of the items to display
-    childIds: {
-      type: Array,
-      default: () => [],
+    parentId: {
+      type: Number,
+      default: () => 0,
+    },
+    parentType: {
+      type: String,
+      default: () => '',
     },
     // people, area, or product
     childType: {
@@ -41,24 +47,6 @@ export default {
       default: () => '',
     },
   },
-  data() {
-    const items = []
-    let candidates = []
-    if (this.childType === 'people') {
-      candidates = db.people
-    } else if (this.childType === 'product') {
-      candidates = db.products
-    } else if (this.childType === 'area') {
-      candidates = db.areas
-    }
-    candidates.forEach((element) => {
-      if (this.childIds.includes(element.id)) {
-        items.push(element)
-      }
-    })
-    return { items: items }
-  },
-
   computed: {
     style() {
       return {
