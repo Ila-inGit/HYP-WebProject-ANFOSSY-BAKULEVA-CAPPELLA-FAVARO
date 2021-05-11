@@ -24,9 +24,6 @@ export default {
       },
     }
   },
-  mounted() {
-    this.popupData.display = 'block'
-  },
   methods: {
     openpopup() {
       this.popupData.body = window.location.origin + this.$route.path
