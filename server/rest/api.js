@@ -9,12 +9,57 @@ async function init() {
   // Call the init function that returns the Database
   const db = await initializeDatabase()
 
-  const Product = db._tables.Product
+  const { Product, Person, Area } = db._tables
 
   // API to get all products
   app.get('/product_list', async (req, res) => {
     const products = await Product.findAll()
     return res.json(products)
+  })
+
+  // API to get a product given an id
+  app.get('/product/:id', async (req, res) => {
+    const { id } = req.params
+    const product = await Product.findOne({
+      where: {
+        ID: id,
+      },
+    })
+    return res.json(product)
+  })
+
+  // API to get items related to the parent
+  // parent type: person/product/area
+  // item type: person/product/area to get
+  app.get('/relatedItems/:parentId/:parentType/:itemType', async (req, res) => {
+    const { parentId, parentType, itemType } = req.params
+    let parent = null
+    let child = null
+    // get child class
+    if (itemType === 'person') {
+      child = Person
+    } else if (itemType === 'area') {
+      child = Area
+    } else if (itemType === 'product') {
+      child = Product
+    }
+    // get parent class
+    if (parentType === 'person') {
+      parent = Person
+    } else if (parentType === 'area') {
+      parent = Area
+    } else if (parentType === 'product') {
+      parent = Product
+    }
+    const items = await parent.findAll({
+      where: { ID: parentId },
+      include: {
+        model: child,
+        through: { attributes: [] },
+      },
+    })
+
+    return res.json(items)
   })
 
   /*
