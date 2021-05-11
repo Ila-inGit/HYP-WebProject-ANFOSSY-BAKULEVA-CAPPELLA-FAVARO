@@ -69,12 +69,12 @@ export default {
   methods: {
     goToPage(id) {
       let url = '/'
-      if (this.itemType === 'people') {
-        url = '/peoples/people'
-      } else if (this.itemType === 'area') {
-        url = '/areas/area'
-      } else if (this.itemType === 'product') {
-        url = '/products/productPresentation'
+      if (this.childType === 'people') {
+        url = '/our_team/presentation/person'
+      } else if (this.childType === 'area') {
+        url = '/our_workfields'
+      } else if (this.childType === 'product') {
+        url = '/products/product_presentation'
       }
       this.$router.push({ path: url, query: { id: id } })
     },

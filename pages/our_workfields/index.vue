@@ -8,14 +8,16 @@
       :title="'Our workfields'"
       :subtitle="'very little description of our workfields'"
     />
-    <intro-card
-      v-for="area in areas"
-      :key="area.ID"
-      :title="area.Title"
-      :description="area.Short"
-      :image="area.Image"
-      @click="goToArea(area.ID)"
-    />
+    <div class="table">
+      <intro-card
+        v-for="area in areas"
+        :key="area.ID"
+        :title="area.Title"
+        :description="area.Short"
+        :image="area.Image"
+        @click="goToArea(area.ID)"
+      />
+    </div>
   </main>
 </template>
 
@@ -41,3 +43,9 @@ export default {
   },
 }
 </script>
+<style scoped>
+.table {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+</style>

@@ -6,74 +6,49 @@
   <main class="container">
     <div>
       <people-title
-        :title="people.title"
-        :subtitle="people.position"
-        :contacts="people.contacts"
-        :image="people.image"
+        :title="person.Name"
+        :subtitle="person.Role"
+        :description="person.Bio"
+        :contacts="person.Email"
+        :image="person.Picture"
         :bg-color="'#f0f8ff'"
         :text-color="'#0f0f0f'"
-      ></people-title>
-      <people-about
-        :title1="'About ' + people.title"
-        :description="people.description"
-        :people-id="$router.currentRoute.query.peopleId"
+      />
+      <related-items-preview
+        :parent-id="person.ID"
+        :parent-type="'person'"
+        :child-type="'area'"
         :bg-color="'#0f0f0f'"
         :text-color="'#f0f8ff'"
-        :title="'Working Area'"
-      ></people-about>
-      <people-products
+        :title="'Working Areas'"
+      />
+      <related-items-preview
         :title="'Developed products'"
-        :people-id="$router.currentRoute.query.peopleId"
+        :parent-id="person.ID"
+        :parent-type="'person'"
+        :child-type="'product'"
         :bg-color="'#0f0f0f'"
         :text-color="'#f0f8ff'"
-      ></people-products>
+      />
     </div>
   </main>
 </template>
 
 <script>
-import db from 'static/fake_db.json'
+import axios from 'axios'
 import PeopleTitle from '~/components/people/PeopleTitle'
+import RelatedItemsPreview from '~/components/RelatedItemsPreview.vue'
 export default {
   components: {
     PeopleTitle,
+    RelatedItemsPreview,
   },
   layout: 'PageLayout',
-  props: {
-    title: {
-      type: String,
-      default: () => '',
-    },
-    description: {
-      type: String,
-      default: () => '',
-    },
-    image: {
-      type: String,
-      default: () =>
-        'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
-    },
-  },
-  data() {
-    let people = {
-      id: '',
-      title: "Please, don't play with URLs...",
-      contacts: '',
-      position: '',
-      description: '',
-      image: '',
-    }
-    const area = {
-      title: "Please, don't play with URLs...",
-      description: '',
-      image: '',
-    }
-    db.people.forEach((element) => {
-      if (element.id === this.$router.currentRoute.query.peopleId) {
-        people = element
-      }
-    })
-    return { people: people, area: area }
+  async asyncData({ route }) {
+    const { id } = route.query
+    const { data } = await axios.get(`${process.env.BASE_URL}/api/person/${id}`)
+    const person = data
+    return { person }
   },
 }
 </script>

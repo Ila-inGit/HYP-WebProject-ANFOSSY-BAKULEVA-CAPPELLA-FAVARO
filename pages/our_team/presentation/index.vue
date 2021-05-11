@@ -1,55 +1,124 @@
 <template>
-  <main class="container">
+  <div class="person-card">
     <div>
-      <people-description :people="people" :related-items="idList" />
+      <!-- go to previous person -->
+      <nuxt-link
+        :to="{
+          path: `${$route.path}`,
+          query: { id: person.ID - 1 },
+        }"
+      >
+        <div class="previous-button">
+          <button-with-text class="border-previous" :title="'Previous'" />
+        </div>
+      </nuxt-link>
     </div>
-  </main>
+
+    <!-- show person info -->
+    <div class="card">
+      <img :src="person.Picture" alt="person image" class="imageCard" />
+      <div class="card-info">
+        <h1>
+          <b>{{ person.Name }}</b>
+        </h1>
+        <h2>{{ person.Role }}</h2>
+        <h2>{{ person.Bio }}</h2>
+        <nuxt-link
+          :to="{
+            path: `${$route.path}/person`,
+            query: { id: person.ID },
+          }"
+        >
+          <div class="button-with-text">
+            <button-with-text
+              :title="'See more'"
+              @click="goToPerson(person.ID)"
+            />
+          </div>
+        </nuxt-link>
+      </div>
+    </div>
+    <!-- go to next person -->
+    <nuxt-link
+      :to="{
+        path: `${$route.path}`,
+        query: { id: person.ID + 1 },
+      }"
+    >
+      <div class="next-button">
+        <button-with-text class="border-next" :title="'Next'" />
+      </div>
+    </nuxt-link>
+  </div>
 </template>
 
 <script>
-import db from 'static/fake_db.json'
-import PeopleDescription from '~/components/people/PeopleDescription'
+import axios from 'axios'
 export default {
-  components: {
-    PeopleDescription,
-  },
   layout: 'PageLayout',
-  props: {
-    title: {
-      type: String,
-      default: () => '',
-    },
-    description: {
-      type: String,
-      default: () => '',
-    },
-    image: {
-      type: String,
-      default: () =>
-        'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
-    },
+  async asyncData({ route }) {
+    const { id } = route.query
+    const { data } = await axios.get(`${process.env.BASE_URL}/api/person/${id}`)
+    const person = data
+    return { person }
   },
-  data() {
-    const idList = []
-    let people = {
-      id: '',
-      title: "Please, don't play with URLs...",
-      contacts: '',
-      position: '',
-      description: '',
-      image: '',
-    }
-    db.people.forEach((element) => {
-      if (element.id === this.$router.currentRoute.query.peopleId) {
-        people = element
-      }
-    })
-    db.people.forEach((element) => {
-      idList.push(element.id)
-    })
-    return { people: people, idList: idList }
+  methods: {
+    goToPerson(id) {
+      this.$router.push({
+        path: `${this.$route.path}/person`,
+        query: { id: id },
+      })
+    },
   },
 }
 </script>
 
-<style></style>
+<style scoped>
+.person-card {
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 {
+  text-align: left;
+  color: black !important;
+}
+
+h2 {
+  text-align: left;
+  color: black !important;
+}
+
+p {
+  text-align: left;
+  font-style: normal;
+  color: black !important;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageCard {
+  height: 40vh;
+  width: auto;
+  margin: 10%;
+}
+
+.button-with-text {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+</style>

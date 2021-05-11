@@ -9,32 +9,46 @@ export
       :title="'People'"
       :subtitle="'Meet the people behind all this work for you to improve your business.'"
     />
-    <people-table />
+    <div class="grid-container">
+      <intro-card
+        v-for="person in people"
+        :key="person.ID"
+        :title="person.Name"
+        :description="person.Role"
+        :image="person.Picture"
+        @click="goToPerson(person.ID)"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import db from 'static/fake_db.json'
-import PeopleTable from '~/components/people/PeopleTable'
+import axios from 'axios'
 
 export default {
-  components: {
-    PeopleTable,
-  },
   layout: 'PageLayout',
-
-  data() {
-    return { peoples: db.people }
+  async asyncData() {
+    const { data } = await axios.get(`${process.env.BASE_URL}/api/person_list`)
+    const people = data
+    return { people }
   },
   methods: {
-    goToPeople(id) {
+    goToPerson(id) {
       this.$router.push({
-        path: 'people',
-        query: { peopleId: id },
+        path: `${this.$route.path}/presentation`,
+        query: { id: id },
       })
     },
   },
 }
 </script>
 
-<style></style>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: #fdfdfd;
+  padding: 10px;
+}
+</style>

@@ -8,14 +8,16 @@ export
       :title="'Products'"
       :subtitle="'Our products are amazing! Have a look'"
     />
-    <intro-card
-      v-for="product in products"
-      :key="product.ID"
-      :title="product.Title"
-      :description="product.Short"
-      :image="product.Image"
-      @click="goToProduct(product.ID)"
-    />
+    <div class="table">
+      <intro-card
+        v-for="product in products"
+        :key="product.ID"
+        :title="product.Title"
+        :description="product.Short"
+        :image="product.Image"
+        @click="goToProduct(product.ID)"
+      />
+    </div>
   </div>
 </template>
 
@@ -48,5 +50,9 @@ export default {
 <style>
 .div {
   width: 100%;
+}
+.table {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 </style>

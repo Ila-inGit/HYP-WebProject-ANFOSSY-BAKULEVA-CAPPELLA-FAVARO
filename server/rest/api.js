@@ -52,7 +52,7 @@ async function init() {
   })
 
   // API to get a person given an id
-  app.get('/product/:id', async (req, res) => {
+  app.get('/person/:id', async (req, res) => {
     const { id } = req.params
     const person = await Person.findOne({
       where: {

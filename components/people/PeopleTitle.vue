@@ -14,6 +14,9 @@
         <h2>
           {{ subtitle }}
         </h2>
+        <p>
+          {{ description }}
+        </p>
       </div>
     </div>
     <div class="last">
@@ -34,6 +37,10 @@ export default {
       default: () => '',
     },
     subtitle: {
+      type: String,
+      default: () => '',
+    },
+    description: {
       type: String,
       default: () => '',
     },
