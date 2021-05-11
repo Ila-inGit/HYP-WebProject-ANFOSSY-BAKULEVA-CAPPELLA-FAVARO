@@ -1,3 +1,43 @@
+# CSS Group
+
+## Elena Bakuleva
+Number: 10719262
+Mail: elena.bakuleva@mail.polimi.it
+Contribution summary: People page
+
+## Francesca Anfossy
+Number: 10789800
+Mail: francesca.anfossy@mail.polimi.it
+Contribution summary: Database, About us page
+
+## Ilaria Cappella
+Number: 10620359
+Mail: ilaria.cappella@mail.polimi.it
+Contribution: Areas page, Contact Us page
+
+## Marzia Favaro
+Number: 10749161
+Mail: marzia.favaro@mail.polimi.it
+Contribution: Products page
+
+# Documentation
+
+## Server and DB technologies used
+Used PostgreSQL for the DB
+
+## Components
+Component: Functionalities and structure
+Component: Functionalities and structure
+Component: Functionalities and structure
+
+## Plugins
+Routing:
+Store:
+
+## Best practices
+Comments about how your usage of the framework was compliant to the best practices for
+the specific application domain of your website (discussed during the course).
+
 # Nuxt Website
 
 ## Build Setup
