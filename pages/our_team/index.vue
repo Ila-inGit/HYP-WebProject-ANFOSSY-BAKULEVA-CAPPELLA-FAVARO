@@ -1,5 +1,5 @@
 <!--
-  page with list of products
+  page with list of people
 -->
 
 export
@@ -9,17 +9,17 @@ export
       :title="'People'"
       :subtitle="'Meet the people behind all this work for you to improve your business.'"
     />
-    <card-carousel />
+    <people-table />
   </div>
 </template>
 
 <script>
 import db from 'static/fake_db.json'
-import cardCarousel from '~/components/people/PeopleCardCarousel'
+import PeopleTable from '~/components/people/PeopleTable'
 
 export default {
   components: {
-    cardCarousel,
+    PeopleTable,
   },
   layout: 'PageLayout',
 

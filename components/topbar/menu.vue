@@ -5,12 +5,9 @@
 <template>
   <div class="menu">
     <div v-for="item in sections" :key="item.key">
-      <h1 class="menuTitle" @click="goTo(item.key)">
-        {{ item.displayText }}
-      </h1>
-      <div v-for="elem in item.content" :key="elem">
-        <p class="textMenu">{{ elem }}</p>
-      </div>
+      <nuxt-link :to="item.key" class="menuTitle" style="text-decoration: none">
+        <h2>{{ item.displayText }}</h2>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -18,47 +15,29 @@
 <script>
 export default {
   data: () => ({
-    paths: [
-      ['about', '/'], //  TODO insert the path
-      ['areas', '/areas/ourWorkfields'],
-      ['products', '/products/products'],
-      ['people', '/peoples/peoples'],
-    ],
     sections: [
       {
         key: 'about',
         displayText: 'About us',
-        content: ['placeholder1', 'placeholder2', 'placeholder3'],
       },
       {
-        key: 'areas',
-        displayText: 'Areas',
-        content: ['placeholder1', 'placeholder2', 'placeholder3'],
+        key: '/our_workfields',
+        displayText: 'Our Workfields',
       },
       {
-        key: 'products',
-        displayText: 'Products',
-        content: ['placeholder', 'placeholder', 'placeholder'],
+        key: '/products',
+        displayText: 'What we offer',
       },
       {
-        key: 'people',
-        displayText: 'People',
-        content: ['placeholder1', 'placeholder2', 'placeholder3'],
+        key: '/our_team',
+        displayText: 'Our Team',
+      },
+      {
+        key: '/contact_us',
+        displayText: 'Contact us',
       },
     ],
   }),
-
-  methods: {
-    goTo(section) {
-      let path = 'error'
-      this.$data.paths.forEach((element) => {
-        if (element[0] === section) path = element[1]
-      })
-      this.$emit('my-click')
-      console.log('Pushing section ' + section + ' @ ' + path)
-      this.$router.push({ path })
-    },
-  },
 }
 </script>
 

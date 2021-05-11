@@ -41,7 +41,8 @@ export default {
   justify-content: space-between;
   margin: 1%;
 }
-.cardInfo {
+
+.card-info {
   display: flex;
   flex-direction: column;
   height: auto;

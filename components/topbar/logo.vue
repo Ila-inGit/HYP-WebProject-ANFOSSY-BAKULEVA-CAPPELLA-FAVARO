@@ -19,11 +19,16 @@
     <div :hidden="!showMenu">
       <TopbarMenu @my-click="invertVisibility" />
     </div>
+    <breadcrumbs />
   </div>
 </template>
 
 <script>
+// import Breadcrumbs from '~/components/breadcrumbs/Breadcrumbs.vue'
 export default {
+  components: {
+    // Breadcrumbs,
+  },
   data: () => ({
     showMenu: false,
   }),
@@ -33,7 +38,7 @@ export default {
       this.showMenu = !this.showMenu
     },
     onClickChild() {
-      console.log('iaskjhfrisjdfh')
+      console.log('cat god is watching you')
     },
   },
 }
