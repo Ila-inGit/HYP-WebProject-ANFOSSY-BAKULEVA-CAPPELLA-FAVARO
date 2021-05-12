@@ -17,11 +17,11 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Somebody forgot the title :)',
+      default: 'Some error occurred',
     },
     description: {
       type: String,
-      default: 'Somebody forgot the description',
+      default: 'This is embarassing... Maybe try to refresh the page?',
     },
     image: {
       type: String,

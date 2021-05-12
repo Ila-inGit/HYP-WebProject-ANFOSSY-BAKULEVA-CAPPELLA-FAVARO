@@ -26,7 +26,7 @@
               <p>{{ it.Short }}</p>
               <button-with-text
                 :title="'Learn more'"
-                @click.native="goToPage(it.id)"
+                @click.native="goToPage(it.ID)"
               />
             </div>
           </div>
@@ -69,12 +69,12 @@ export default {
   methods: {
     goToPage(id) {
       let url = '/'
-      if (this.childType === 'people') {
-        url = '/our_team/presentation/person'
+      if (this.childType === 'person') {
+        url = `/our_team/presentation/person`
       } else if (this.childType === 'area') {
-        url = '/our_workfields'
+        url = `/our_workfields/area`
       } else if (this.childType === 'product') {
-        url = '/products/product_presentation'
+        url = `/products/product_presentation`
       }
       this.$router.push({ path: url, query: { id: id } })
     },
