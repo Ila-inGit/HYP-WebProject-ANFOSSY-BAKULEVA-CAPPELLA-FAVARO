@@ -49,23 +49,12 @@ export default {
 .slider {
   position: relative;
   overflow: hidden;
-  height: 225px;
+  height: 200px;
   width: 325px;
-  z-index: 10;
+  z-index: 1;
   padding: 10px;
 }
-.btn {
-  padding: 5px;
-  margin: 15px 1px;
-  color: #fff;
-  position: absolute;
-  font-size: small;
-  font-style: italic;
-  z-index: 1;
-}
-.btn:focus {
-  outline: none;
-}
+
 .btn-down {
   top: 10%;
   right: 0;
@@ -76,11 +65,13 @@ export default {
   border-bottom: 20px solid #555;
   background-color: #fff;
 }
+
 .btn-down:hover {
   border-bottom: 20px solid #008cba;
   cursor: pointer;
   color: #0f0f0f;
 }
+
 .btn-up {
   bottom: 10%;
   right: 0;
@@ -96,9 +87,10 @@ export default {
   cursor: pointer;
   color: #0f0f0f;
 }
+
 .cards {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 0;
   bottom: 20%;
   right: 20%;
@@ -109,10 +101,12 @@ export default {
   border-style: solid;
   border: 1% px #999;
 }
+
 .cards p {
   color: #000;
   padding: 5px 40px 0 0;
 }
+
 .wrapper {
   padding: 10px;
 }

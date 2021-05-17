@@ -7,7 +7,7 @@ export
   <div>
     <SectionTitle
       :title="'People'"
-      :subtitle="'Meet the people behind all this work for you to improve your business.'"
+      :subtitle="'Meet the people behind all this work for you to improve your business'"
     />
     <div class="grid-container">
       <intro-card

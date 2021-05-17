@@ -11,7 +11,9 @@
         <img
           src="https://mercado.com.ar/wp/wp-content/uploads/2020/12/2_tecnologia.jpg"
         />
-        <button class="but" @click="goTo('our_workfields')">See more</button>
+        <button class="but" @click="goTo('our_workfields')">
+          <ButtonWithText :title="'See more'" />
+        </button>
       </div>
       <div class="column">
         <h1>Our products</h1>
@@ -19,7 +21,9 @@
         <img
           src="https://d3qy1pxzcopg5z.cloudfront.net/wp-content/uploads/2018/06/29095115/digital-transformation-technological-innovations.jpg"
         />
-        <button class="but" @click="goTo('products')">See more</button>
+        <button class="but" @click="goTo('products')">
+          <ButtonWithText :title="'See more'" />
+        </button>
       </div>
       <div class="column">
         <h1>Our team</h1>
@@ -27,18 +31,24 @@
         <img
           src="https://www.culturarsc.com/wp-content/uploads/2020/10/StudentFinance.jpg"
         />
-        <button class="but" @click="goTo('our_team')">See more</button>
+        <button class="but" @click="goTo('our_team')">
+          <ButtonWithText :title="'See more'" />
+        </button>
       </div>
       <div>
-        <div class="card">
+        <div class="home-card">
           <h1>About us</h1>
           <p>Know more about our company</p>
-          <button class="but" @click="goTo('about')">See more</button>
+          <button class="but" @click="goTo('about')">
+            <ButtonWithText :title="'See more'" />
+          </button>
         </div>
-        <div class="card">
+        <div class="home-card">
           <h1>Contact us</h1>
           <p>Find our contact information</p>
-          <button class="but" @click="goTo('contact_us')">See more</button>
+          <button class="but" @click="goTo('contact_us')">
+            <ButtonWithText :title="'See more'" />
+          </button>
         </div>
       </div>
     </div>
@@ -65,19 +75,9 @@ export default {
 }
 
 .but {
-  padding: 5px;
-  margin: 5px 10px;
-  color: #0f0f0f;
-  position: relative;
-  font-size: small;
-  font-style: italic;
-  z-index: 2;
-}
-
-.but:hover {
-  cursor: pointer;
-  background-color: rgba(0, 140, 186, 0.6);
-  color: #0f0f0f;
+  padding: 20px;
+  background-color: transparent;
+  border: transparent;
 }
 
 .but:focus {
@@ -96,7 +96,7 @@ export default {
   padding-top: 15px;
 }
 
-.card {
+.home-card {
   height: auto;
   width: 80%;
   padding-right: 2.5%;
@@ -104,14 +104,14 @@ export default {
   padding-top: 1%;
   padding-bottom: 1%;
   border-style: solid;
-  border: 1% #0f0f0f;
+  border-color: #999;
   border-radius: 10px;
   flex-direction: column;
   justify-content: flex-start;
   margin: 1%;
 }
 
-.card:hover {
+.home-card:hover {
   color: #008cba;
 }
 
@@ -124,7 +124,7 @@ export default {
   padding-top: 1%;
   padding-bottom: 1%;
   border-style: solid;
-  border: 1% #999;
+  border-color: #999;
   border-radius: 10px;
   flex-direction: column;
   justify-content: space-evenly;

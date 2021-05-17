@@ -6,7 +6,7 @@
   <main class="container">
     <section-title
       :title="'Our workfields'"
-      :subtitle="'very little description of our workfields'"
+      :subtitle="'Find out about our areas of expertise'"
     />
     <div class="table">
       <intro-card

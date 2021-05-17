@@ -66,11 +66,15 @@ export default {
 .map {
   height: 400px;
   max-width: auto;
-  border: #333 solid;
+  border: 1;
+  border-style: solid;
+  border-color: #999;
   border-radius: 5px;
 }
 .card-contacts {
-  border: #333 solid;
+  border: 1;
+  border-style: solid;
+  border-color: #999;
   padding: 15px;
   flex: auto;
   margin: 10px;
