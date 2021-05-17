@@ -11,7 +11,7 @@
     <div class="titleContainer">
       <img
         class="logo"
-        src="https://pngimage.net/wp-content/uploads/2018/05/c-logo-png.png"
+        src="http://getdrawings.com/free-icon-bw/letter-c-icon-8.png"
       />
       <h1 class="title">Comc company</h1>
       <button class="button" @click="invertVisibility">&#9776;</button>
@@ -65,9 +65,11 @@ export default {
 }
 
 .logo {
-  height: 100%;
+  height: 90%;
   width: auto;
   border: transparent;
+  padding-left: 2.5%;
+  padding-top: 1%;
 }
 
 .button {
