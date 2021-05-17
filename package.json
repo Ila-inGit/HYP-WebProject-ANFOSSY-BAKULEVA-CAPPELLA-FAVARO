@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "google-maps-api-loader": "^1.1.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.15.3",
+    "nuxt": "^2.15.5",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2"
@@ -34,5 +34,18 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
     "prettier": "^2.2.1"
-  }
+  },
+  "description": "## Elena Bakuleva Number: 10719262 Mail: elena.bakuleva@mail.polimi.it Contribution summary: People page",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ila-inGit/HYP-WebProject-ANFOSSY-BAKULEVA-CAPPELLA-FAVARO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ila-inGit/HYP-WebProject-ANFOSSY-BAKULEVA-CAPPELLA-FAVARO/issues"
+  },
+  "homepage": "https://github.com/Ila-inGit/HYP-WebProject-ANFOSSY-BAKULEVA-CAPPELLA-FAVARO#readme"
 }
