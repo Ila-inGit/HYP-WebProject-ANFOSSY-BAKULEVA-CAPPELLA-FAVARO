@@ -27,7 +27,7 @@ export default {
 /* The navbar container */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #ddd;
   flex: auto;
 }
 </style>

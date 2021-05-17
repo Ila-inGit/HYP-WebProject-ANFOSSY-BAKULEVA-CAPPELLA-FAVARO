@@ -56,6 +56,7 @@ export default {
 }
 
 .btn-down {
+  position: absolute;
   top: 10%;
   right: 0;
   width: 0;
@@ -73,6 +74,7 @@ export default {
 }
 
 .btn-up {
+  position: absolute;
   bottom: 10%;
   right: 0;
   width: 0;
