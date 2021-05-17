@@ -22,7 +22,7 @@ export default {
   data: () => ({
     sections: [
       {
-        key: 'about',
+        key: '/about',
         displayText: 'About us',
       },
       {

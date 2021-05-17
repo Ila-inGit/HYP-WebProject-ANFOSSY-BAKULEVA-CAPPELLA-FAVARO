@@ -18,7 +18,7 @@
         <img
           src="https://d3qy1pxzcopg5z.cloudfront.net/wp-content/uploads/2018/06/29095115/digital-transformation-technological-innovations.jpg"
         />
-        <button class="but" @click="goTo('our_products')">See more</button>
+        <button class="but" @click="goTo('products')">See more</button>
       </div>
       <div class="column">
         <h1>Our team</h1>
@@ -49,7 +49,7 @@ export default {
   layout: 'PageLayout',
   methods: {
     goTo(place) {
-      this.$router.push({ path: this.$route.path + '/' + place })
+      this.$router.push({ path: this.$route.path + place })
     },
   },
 }
