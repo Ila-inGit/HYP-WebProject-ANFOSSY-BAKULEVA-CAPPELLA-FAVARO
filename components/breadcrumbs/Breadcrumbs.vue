@@ -3,7 +3,13 @@
     <li v-for="(item, i) in crumbs" :key="i" :class="item.classes">
       <button class="br-button">
         <span>
-          <nuxt-link :to="item.path" style="text-decoration: none">
+          <nuxt-link
+            :to="{
+              path: item.path,
+              query: item.query,
+            }"
+            style="text-decoration: none"
+          >
             {{ item.name }}
           </nuxt-link>
         </span>
@@ -38,7 +44,7 @@ export default {
           )
           // select the name to display
           crumb.name = item.replace('_', ' ')
-
+          crumb.query = ''
           console.log(
             '-> path: ' +
               crumb.path +
@@ -53,6 +59,9 @@ export default {
           if (i === length - 1) {
             // if it is active it can not be clicked because you are in that locationn
             crumb.classes = 'is-active'
+          }
+          if (crumb.name === 'presentation') {
+            crumb.query = this.$route.query
           }
           crumbs.push(crumb)
         })
