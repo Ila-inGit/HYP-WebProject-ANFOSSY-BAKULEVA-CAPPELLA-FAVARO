@@ -1,6 +1,7 @@
 <!--
-  homepage  @click="$emit('click')"
+  homepage
 -->
+
 <template>
   <div class="container">
     <div class="row">
@@ -103,7 +104,7 @@ export default {
   padding-top: 1%;
   padding-bottom: 1%;
   border-style: solid;
-  border: 1% #999;
+  border: 1% #0f0f0f;
   border-radius: 10px;
   flex-direction: column;
   justify-content: flex-start;

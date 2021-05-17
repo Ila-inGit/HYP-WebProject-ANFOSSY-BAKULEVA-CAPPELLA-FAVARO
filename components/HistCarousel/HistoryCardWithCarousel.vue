@@ -49,46 +49,52 @@ export default {
 .slider {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 225px;
   width: 325px;
   z-index: 10;
   padding: 10px;
 }
 .btn {
   padding: 5px;
-  margin: 5px 10px;
+  margin: 15px 1px;
   color: #fff;
   position: absolute;
   font-size: small;
   font-style: italic;
-  z-index: 2;
-}
-.btn:hover {
-  cursor: pointer;
-  background-color: rgba(0, 140, 186, 0.6);
-  color: #0f0f0f;
+  z-index: 1;
 }
 .btn:focus {
   outline: none;
 }
 .btn-down {
-  top: 15%;
+  top: 10%;
   right: 0;
   width: 0;
   height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 50px solid #555;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #555;
   background-color: #fff;
 }
+.btn-down:hover {
+  border-bottom: 20px solid #008cba;
+  cursor: pointer;
+  color: #0f0f0f;
+}
 .btn-up {
-  bottom: 0;
+  bottom: 10%;
   right: 0;
-  border: 1px solid transparent;
-  height: 40px;
-  width: 50px;
-  margin-top: -25px;
-  background-color: rgba(0, 0, 0, 0.418);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #555;
+  background-color: #fff;
+}
+.btn-up:hover {
+  border-top: 20px solid #008cba;
+  cursor: pointer;
+  color: #0f0f0f;
 }
 .cards {
   position: absolute;
