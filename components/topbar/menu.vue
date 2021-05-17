@@ -53,7 +53,7 @@ export default {
   justify-content: space-around;
 }
 .menuTitle {
-  color: white;
+  color: black;
   text-decoration-thickness: 3;
 }
 .menuTitle:hover {
@@ -61,11 +61,11 @@ export default {
 }
 
 .textMenu {
-  color: white;
+  color: #fff;
   padding: 6px;
 }
 .textMenu:hover {
-  background-color: #ddd;
+  background-color: #fff;
   color: black;
 }
 </style>

@@ -11,9 +11,9 @@
     <div class="titleContainer">
       <img
         class="logo"
-        src="https://childreninspiredbyyoga.com/wp-content/uploads/2014/01/spider-pose-blog-header.png"
+        src="https://pngimage.net/wp-content/uploads/2018/05/c-logo-png.png"
       />
-      <h1 class="title">Surf the Spider House</h1>
+      <h1 class="title">Comc company</h1>
       <button class="button" @click="invertVisibility">&#9776;</button>
     </div>
     <div :hidden="!showMenu">
@@ -58,7 +58,7 @@ export default {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 5vh;
-  color: #ffffff;
+  color: #0f0f0f;
   letter-spacing: 1px;
   padding-left: 2%;
   padding-right: 2%;
@@ -67,7 +67,7 @@ export default {
 .logo {
   height: 100%;
   width: auto;
-  border: #333 solid;
+  border: transparent;
 }
 
 .button {
@@ -76,7 +76,7 @@ export default {
   font-size: 5vh;
   background-color: transparent;
   border-color: transparent;
-  color: #ffffff;
+  color: #0f0f0f;
 }
 
 .button:hover {
