@@ -35,7 +35,7 @@
       </div>
       <div class="card">
         <div class="cardTitle">
-          <h1>What they say about us</h1>
+          <h1>Our reviews</h1>
         </div>
         <div>
           <div class="card-bordered">
@@ -125,10 +125,10 @@ export default {
   padding-top: 1%;
   padding-bottom: 1%;
   border-style: solid;
-  border: 1% px #999;
+  border: 1% #999;
   border-radius: 10px;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   margin: 1%;
 }
 .card:hover {
@@ -141,6 +141,7 @@ export default {
   overflow-wrap: break-word;
 }
 .cardTitle {
+  width: 90%;
   justify-content: center;
 }
 .row {
@@ -151,21 +152,10 @@ export default {
   align-items: stretch;
 }
 h1 {
-  padding-left: 10px;
+  padding-left: 1%;
 }
 p {
   overflow: auto;
   float: left;
-}
-.title-card {
-  padding: 10px;
-  align-self: auto;
-  text-align: start;
-  background-color: #0f0f0f;
-}
-.flex-box {
-  justify-content: space-between;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 #0000004d;
 }
 </style>
