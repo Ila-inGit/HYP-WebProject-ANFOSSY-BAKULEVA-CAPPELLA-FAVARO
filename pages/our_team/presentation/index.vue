@@ -15,7 +15,7 @@
     </div>
 
     <!-- show person info -->
-    <div class="card">
+    <div class="person-card">
       <img :src="person.Picture" alt="person image" class="imageCard" />
       <div class="card-info">
         <h1>
@@ -66,6 +66,12 @@ export default {
     goToPerson(id) {
       this.$router.push({
         path: `${this.$route.path}/person`,
+        query: { id: id },
+      })
+    },
+    goToDescription(id) {
+      this.$router.push({
+        path: `${this.$route.path}`,
         query: { id: id },
       })
     },

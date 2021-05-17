@@ -7,7 +7,7 @@
       <h2 @click="goToPeople(it.id)">{{ it.title }}</h2>
       <div class="img-and-desc">
         <img
-          v-if="it.image != ''"
+          v-if="it.image !== ''"
           :src="it.image"
           :alt="it.title"
           @click="goToPeople(it.id)"

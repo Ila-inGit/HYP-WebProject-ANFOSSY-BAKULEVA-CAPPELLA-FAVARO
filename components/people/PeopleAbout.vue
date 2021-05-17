@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import db from 'static/fake_db.json'
-
 export default {
   props: {
     title1: { type: String, default: () => '' },
@@ -28,10 +26,6 @@ export default {
         'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
     },
     textColor: { type: String, default: () => '#f0f844' },
-  },
-  data() {
-    const items = db.areas // TODO: check if person ID in area people list
-    return { items: items }
   },
   computed: {
     style() {
