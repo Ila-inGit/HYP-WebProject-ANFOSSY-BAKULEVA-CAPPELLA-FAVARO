@@ -28,9 +28,10 @@ export default {
 }
 
 .button1 {
-  background-color: white;
-  color: black;
-  border: 2px solid #008cba;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  border: 2px solid white;
+  border-radius: 5%;
 }
 
 .button1:hover {
