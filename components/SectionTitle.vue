@@ -7,9 +7,9 @@
       <h1>
         {{ title }}
       </h1>
-      <h2>
+      <h3>
         {{ subtitle }}
-      </h2>
+      </h3>
     </div>
     <card-with-carousel></card-with-carousel>
   </div>
@@ -55,7 +55,7 @@ export default {
 }
 </script>
 <style scoped>
-h2 {
+h3 {
   font-style: italic;
 }
 

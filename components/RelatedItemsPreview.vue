@@ -4,10 +4,10 @@
 -->
 <template>
   <div>
-    <div class="flex-box" :style="style">
-      <div class="main-container">
+    <div class="main-container" :style="style">
+      <div class="title-video-container">
         <!-- video (optional) -->
-        <div v-if="showVideo" class="flex-box" :style="style">
+        <div v-if="showVideo">
           <iframe
             class="video"
             src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
@@ -17,10 +17,11 @@
 
         <h1>{{ title }}</h1>
       </div>
-      <div class="row">
+      <!-- Preview of the elements -->
+      <div class="table">
         <div v-for="it in items" :key="it.ID" class="item-card">
           <div class="img-and-desc">
-            <img v-if="it.Image != ''" :src="it.Image" />
+            <img v-if="it.Image" :src="it.Image" />
             <div>
               <h3>{{ it.Title }}</h3>
               <p>{{ it.Short }}</p>
@@ -107,61 +108,71 @@ export default {
 <style scoped>
 .main-container {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-.flex-box {
-  display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   border-radius: 5vh;
+  align-items: flex-start;
   margin: 2%;
+}
+.title-video-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+.table {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
 }
 
 .video {
   display: flex;
-  width: 30vw;
-  height: auto;
+  width: 50vw;
+  height: 50vw;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .item-card {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  padding: 30px;
   justify-content: space-between;
-  max-width: 30vw;
   height: auto;
 }
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  align-self: center;
+@media screen and (max-width: 600px) {
+  .item-card {
+    width: 100%;
+  }
 }
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .item-card {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .item-card {
+    width: 33%;
+  }
+}
+
 .img-and-desc {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  max-width: 20vw;
-  height: 100%;
+  margin: 1%;
 }
 img {
   display: flex;
   margin: 10px;
   width: 10vw;
   align-self: center;
-}
-h1 {
-  padding-left: 20px;
-}
-
-p {
-  max-width: 100%;
 }
 </style>
