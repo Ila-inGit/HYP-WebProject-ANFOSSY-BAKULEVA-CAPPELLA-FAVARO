@@ -69,6 +69,12 @@ export default {
       return crumbs
     },
   },
+  metaInfo: {
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
+  },
 }
 </script>
 
@@ -76,13 +82,28 @@ export default {
 ol {
   list-style: none;
 }
+
+@media screen and (max-width: 600px) {
+  ol {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0%;
+  }
+}
 li {
   display: inline;
+  padding-left: 5%;
 }
-
+@media screen and (max-width: 600px) {
+  li {
+    display: flex;
+    justify-content: center;
+    padding-left: 0%;
+  }
+}
 li a {
   color: grey;
-  font-size: 18px;
+  font-size: 16px;
 }
 li a.nuxt-link-exact-active.nuxt-link-active {
   color: grey;
@@ -95,8 +116,7 @@ li a.nuxt-link-exact-active.nuxt-link-active {
   border-radius: 4px;
   border: none;
   text-align: center;
-  padding-top: 20px;
-  width: 200px;
+  width: fit-content;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -107,7 +127,6 @@ li a.nuxt-link-exact-active.nuxt-link-active {
   cursor: pointer;
   display: inline-block;
   position: relative;
-
   color: grey;
   font-size: 20px;
   transition: 0.5s;

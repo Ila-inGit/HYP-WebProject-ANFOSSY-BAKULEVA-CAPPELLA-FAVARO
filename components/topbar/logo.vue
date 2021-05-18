@@ -9,10 +9,12 @@
       href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons"
     />
     <div class="titleContainer">
-      <img
-        class="logo"
-        src="http://getdrawings.com/free-icon-bw/letter-c-icon-8.png"
-      />
+      <nuxt-link to="/" class="logo">
+        <img
+          class="logo"
+          src="http://getdrawings.com/free-icon-bw/letter-c-icon-8.png"
+        />
+      </nuxt-link>
       <h1 class="title">Comc company</h1>
       <button class="button" @click="invertVisibility">&#9776;</button>
     </div>
@@ -38,6 +40,12 @@ export default {
       this.showMenu = !this.showMenu
     },
   },
+  metaInfo: {
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
+  },
 }
 </script>
 
@@ -51,10 +59,16 @@ export default {
   width: 100vw;
 }
 
+@media screen and (max-width: 600px) {
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .title {
   display: flex;
   align-self: center;
-
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 5vh;
@@ -62,6 +76,11 @@ export default {
   letter-spacing: 1px;
   padding-left: 2%;
   padding-right: 2%;
+}
+@media screen and (max-width: 600px) {
+  .title {
+    display: none;
+  }
 }
 
 .logo {

@@ -43,6 +43,12 @@ export default {
       },
     ],
   }),
+  metaInfo: {
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
+  },
 }
 </script>
 
@@ -51,6 +57,13 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+@media screen and (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
 }
 .menuTitle {
   color: black;
