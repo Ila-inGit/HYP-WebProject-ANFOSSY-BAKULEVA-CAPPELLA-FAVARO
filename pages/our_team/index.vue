@@ -9,7 +9,7 @@ export
       :title="'People'"
       :subtitle="'Meet the people behind all this work for you to improve your business'"
     />
-    <div class="grid-container">
+    <div class="table">
       <intro-card
         v-for="person in people"
         :key="person.ID"
@@ -44,11 +44,14 @@ export default {
 </script>
 
 <style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-  background-color: #fdfdfd;
-  padding: 10px;
+.table {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
 }
 </style>

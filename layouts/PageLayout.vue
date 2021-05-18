@@ -32,7 +32,12 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 1000px) {
   html {
     font-size: 16px;
   }

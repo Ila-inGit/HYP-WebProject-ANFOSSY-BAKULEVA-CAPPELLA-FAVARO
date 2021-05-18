@@ -34,14 +34,28 @@ export default {
 <style>
 .card {
   display: flex;
-  height: auto;
-  width: auto;
-  padding: 1% 5%;
+  padding: 2%;
   border: solid #999;
   border-radius: 10px;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: flex-start;
   margin: 1%;
+  justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .card {
+    width: 27%;
+  }
 }
 .card:hover {
   color: #008cba;
@@ -49,15 +63,11 @@ export default {
 .cardInfo {
   display: flex;
   flex-direction: column;
-  height: auto;
-}
-.cardTitle {
-  display: flex;
-  justify-content: center;
 }
 
+/** unfortunately here the image size is limited by the long text of the products */
 .imageCard {
-  height: 20vh;
-  width: auto;
+  padding-top: 5%;
+  width: 25%;
 }
 </style>

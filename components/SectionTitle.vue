@@ -11,7 +11,6 @@
         {{ subtitle }}
       </h2>
     </div>
-    <!-- <img class="title-image" :src="image" alt="alternatetext" /> -->
     <card-with-carousel></card-with-carousel>
   </div>
 </template>
@@ -56,28 +55,17 @@ export default {
 }
 </script>
 <style scoped>
-h1 {
-  padding-left: 10px;
-}
 h2 {
   font-style: italic;
-  padding-left: 20px;
 }
 
 .title-card {
-  padding: 10px;
+  padding: 2%;
   align-self: auto;
   text-align: start;
-}
-.title-image {
-  width: 200px;
-  height: 200px;
-  padding: 10px;
 }
 .flex-box {
   display: flex;
   justify-content: space-between;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 #0000004d;
 }
 </style>

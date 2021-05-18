@@ -72,18 +72,20 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  align-self: center;
+  align-items: center;
   flex-shrink: 0;
 }
 /** row made of columns */
 .row {
-  width: 100vw;
   display: flex;
+  width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: stretch;
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
 }
 /* column contains the sections */
 .column {
@@ -94,7 +96,7 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 1%;
+  margin: 1%;
 }
 
 /* home card contains the about and contact us sections */
@@ -106,7 +108,7 @@ export default {
   flex-direction: column;
   justify-items: space-evenly;
   align-items: center;
-  margin-bottom: 1%;
+  margin: 1%;
 }
 
 /* the size of the columns is based on the screen size */
