@@ -1,60 +1,48 @@
-<template>
-  <div class="person-card">
-    <div>
-      <!-- go to previous person -->
-      <nuxt-link
-        :to="{
-          path: `${$route.path}`,
-          query: { id: person.ID - 1 },
-        }"
-      >
-        <div class="previous-button">
-          <button-with-text class="border-previous" :title="'Previous'" />
-        </div>
-      </nuxt-link>
-    </div>
+<!--
+  page of a single person
+-->
 
-    <!-- show person info -->
-    <div class="person-card">
-      <img :src="person.Picture" alt="person image" class="imageCard" />
-      <div class="card-info">
-        <h1>
-          <b>{{ person.Name }}</b>
-        </h1>
-        <h2>{{ person.Role }}</h2>
-        <h2>{{ person.Bio }}</h2>
-        <nuxt-link
-          :to="{
-            path: `${$route.path}/person`,
-            query: { id: person.ID },
-          }"
-        >
-          <div class="button-with-text">
-            <button-with-text
-              :title="'See more'"
-              @click="goToPerson(person.ID)"
-            />
-          </div>
-        </nuxt-link>
-      </div>
+<template>
+  <main class="container">
+    <div>
+      <people-title
+        :title="person.Name"
+        :subtitle="person.Role"
+        :description="person.Bio"
+        :contacts="person.Email"
+        :image="person.Picture"
+        :bg-color="'#f0f8ff'"
+        :text-color="'#0f0f0f'"
+      />
+      <related-items-preview
+        :parent-id="person.ID"
+        :parent-type="'person'"
+        :child-type="'area'"
+        :bg-color="'#0f0f0f'"
+        :text-color="'#f0f8ff'"
+        :title="'Working Areas'"
+      />
+      <related-items-preview
+        :title="'Developed products'"
+        :parent-id="person.ID"
+        :parent-type="'person'"
+        :child-type="'product'"
+        :bg-color="'#0f0f0f'"
+        :text-color="'#f0f8ff'"
+      />
     </div>
-    <!-- go to next person -->
-    <nuxt-link
-      :to="{
-        path: `${$route.path}`,
-        query: { id: person.ID + 1 },
-      }"
-    >
-      <div class="next-button">
-        <button-with-text class="border-next" :title="'Next'" />
-      </div>
-    </nuxt-link>
-  </div>
+  </main>
 </template>
 
 <script>
 import axios from 'axios'
+import PeopleTitle from '~/components/people/PeopleTitle'
+import RelatedItemsPreview from '~/components/RelatedItemsPreview.vue'
 export default {
+  components: {
+    PeopleTitle,
+    RelatedItemsPreview,
+  },
   layout: 'PageLayout',
   async asyncData({ route }) {
     const { id } = route.query
@@ -62,69 +50,7 @@ export default {
     const person = data
     return { person }
   },
-  methods: {
-    goToPerson(id) {
-      this.$router.push({
-        path: `${this.$route.path}/person`,
-        query: { id: id },
-      })
-    },
-    goToDescription(id) {
-      this.$router.push({
-        path: `${this.$route.path}`,
-        query: { id: id },
-      })
-    },
-  },
 }
 </script>
 
-<style scoped>
-.person-card {
-  height: 70vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-h1 {
-  text-align: left;
-  color: black !important;
-}
-
-h2 {
-  text-align: left;
-  color: black !important;
-}
-
-p {
-  text-align: left;
-  font-style: normal;
-  color: black !important;
-}
-.card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.imageCard {
-  height: 40vh;
-  width: auto;
-  margin: 10%;
-}
-
-.button-with-text {
-  width: auto;
-  height: auto;
-  position: relative;
-}
-</style>
+<style></style>

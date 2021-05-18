@@ -35,7 +35,7 @@ export default {
   methods: {
     goToPerson(id) {
       this.$router.push({
-        path: `${this.$route.path}/presentation`,
+        path: `${this.$route.path}/person`,
         query: { id: id },
       })
     },
