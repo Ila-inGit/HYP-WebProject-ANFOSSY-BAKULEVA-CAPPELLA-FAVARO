@@ -69,6 +69,11 @@ export default {
     const person = data
     return { person }
   },
+  watch: {
+    $route() {
+      this.$router.go()
+    },
+  },
   methods: {
     goToPerson(id) {
       this.$router.push({
