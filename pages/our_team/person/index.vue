@@ -87,7 +87,7 @@ export default {
 
 <style scoped>
 .person-card {
-  height: 85vh;
+  height: 90vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
