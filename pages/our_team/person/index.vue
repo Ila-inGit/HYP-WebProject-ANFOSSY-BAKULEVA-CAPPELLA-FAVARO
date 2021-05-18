@@ -70,8 +70,8 @@ export default {
     return { person }
   },
   watch: {
-    $route() {
-      this.$router.go()
+    $route(n) {
+      this.$router.go(n)
     },
   },
   methods: {
