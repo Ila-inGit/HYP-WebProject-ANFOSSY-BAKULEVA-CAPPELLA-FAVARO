@@ -58,7 +58,7 @@
     >
       <div class="next-button">
         <button-with-text
-          v-if="person.ID + 1 !== 20"
+          v-if="person.ID + 1 !== 21"
           class="border-next"
           :title="'Next'"
         />
