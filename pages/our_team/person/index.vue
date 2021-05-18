@@ -9,7 +9,11 @@
         }"
       >
         <div class="previous-button">
-          <button-with-text class="border-previous" :title="'Previous'" />
+          <button-with-text
+            v-if="person.ID - 1 !== 0"
+            class="border-previous"
+            :title="'Previous'"
+          />
         </div>
       </nuxt-link>
     </div>
@@ -53,7 +57,11 @@
       }"
     >
       <div class="next-button">
-        <button-with-text class="border-next" :title="'Next'" />
+        <button-with-text
+          v-if="person.ID + 1 !== 20"
+          class="border-next"
+          :title="'Next'"
+        />
       </div>
     </nuxt-link>
   </div>
