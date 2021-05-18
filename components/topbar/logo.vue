@@ -82,7 +82,7 @@ export default {
 }
 
 .button:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: black;
+  color: white;
 }
 </style>
