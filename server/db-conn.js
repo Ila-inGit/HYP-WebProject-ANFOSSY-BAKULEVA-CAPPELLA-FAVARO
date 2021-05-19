@@ -9,9 +9,9 @@ const db = new Sequelize({
   host: 'localhost',
   port: 5432,
   dialect: 'postgres',
-  database: 'CSS_project',
-  username: 'postgres',
-  password: 'derp',
+  database: 'test',
+  username: 'group',
+  password: 'banana',
   define: {
     freezeTableName: true,
   },

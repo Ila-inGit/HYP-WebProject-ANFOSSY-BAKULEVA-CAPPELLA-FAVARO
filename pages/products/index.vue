@@ -52,7 +52,13 @@ export default {
   width: 100%;
 }
 .table {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
 }
 </style>

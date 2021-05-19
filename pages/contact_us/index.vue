@@ -1,9 +1,6 @@
 <template>
   <div>
-    <SectionTitle
-      title="Contact us"
-      subtitle="Description of the area of contact us"
-    />
+    <SectionTitle title="Contact us" subtitle="We are happy to talk to you" />
     <nuxt-link :to="$route.path + '/the game'"> ciao </nuxt-link>
     <div class="row">
       <div class="card-contacts">
@@ -65,7 +62,7 @@ export default {
 <style scoped>
 .map {
   height: 400px;
-  max-width: auto;
+  min-width: 30vw;
   border: 1;
   border-style: solid;
   border-color: #999;

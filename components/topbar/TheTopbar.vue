@@ -20,7 +20,6 @@ export default {
 .right {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   margin: auto;
   max-width: 50%;
 }
