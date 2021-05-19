@@ -20,14 +20,16 @@ export default {
         header: 'Share',
         footer: 'Comc company',
         body: '',
-        display: 'none',
+        opacity: '0',
+        zIndex: '-1',
       },
     }
   },
   methods: {
     openpopup() {
       this.popupData.body = window.location.origin + this.$route.path
-      this.popupData.display = 'block'
+      this.popupData.opacity = '100'
+      this.popupData.zIndex = '10000'
     },
   },
 }

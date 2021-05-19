@@ -1,5 +1,6 @@
+/* eslint-disable @vue/no-parsing-error */
 <template>
-  <div id="popup" :style="{ display: popupData.display }">
+  <div id="popup" :style="style">
     <div class="inner">
       <div class="header">
         <div class="flex-box-pop-up-h">
@@ -26,7 +27,7 @@
               >Tweet</a
             >
             <script
-              await
+              async
               src="https://platform.twitter.com/widgets.js"
               charset="utf-8"
             ></script>
@@ -65,10 +66,20 @@ export default {
       default: null,
     },
   },
+  computed: {
+    style() {
+      return {
+        'z-index': this.popupData.zIndex,
+        opacity: this.popupData.opacity,
+      }
+    },
+  },
   methods: {
     closeFunction() {
       // eslint-disable-next-line vue/no-mutating-props
-      this.popupData.display = 'none'
+      this.popupData.opacity = '0'
+      // eslint-disable-next-line vue/no-mutating-props
+      this.popupData.zIndex = '-1'
     },
   },
   metaInfo: {
@@ -88,7 +99,8 @@ export default {
   width: 100%;
   height: 100%;
   left: 0%;
-  z-index: 10000;
+  /* z-index: -1;
+  opacity: 0; */
 }
 #popup .inner {
   position: relative;
