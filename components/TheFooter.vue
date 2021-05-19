@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       popupData: {
-        header: 'Share Link',
+        header: 'Share',
         footer: 'Comc company',
         body: '',
         display: 'none',
