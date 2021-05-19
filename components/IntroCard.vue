@@ -68,6 +68,6 @@ export default {
 /** unfortunately here the image size is limited by the long text of the products */
 .imageCard {
   padding-top: 5%;
-  width: 25%;
+  min-width: 20%;
 }
 </style>

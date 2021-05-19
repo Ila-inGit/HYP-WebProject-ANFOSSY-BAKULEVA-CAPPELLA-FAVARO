@@ -13,7 +13,7 @@
           <h1>Our history</h1>
         </div>
         <div>
-          <history-card-with-carousel></history-card-with-carousel>
+          <history-card-with-carousel />
         </div>
       </div>
       <div class="card">
@@ -103,6 +103,50 @@ export default {
 </script>
 
 <style scoped>
+.row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
+.card {
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-style: solid;
+  border: 1% #999;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1%;
+}
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .card {
+    width: 25%;
+  }
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow-wrap: break-word;
+}
 .card-bordered {
   height: auto;
   width: auto;
@@ -116,46 +160,5 @@ export default {
   flex-direction: column;
   justify-content: flex-end;
   margin: 1%;
-}
-.card {
-  height: auto;
-  width: 25%;
-  padding-right: 2.5%;
-  padding-left: 2.5%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  border-style: solid;
-  border: 1% #999;
-  border-radius: 10px;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 1%;
-}
-.card:hover {
-  color: #008cba;
-}
-.card-info {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  overflow-wrap: break-word;
-}
-.cardTitle {
-  width: 90%;
-  justify-content: center;
-}
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-}
-h1 {
-  padding-left: 1%;
-}
-p {
-  overflow: auto;
-  float: left;
 }
 </style>

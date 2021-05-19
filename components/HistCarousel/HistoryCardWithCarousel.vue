@@ -64,7 +64,7 @@ export default {
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-bottom: 20px solid #555;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .btn-down:hover {
@@ -82,7 +82,7 @@ export default {
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 20px solid #555;
-  background-color: #fff;
+  background-color: transparent;
 }
 .btn-up:hover {
   border-top: 20px solid #008cba;
