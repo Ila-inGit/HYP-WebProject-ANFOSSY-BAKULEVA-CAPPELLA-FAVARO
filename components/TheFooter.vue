@@ -3,22 +3,22 @@
     <NuxtLink class="a" to="/">Home page</NuxtLink>
     <div>
       <a @click="openpopup">Share</a>
-      <!--<popup :popup-data="popupData"></popup>-->
+      <popup :popup-data="popupData"></popup>
     </div>
   </div>
 </template>
 
 <script>
-// import Popup from '~/components/contacts/PopUp.vue'
+import Popup from '~/components/contacts/PopUp.vue'
 export default {
   components: {
-    // popup: Popup,
+    popup: Popup,
   },
   data() {
     return {
       popupData: {
-        header: 'Share Link',
-        footer: 'Surf the spider house inc.',
+        header: 'Share',
+        footer: 'Comc company',
         body: '',
         display: 'none',
       },
@@ -55,10 +55,17 @@ export default {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1% 2%;
   text-decoration: none;
   flex: auto;
   font-size: 1.3rem;
+}
+
+@media screen and (max-width: 400px) {
+  .footer a {
+    float: none;
+    width: 100%;
+  }
 }
 /* Links - change color on hover */
 .footer a:hover {

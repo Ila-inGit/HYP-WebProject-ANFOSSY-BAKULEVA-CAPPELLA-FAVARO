@@ -29,16 +29,16 @@
         <p>
           <b>{{ person.Bio }}</b>
         </p>
-      </div>
-      <div class="card-info">
-        <related-items-small-preview
+        <related-items-list
           :parent-id="person.ID"
           :title="'Working area'"
           :parent-type="'person'"
           :child-type="'area'"
-          :bg-color="'#ffffff'"
+          :bg-color="'#dddddd'"
           :text-color="'#000000'"
         />
+      </div>
+      <div class="card-info">
         <related-items-small-preview
           :parent-id="person.ID"
           :title="'Developed products'"
@@ -95,7 +95,7 @@ export default {
 
 <style scoped>
 .person-card {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
