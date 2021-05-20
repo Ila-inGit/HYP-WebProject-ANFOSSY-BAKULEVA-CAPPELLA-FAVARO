@@ -11,7 +11,7 @@
       <div class="row">
         <div v-for="it in items" :key="it.ID" class="item-card">
           <div class="img-and-desc">
-            <img v-if="it.Image != ''" :src="it.Image" />
+            <img v-if="it.Image != ''" :src="it.Image" :alt="'Image'" />
             <div>
               <h3>{{ it.Title }}</h3>
               <p>{{ it.Short }}</p>

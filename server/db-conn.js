@@ -5,13 +5,17 @@ const { Sequelize, DataTypes } = require('sequelize')
 // const db = new Sequelize(
 //   'postgres://postgres:@127.0.0.1:5432/hyp-spider'
 // )
+// DB credentials
+// database: 'CSS_project',
+// username: 'postgres',
+// password: 'derp',
 const db = new Sequelize({
   host: 'localhost',
   port: 5432,
   dialect: 'postgres',
-  database: 'test',
-  username: 'group',
-  password: 'banana',
+  database: 'CSS_project',
+  username: 'postgres',
+  password: 'derp',
   define: {
     freezeTableName: true,
   },

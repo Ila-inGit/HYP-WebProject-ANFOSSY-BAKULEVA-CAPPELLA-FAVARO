@@ -10,10 +10,7 @@
     />
     <div class="titleContainer">
       <nuxt-link to="/" class="logo">
-        <img
-          class="logo"
-          src="http://getdrawings.com/free-icon-bw/letter-c-icon-8.png"
-        />
+        <img class="logo" src="~/static/letter-c-icon-8.png" alt="logo" />
       </nuxt-link>
       <h1 class="title">Comc company</h1>
       <button class="button" @click="invertVisibility">&#9776;</button>

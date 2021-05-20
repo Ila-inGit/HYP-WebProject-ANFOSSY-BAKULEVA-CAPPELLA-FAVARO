@@ -8,9 +8,7 @@
       <div class="column">
         <h1>Our workfields</h1>
         <p>Find out about our areas of expertise</p>
-        <img
-          src="https://mercado.com.ar/wp/wp-content/uploads/2020/12/2_tecnologia.jpg"
-        />
+        <img src="~/static/areas.jpg" alt="areas" />
         <button class="but" @click="goTo('our_workfields')">
           <ButtonWithText :title="'See more'" />
         </button>
@@ -18,9 +16,7 @@
       <div class="column">
         <h1>Our products</h1>
         <p>See everything we can offer you</p>
-        <img
-          src="https://d3qy1pxzcopg5z.cloudfront.net/wp-content/uploads/2018/06/29095115/digital-transformation-technological-innovations.jpg"
-        />
+        <img src="~/static/prod.jpg" alt="products" />
         <button class="but" @click="goTo('products')">
           <ButtonWithText :title="'See more'" />
         </button>
@@ -28,9 +24,7 @@
       <div class="column">
         <h1>Our team</h1>
         <p>Discover the people behind this company</p>
-        <img
-          src="https://www.culturarsc.com/wp-content/uploads/2020/10/StudentFinance.jpg"
-        />
+        <img src="~/static/people.jpg" alt="people" />
         <button class="but" @click="goTo('our_team')">
           <ButtonWithText :title="'See more'" />
         </button>

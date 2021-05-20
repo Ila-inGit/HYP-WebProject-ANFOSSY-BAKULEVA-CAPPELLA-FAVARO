@@ -12,7 +12,13 @@
         <ButtonWithText title="Back to the home page" />
       </nuxt-link>
     </div>
-    <div><img src="/mike404.png" style="padding-top: 20%; width: 60%" /></div>
+    <div>
+      <img
+        src="/mike404.png"
+        style="padding-top: 20%; width: 60%"
+        alt="error404"
+      />
+    </div>
   </div>
 </template>
 

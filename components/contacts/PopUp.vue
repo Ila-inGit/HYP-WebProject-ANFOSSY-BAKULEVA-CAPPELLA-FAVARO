@@ -9,7 +9,8 @@
             <span class="close-button" @click="closeFunction">Close</span>
             <span class="close-icon" @click="closeFunction"
               ><img
-                src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-close-512.png"
+                src="'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-close-512.png'"
+                alt="close"
             /></span>
           </div>
         </div>
@@ -50,6 +51,7 @@
             <img
               class="mail-icon"
               src="https://www.exigome.it/wp-content/uploads/2019/11/email-envelope-letter-mail-icon-icon-mail-icon-png-512_512-300x300.png"
+              alt="mail"
             />
           </a>
         </div>
