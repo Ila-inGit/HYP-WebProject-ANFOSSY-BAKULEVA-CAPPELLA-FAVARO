@@ -1,3 +1,7 @@
+<!--
+  wrapper of carousel
+-->
+
 <template>
   <div class="slider" tabindex="0" @keydown="checkSlide($event)">
     <button class="btn-n" @click.prevent="next"></button>

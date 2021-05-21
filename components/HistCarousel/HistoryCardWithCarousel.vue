@@ -69,7 +69,7 @@ export default {
     width: 20vw;
   }
 }
-
+/** previous button pointing up */
 .btn-p {
   position: absolute;
   top: 10%;
@@ -88,6 +88,7 @@ export default {
   color: #0f0f0f;
 }
 
+/** next button pointing down */
 .btn-n {
   position: absolute;
   bottom: 20%;
@@ -99,12 +100,14 @@ export default {
   border-top: 1vh solid #555;
   background-color: transparent;
 }
+
 .btn-n:hover {
   border-top: 1vh solid #008cba;
   cursor: pointer;
   color: #0f0f0f;
 }
 
+/** bordered cards with the contect of each event */
 .cards {
   position: absolute;
   top: 10%;
