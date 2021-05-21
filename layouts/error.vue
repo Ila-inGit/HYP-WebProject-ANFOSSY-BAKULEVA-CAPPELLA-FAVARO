@@ -14,7 +14,7 @@
     </div>
     <div>
       <img
-        src="/mike404.png"
+        src="~/static/mike404.png"
         style="padding-top: 20%; width: 60%"
         alt="error404"
       />

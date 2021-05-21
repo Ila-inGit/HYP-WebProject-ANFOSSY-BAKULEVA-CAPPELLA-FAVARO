@@ -1,3 +1,7 @@
+<!--
+  sliding animation of carousel
+-->
+
 <template>
   <transition :name="dir">
     <div v-show="visible">
