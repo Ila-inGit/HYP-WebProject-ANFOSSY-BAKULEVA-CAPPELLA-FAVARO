@@ -102,11 +102,11 @@ li {
   }
 }
 li a {
-  color: grey;
+  color: rgb(63, 63, 63);
   font-size: 16px;
 }
 li a.nuxt-link-exact-active.nuxt-link-active {
-  color: grey;
+  color: rgb(63, 63, 63);
   font-style: italic;
   font-weight: bold;
 }
@@ -127,7 +127,7 @@ li a.nuxt-link-exact-active.nuxt-link-active {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  color: grey;
+  color: rgb(63, 63, 63);
   font-size: 20px;
   transition: 0.5s;
 }

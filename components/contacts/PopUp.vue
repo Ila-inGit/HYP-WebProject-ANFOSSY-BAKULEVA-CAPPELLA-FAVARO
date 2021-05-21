@@ -8,9 +8,7 @@
           <div>
             <span class="close-button" @click="closeFunction">Close</span>
             <span class="close-icon" @click="closeFunction"
-              ><img
-                src="'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-close-512.png'"
-                alt="close"
+              ><img src="/close.webp" alt="close"
             /></span>
           </div>
         </div>
@@ -33,6 +31,7 @@
               charset="utf-8"
             ></script>
             <iframe
+              title="facebook-link"
               src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&width=87&height=20&appId"
               width="87"
               height="20"

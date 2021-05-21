@@ -67,6 +67,7 @@ export default {
   .footer a {
     float: none;
     width: 100%;
+    padding: 3%;
   }
 }
 /* Links - change color on hover */
