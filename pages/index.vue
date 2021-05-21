@@ -4,7 +4,7 @@
 
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row1">
       <div class="column">
         <h1>Our workfields</h1>
         <p>Find out about our areas of expertise</p>
@@ -30,7 +30,7 @@
         </button>
       </div>
     </div>
-    <div class="row">
+    <div class="row2">
       <div class="home-card">
         <h1>About us</h1>
         <p>Know more about our company</p>
@@ -70,11 +70,19 @@ export default {
   align-items: center;
   flex-shrink: 0;
 }
-/** row made of columns */
-.row {
+/** row1 made of section columns */
+.row1 {
   display: flex;
-  width: 100%;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
+/** row2 made of company columns */
+.row2 {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: stretch;
@@ -107,14 +115,28 @@ export default {
 
 /* the size of the columns is based on the screen size */
 @media screen and (max-width: 600px) {
-  .column {
+  .row1 {
     width: 100%;
+  }
+  .row2 {
+    width: 100%;
+    flex-direction: row;
+  }
+  .column {
+    width: 90%;
   }
   .home-card {
     width: 100%;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 992px) {
+  .row1 {
+    width: 100%;
+  }
+  .row2 {
+    width: 100%;
+    flex-direction: row;
+  }
   .column {
     width: 45%;
   }
@@ -123,11 +145,21 @@ export default {
   }
 }
 @media screen and (min-width: 992px) {
+  .container {
+    flex-direction: row;
+  }
+  .row1 {
+    width: 75%;
+  }
+  .row2 {
+    width: 20%;
+    flex-direction: column;
+  }
   .column {
     width: 30%;
   }
   .home-card {
-    width: 45%;
+    width: 100%;
   }
 }
 
@@ -142,6 +174,6 @@ export default {
 }
 
 img {
-  width: 90%;
+  width: 80%;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="slider" tabindex="0" @keydown="checkSlide($event)">
-    <button class="btn-up" @click.prevent="next"></button>
+    <button class="btn-n" @click.prevent="next"></button>
     <slot></slot>
-    <button class="btn-down" @click.prevent="prev"></button>
+    <button class="btn-p" @click.prevent="prev"></button>
   </div>
 </template>
 <script>

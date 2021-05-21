@@ -12,7 +12,7 @@
         <div class="cardTitle">
           <h1>Our history</h1>
         </div>
-        <div>
+        <div class="card-info">
           <history-card-with-carousel />
         </div>
       </div>
@@ -144,12 +144,14 @@ export default {
 .card-info {
   display: flex;
   flex-direction: column;
-  height: auto;
+  width: 90%;
   overflow-wrap: break-word;
+  padding: 1%;
+  margin: 1%;
 }
 .card-bordered {
   height: auto;
-  width: auto;
+  width: 85%;
   padding-right: 5%;
   padding-left: 5%;
   padding-top: 1%;

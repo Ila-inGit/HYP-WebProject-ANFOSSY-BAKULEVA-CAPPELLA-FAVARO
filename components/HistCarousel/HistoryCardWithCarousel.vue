@@ -49,43 +49,58 @@ export default {
 .slider {
   position: relative;
   overflow: hidden;
-  height: 200px;
-  width: 325px;
-  z-index: 1;
   padding: 10px;
 }
+@media screen and (max-width: 600px) {
+  .slider {
+    height: 20vh;
+    width: 75vw;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .slider {
+    height: 20vh;
+    width: 30vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .slider {
+    height: 40vh;
+    width: 20vw;
+  }
+}
 
-.btn-down {
+.btn-p {
   position: absolute;
   top: 10%;
   right: 0;
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid #555;
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+  border-bottom: 1vh solid #555;
   background-color: transparent;
 }
 
-.btn-down:hover {
-  border-bottom: 20px solid #008cba;
+.btn-p:hover {
+  border-bottom: 1vh solid #008cba;
   cursor: pointer;
   color: #0f0f0f;
 }
 
-.btn-up {
+.btn-n {
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
   right: 0;
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #555;
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+  border-top: 1vh solid #555;
   background-color: transparent;
 }
-.btn-up:hover {
-  border-top: 20px solid #008cba;
+.btn-n:hover {
+  border-top: 1vh solid #008cba;
   cursor: pointer;
   color: #0f0f0f;
 }
@@ -106,10 +121,10 @@ export default {
 
 .cards p {
   color: #000;
-  padding: 5px 40px 0 0;
+  padding: 5% 40% 0 0;
 }
 
 .wrapper {
-  padding: 10px;
+  padding: 10%;
 }
 </style>
