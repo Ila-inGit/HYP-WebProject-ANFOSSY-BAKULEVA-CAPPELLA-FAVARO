@@ -1,7 +1,7 @@
 <template>
   <div>
     <SectionTitle title="Contact us" subtitle="We are happy to talk to you" />
-    <nuxt-link :to="$route.path + '/the game'"> ciao </nuxt-link>
+    <!-- <nuxt-link :to="$route.path + '/the game'"> ciao </nuxt-link> -->
     <div class="row">
       <div class="card-contacts">
         <div>
@@ -40,18 +40,22 @@ export default {
     return {
       firstContact: {
         title: 'New York Office phone',
+        descr: '+1 212-586-5530',
         buttonTitle: 'Call',
       },
       secondContact: {
         title: 'Milan Office phone',
+        descr: '+39 02 481 6608',
         buttonTitle: 'Call',
       },
       firstAddress: {
         title: 'New York Office address',
+        descr: '1651 Broadway, New York, NY 10019, United State',
         buttonTitle: 'Directions',
       },
       secondAddress: {
         title: 'Milan Office address',
+        descr: 'Via Buonarroti, 6 Milano, Italy',
         buttonTitle: 'Directions',
       },
     }
@@ -61,7 +65,7 @@ export default {
 
 <style scoped>
 .map {
-  height: 400px;
+  height: 250px;
   min-width: 30vw;
   border: 1;
   border-style: solid;

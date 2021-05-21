@@ -3,18 +3,20 @@
     <div class="flex-box">
       <div>
         <h3>{{ first.title }}</h3>
+        <p class="p-descr">{{ first.descr }}</p>
       </div>
-      <div class="btt">
+      <!-- <div class="btt">
         <ButtonWithText :title="first.buttonTitle" />
-      </div>
+      </div> -->
     </div>
     <div class="flex-box">
       <div>
         <h3>{{ second.title }}</h3>
+        <p class="p-descr">{{ second.descr }}</p>
       </div>
-      <div class="btt">
+      <!-- <div class="btt">
         <ButtonWithText :title="second.buttonTitle" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -42,9 +44,14 @@ export default {
 
 h3 {
   font-size: 15px;
-  padding: 20px;
+  padding: 5%;
+}
+.p-descr {
+  padding: 5%;
+  margin: 1%;
+  font-style: oblique;
 }
 .btt {
-  padding: 20px;
+  padding: 5%;
 }
 </style>
