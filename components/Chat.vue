@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       messageToSend: '',
-      isOpen: true,
+      isOpen: false,
     }
   },
   methods: {
@@ -54,17 +54,26 @@ export default {
       this.messageToSend = ''
     },
   },
+  metaInfo: {
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
+  },
 }
 </script>
 
 <style>
 .chat-button {
-  height: 60px;
-  width: 60px;
-  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  background-color: #008cba;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 100%;
   padding: 10px;
-  float: right;
+  position: fixed;
+  bottom: 10px;
+  right: 5px;
 }
 .chat-button img {
   width: 100%;
@@ -72,12 +81,20 @@ export default {
 .chat-container {
   border: 1px solid black;
   border-radius: 4px;
-  height: 20vh;
-  width: 50vw;
-  position: absolute;
-  bottom: 10px;
-  right: 0px;
+  height: 33vh;
+  width: 40vw;
+  position: fixed;
+  bottom: 90px;
+  right: 10px;
   background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+@media screen and (max-width: 600px) {
+  .chat-container {
+    height: 40vh;
+    width: 70vw;
+  }
 }
 .chat-window {
   overflow-y: scroll;
@@ -106,7 +123,8 @@ export default {
   border: 1px solid black;
 }
 input {
-  width: 100%;
+  width: 90%;
+  height: 10%;
   position: absolute;
   z-index: 20;
 }

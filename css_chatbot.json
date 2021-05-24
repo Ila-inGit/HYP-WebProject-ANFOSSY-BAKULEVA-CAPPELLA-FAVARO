@@ -5,8 +5,11 @@
       "guide": "Do you want to start the guide?",
       "home": "I will guide you through the site. Welcome to the homepage",
       "about": "Welcome to the About page of our website. Here you can find all the information about our company",
+      "form" : "Contact us is really simple through this form",
+      "page" : "Contact us looking at all the information in this page",
       "end": "The process is completed",
       "steps_v": [
+        "/",
         "/",
         "/about"
       ],
@@ -22,7 +25,9 @@
       ],
       "main_exit_v": [
         "no",
-        "reset"
+        "reset",
+        "end",
+        "stop"
       ],
       "main_err": "Option not available",
       "stay_message": "I don't understand. Do you want to continue?",
@@ -43,7 +48,7 @@
               "a"
             ],
             "utterance": [
-              "Perfect. The guide it is"
+              "Perfect. The guide it is. \n"
             ],
             "payload": {
               "openGuidePopup": true,
@@ -51,7 +56,7 @@
             }
           },
           {
-            "id": "contact",
+            "id": "contact_xor",
             "intents": [
               "I want to contact you",
               "Contact",
@@ -60,7 +65,7 @@
               "b"
             ],
             "utterance": [
-              "Okay, let's contact"
+              "Okay, contact. \n"
             ],
             "payload": {
               "openGuidePopup": true,
@@ -87,9 +92,9 @@
               "a"
             ],
             "utterance": [
-              "Ah.. form...",
-              "Uff, form",
-              "Okay, so let's go for the form"
+              "Ah.. form... \n",
+              "Uff, form \n",
+              "Okay, so let's go for the form. \n"
             ],
             "payload": {
               "openGuidePopup": true,
@@ -106,13 +111,13 @@
               "b"
             ],
             "utterance": [
-              "Ah.. page...",
-              "Uff, page",
-              "Okay, so let's go to the page"
+              "Ah.. page...\n",
+              "Uff, page. \n",
+              "Okay, so let's go to the page. \n"
             ],
             "payload": {
               "openGuidePopup": true,
-              "customGuide": "/"
+              "customGuide": "/contact_us"
             }
           }
         ],
