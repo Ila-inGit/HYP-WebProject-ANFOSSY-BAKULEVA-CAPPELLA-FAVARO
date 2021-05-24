@@ -4,6 +4,7 @@ export default {
   env: {
     // BASE_URL: 'https://test-polimi.herokuapp.com', Production URL
     BASE_URL: 'http://localhost:3000', // Development URL
+    configurationId: 'f553148e-dbf1-4b59-bf3a-f3ad74a61425', // Configuration ID for the chatbot
   },
   serverMiddleware: [
     {
@@ -37,7 +38,7 @@ export default {
   css: ['normalize.css/normalize.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/mmcc.js'], // Chatbot plugin
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

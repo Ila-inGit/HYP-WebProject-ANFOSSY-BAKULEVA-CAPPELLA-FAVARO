@@ -18,6 +18,7 @@
     "core-js": "^3.9.1",
     "express": "^4.17.1",
     "google-maps-api-loader": "^1.1.1",
+    "mmcc": "git+https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue.git",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.5",
     "pg": "^8.6.0",
