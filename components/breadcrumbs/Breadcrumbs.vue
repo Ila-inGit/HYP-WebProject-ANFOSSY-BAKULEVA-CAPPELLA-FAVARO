@@ -25,10 +25,15 @@ export default {
       const crumbs = []
       // complete path to the current page
       const currentRoute = this.$route.path
-      // spit the element of the path into the subpath
+      // split the element of the path into the subpath
       const arrayOfCrumbs = currentRoute.split('/')
       // remove home from routes
       arrayOfCrumbs.shift()
+      // replace the ids with other more meaningful stuff
+      const lastCrumb = arrayOfCrumbs[arrayOfCrumbs.length - 1]
+      if (/^\d+$/.test(lastCrumb)) {
+        arrayOfCrumbs[arrayOfCrumbs.length - 1] = 'details'
+      }
 
       console.log(currentRoute)
       console.log(arrayOfCrumbs.toString())
