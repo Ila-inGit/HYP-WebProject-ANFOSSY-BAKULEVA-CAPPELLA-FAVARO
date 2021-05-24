@@ -1,6 +1,13 @@
 <template>
   <div class="chat">
     <div v-if="isOpen" class="chat-container">
+      <div class="chat-box-header">
+        ChatBot
+        <span class="chat-box-toggle" @click="isOpen = !isOpen"
+          ><img src="/close.webp" alt="close" style="height: 15px; width: 15px"
+        /></span>
+      </div>
+      <div class="chat-bot-overlay"></div>
       <div id="chat-window" class="chat-window">
         <div
           v-for="(message, messageIndex) of chatList"
@@ -13,11 +20,16 @@
           </div>
         </div>
       </div>
-      <input
-        v-model="messageToSend"
-        type="text"
-        @keypress.enter="sendMessage"
-      />
+      <div class="flex-box-chat">
+        <input
+          v-model="messageToSend"
+          class="chat-input"
+          type="text"
+          placeholder="Send a message..."
+          @keypress.enter="sendMessage"
+        />
+        <button class="chat-submit" @click="sendMessage">send</button>
+      </div>
     </div>
     <div class="chat-button" @click="isOpen = !isOpen">
       <img src="https://img.icons8.com/ios-filled/452/chat--v1.png" alt="" />
@@ -65,40 +77,94 @@ export default {
 
 <style>
 .chat-button {
-  height: 30px;
-  width: 30px;
-  background-color: #008cba;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  height: 40px;
+  width: 40px;
+  background-color: #34bdeb;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   border-radius: 100%;
   padding: 10px;
   position: fixed;
+  cursor: pointer;
   bottom: 10px;
   right: 5px;
 }
 .chat-button img {
   width: 100%;
 }
-.chat-container {
-  border: 1px solid black;
-  border-radius: 4px;
-  height: 33vh;
-  width: 40vw;
-  position: fixed;
-  bottom: 90px;
-  right: 10px;
-  background-color: white;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
 
+.chat-overlay {
+  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: none;
+}
+.chat-container {
+  background: #efefef;
+  position: fixed;
+  right: 35px;
+  bottom: 75px;
+  width: 350px;
+  max-width: 85vw;
+  max-height: 100vh;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px 1px #ccc;
+  display: flex;
+  flex-direction: column;
+  z-index: 30;
+}
+.flex-box-chat {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: center;
+  width: -webkit-fill-available;
+}
 @media screen and (max-width: 600px) {
   .chat-container {
-    height: 40vh;
     width: 70vw;
   }
 }
 .chat-window {
   overflow-y: scroll;
-  height: calc(100% - 34px);
+  max-height: 450px;
+  min-height: 200px;
+  width: -webkit-fill-available;
+  border: 1px solid #ccc;
+}
+
+.chat-window::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #34bdeb;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+.chat-box-toggle {
+  float: right;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.chat-box-header {
+  background: #34bdeb;
+  height: 5%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  padding: 3%;
+  width: -webkit-fill-available;
 }
 .message {
   width: calc(100% - 8px);
@@ -109,23 +175,58 @@ export default {
   justify-content: flex-start;
 }
 .message-content {
-  padding: 5px 10px;
-  margin: 4px;
-  width: auto;
-  background: #f3f3f3;
-  color: black;
-  border: 1px solid black;
-  border-radius: 4px;
+  padding: 1% 2% 2% 2%;
+  background: #34bdeb;
+  color: white;
+  max-width: 75%;
+  float: left;
+  margin-left: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 30px;
 }
 .message-content.sender {
-  background: black;
-  color: white;
-  border: 1px solid black;
+  background: white;
+  color: #666;
+  max-width: 75%;
+  float: left;
+  margin-left: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 30px;
 }
-input {
+.chat-input {
+  background: #f4f7f9;
   width: 90%;
-  height: 10%;
-  position: absolute;
-  z-index: 20;
+  position: relative;
+  height: 30px;
+  padding-top: 10px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border: none;
+  resize: none;
+  outline: none;
+  border: 1px solid #ccc;
+  color: #888;
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+}
+.chat-input > form {
+  margin-bottom: 0;
+}
+.chat-input::-webkit-input-placeholder {
+  color: #ccc;
+}
+.chat-submit {
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  color: #34bdeb;
+  padding: 3%;
 }
 </style>
