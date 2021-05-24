@@ -58,7 +58,7 @@ export default {
     },
   },
   async asyncData({ route }) {
-    const { id } = route.query
+    const { id } = route.params
     const { data } = await axios.get(`${process.env.BASE_URL}/api/area/${id}`)
     const area = data
     return { area }

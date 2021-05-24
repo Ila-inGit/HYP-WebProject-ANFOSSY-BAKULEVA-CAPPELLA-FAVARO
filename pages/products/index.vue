@@ -39,8 +39,7 @@ export default {
   methods: {
     goToProduct(id) {
       this.$router.push({
-        path: this.$route.path + '/product_presentation',
-        query: { id: id },
+        path: `${this.$route.path}/${id}`,
       })
     },
   },

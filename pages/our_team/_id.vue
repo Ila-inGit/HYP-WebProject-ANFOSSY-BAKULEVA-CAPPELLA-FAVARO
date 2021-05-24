@@ -72,7 +72,7 @@ import axios from 'axios'
 export default {
   layout: 'PageLayout',
   async asyncData({ route }) {
-    const { id } = route.query
+    const { id } = route.params
     const { data } = await axios.get(`${process.env.BASE_URL}/api/person/${id}`)
     const person = data
     return { person }
@@ -85,8 +85,7 @@ export default {
   methods: {
     goToPerson(id) {
       this.$router.push({
-        path: `${this.$route.path}`,
-        query: { id: id },
+        path: `${this.$route.path}/${id}`,
       })
     },
   },

@@ -30,7 +30,7 @@ export default {
   components: { SectionTitle, RelatedItemsPreview },
   layout: 'PageLayout',
   async asyncData({ route }) {
-    const { id } = route.query
+    const { id } = route.params
     const { data } = await axios.get(
       `${process.env.BASE_URL}/api/product/${id}`
     )

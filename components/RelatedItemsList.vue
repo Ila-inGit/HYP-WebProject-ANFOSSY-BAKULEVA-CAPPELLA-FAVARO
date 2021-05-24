@@ -45,15 +45,15 @@ export default {
 
   methods: {
     goToPage(id) {
-      let url = '/'
+      let url = ''
       if (this.childType === 'person') {
-        url = `/our_team/presentation/person`
+        url = `/our_team/presentation/`
       } else if (this.childType === 'area') {
-        url = `/our_workfields/area`
+        url = `/our_workfields/`
       } else if (this.childType === 'product') {
-        url = `/products/product_presentation`
+        url = `/products/`
       }
-      this.$router.push({ path: url, query: { id: id } })
+      this.$router.push({ path: url + id })
     },
     async fetchData() {
       const getReq = `${process.env.BASE_URL}/api/relatedItems/${this.parentId}/${this.parentType}/${this.childType}`

@@ -44,7 +44,7 @@ html {
 }
 @media screen and (min-width: 1000px) {
   html {
-    font-size: 1.1vw;
+    font-size: 1.1xvw;
   }
 }
 

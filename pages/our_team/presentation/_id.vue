@@ -45,7 +45,7 @@ export default {
   },
   layout: 'PageLayout',
   async asyncData({ route }) {
-    const { id } = route.query
+    const { id } = route.params
     const { data } = await axios.get(`${process.env.BASE_URL}/api/person/${id}`)
     const person = data
     return { person }
