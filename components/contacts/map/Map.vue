@@ -31,11 +31,13 @@ export default {
           id: 'a',
           position: { lat: 45.467836, lng: 9.155377 },
           // Via Buonarroti, 6 Milano, Italy
+          label: 'Milan',
         },
         {
           id: 'b',
           position: { lat: 40.761619, lng: -433.984242 },
           // 1651 Broadway, New York, NY 10019, United State
+          label: 'NYC',
         },
       ],
     }

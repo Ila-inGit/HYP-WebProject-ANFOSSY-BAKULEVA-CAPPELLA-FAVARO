@@ -27,6 +27,8 @@ export default {
       marker: this.marker,
       map: this.map,
       icon: POINT_MARKER_ICON_CONFIG,
+      animation: this.google.maps.Animation.BOUNCE,
+      title: this.marker.label,
     })
   },
 

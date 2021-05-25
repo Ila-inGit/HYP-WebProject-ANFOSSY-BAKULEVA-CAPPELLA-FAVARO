@@ -1,6 +1,6 @@
 <template>
   <ol typeof="BreadcrumbList">
-    <li v-for="(item, i) in crumbs" :key="i" :class="item.classes">
+    <li v-for="(item, i) in crumbs" :key="i">
       <button class="br-button">
         <span>
           <nuxt-link
@@ -9,6 +9,7 @@
               query: item.query,
             }"
             style="text-decoration: none"
+            :class="{ 'nuxt-link-active': item.class }"
           >
             {{ item.name }}
           </nuxt-link>
@@ -29,11 +30,6 @@ export default {
       const arrayOfCrumbs = currentRoute.split('/')
       // remove home from routes
       arrayOfCrumbs.shift()
-      // replace the ids with other more meaningful stuff
-      const lastCrumb = arrayOfCrumbs[arrayOfCrumbs.length - 1]
-      if (/^\d+$/.test(lastCrumb)) {
-        arrayOfCrumbs[arrayOfCrumbs.length - 1] = 'details'
-      }
 
       console.log(currentRoute)
       console.log(arrayOfCrumbs.toString())
@@ -62,8 +58,13 @@ export default {
           )
           // is last item?
           if (i === length - 1) {
-            // if it is active it can not be clicked because you are in that location
-            crumb.classes = 'is-active'
+            // replace the ids with other more meaningful stuff
+
+            if (/^\d+$/.test(crumb.name)) {
+              crumb.name = 'details'
+            }
+            // if it is active it can not be clicked because you are in that locationn
+            crumb.class = 'true'
           }
           crumbs.push(crumb)
         })
@@ -107,7 +108,7 @@ li a {
   color: rgb(63, 63, 63);
   font-size: 16px;
 }
-li a.nuxt-link-exact-active.nuxt-link-active {
+.nuxt-link-exact-active.nuxt-link-active {
   color: rgb(63, 63, 63);
   font-style: italic;
   font-weight: bold;

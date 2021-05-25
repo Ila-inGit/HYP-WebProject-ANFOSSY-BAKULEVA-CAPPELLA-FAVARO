@@ -53,7 +53,7 @@ export default {
       },
       firstAddress: {
         title: 'New York Office address',
-        descr: '1651 Broadway, New York, NY 10019, United State',
+        descr: '1651 Broadway, New York, NY 10019, United States',
         buttonTitle: 'Directions',
       },
       secondAddress: {
