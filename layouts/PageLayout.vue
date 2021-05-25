@@ -1,13 +1,14 @@
 <!--
-  This sets the page to have header and footer
+  This sets the page to have header, chatbot and footer
   import this to wrap your page in these
 -->
 
-<!--Show the pages wrapped between header and footer-->
+<!--Show the pages wrapped between header and footer with the added chatbot-->
 <template>
   <div>
     <the-topbar />
     <Nuxt class="page" />
+    <chat :chat-list="list" />
     <the-footer />
   </div>
 </template>
@@ -15,11 +16,15 @@
 <script>
 import TheTopbar from '~/components/topbar/TheTopbar'
 import TheFooter from '~/components/TheFooter.vue'
+import Chat from '~/components/Chat.vue'
+import MMCCMixin from '~/mixins/mmcc-mixin'
 export default {
   components: {
     TheTopbar,
     TheFooter,
+    Chat,
   },
+  mixins: [MMCCMixin],
 }
 </script>
 
