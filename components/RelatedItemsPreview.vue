@@ -159,7 +159,9 @@ export default {
 }
 @media screen and (min-width: 1000px) {
   .item-card {
+    display: flex;
     width: 33%;
+    align-items: stretch;
   }
 }
 
@@ -172,7 +174,7 @@ export default {
 img {
   display: flex;
   margin: 10px;
-  width: 10vw;
+  max-width: 30%;
   align-self: center;
 }
 </style>

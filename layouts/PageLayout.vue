@@ -6,9 +6,9 @@
 <!--Show the pages wrapped between header and footer-->
 <template>
   <div>
-    <the-topbar></the-topbar>
-    <Nuxt />
-    <the-footer></the-footer>
+    <the-topbar />
+    <Nuxt class="page" />
+    <the-footer />
   </div>
 </template>
 
@@ -37,15 +37,15 @@ html {
     font-size: 12px;
   }
 }
-@media screen and (min-width: 400px) and (max-width: 1000px) {
+@media screen and (min-width: 400px) {
   html {
-    font-size: 16px;
+    font-size: 60%;
   }
 }
-@media screen and (min-width: 1000px) {
-  html {
-    font-size: 1.1xvw;
-  }
+
+.page {
+  max-width: 1000px;
+  margin: auto;
 }
 
 a {

@@ -62,11 +62,8 @@ export default {
           )
           // is last item?
           if (i === length - 1) {
-            // if it is active it can not be clicked because you are in that locationn
+            // if it is active it can not be clicked because you are in that location
             crumb.classes = 'is-active'
-          }
-          if (crumb.name === 'presentation') {
-            crumb.query = this.$route.query
           }
           crumbs.push(crumb)
         })

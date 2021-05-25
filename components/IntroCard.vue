@@ -54,7 +54,7 @@ export default {
 }
 @media screen and (min-width: 1000px) {
   .card {
-    width: 27%;
+    width: 25%;
   }
 }
 .card:hover {
