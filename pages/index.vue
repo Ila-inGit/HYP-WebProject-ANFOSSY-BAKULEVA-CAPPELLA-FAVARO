@@ -8,7 +8,7 @@
       <div class="column">
         <h1>Our workfields</h1>
         <p>Find out about our areas of expertise</p>
-        <img src="~/static/areas.jpg" alt="areas" />
+        <img src="~/static/areas.jpg" alt="go to areas" />
         <button class="but" @click="goTo('our_workfields')">
           <ButtonWithText :title="'See more'" />
         </button>
@@ -16,7 +16,7 @@
       <div class="column">
         <h1>Our products</h1>
         <p>See everything we can offer you</p>
-        <img src="~/static/prod.jpg" alt="products" />
+        <img src="~/static/prod.jpg" alt="go to products" />
         <button class="but" @click="goTo('products')">
           <ButtonWithText :title="'See more'" />
         </button>
@@ -24,7 +24,7 @@
       <div class="column">
         <h1>Our team</h1>
         <p>Discover the people behind this company</p>
-        <img src="~/static/people.jpg" alt="people" />
+        <img src="~/static/people.jpg" alt="go to people" />
         <button class="but" @click="goTo('our_team')">
           <ButtonWithText :title="'See more'" />
         </button>

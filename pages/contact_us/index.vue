@@ -8,6 +8,9 @@
           <h2>Contact Information</h2>
         </div>
         <ContactCard :first="firstContact" :second="secondContact" />
+        <button class="but" @click="goTo('/_form')">
+          <ButtonWithText :title="'Contact Form'" />
+        </button>
       </div>
       <div class="card-contacts">
         <div>
@@ -60,6 +63,11 @@ export default {
       },
     }
   },
+  methods: {
+    goTo(place) {
+      this.$router.push({ path: this.$route.path + place })
+    },
+  },
 }
 </script>
 
@@ -86,5 +94,13 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
+}
+.but {
+  background-color: transparent;
+  border: transparent;
+  padding-top: 4%;
+}
+.but:focus {
+  outline: none;
 }
 </style>

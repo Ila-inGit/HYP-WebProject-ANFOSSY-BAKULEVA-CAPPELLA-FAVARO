@@ -5,12 +5,12 @@
       "guide": "Do you want to start the guide?",
       "home": "I will guide you through the site. Welcome to the homepage",
       "about": "Welcome to the About page of our website. Here you can find all the information about our company",
-      "form" : "Contact us is really simple through this form",
-      "page" : "Contact us looking at all the information in this page",
+      "form": "Contact us is really simple through this form",
+      "page": "Contact us looking at all the information in this page",
       "end": "The process is completed",
       "steps_v": [
         "/",
-        "/",
+        "/contact",
         "/about"
       ],
       "continue_v": [
@@ -52,7 +52,7 @@
             ],
             "payload": {
               "openGuidePopup": true,
-              "customGuide": "/"
+              "customGuide": "/about"
             }
           },
           {
@@ -92,8 +92,6 @@
               "a"
             ],
             "utterance": [
-              "Ah.. form... \n",
-              "Uff, form \n",
               "Okay, so let's go for the form. \n"
             ],
             "payload": {
@@ -111,8 +109,6 @@
               "b"
             ],
             "utterance": [
-              "Ah.. page...\n",
-              "Uff, page. \n",
               "Okay, so let's go to the page. \n"
             ],
             "payload": {
