@@ -125,7 +125,7 @@ label {
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  overflow: scroll;
+  overflow: visible;
 }
 .send:hover {
   background-color: #008cba;

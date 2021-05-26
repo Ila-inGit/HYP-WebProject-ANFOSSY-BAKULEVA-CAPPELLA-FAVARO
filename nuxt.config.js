@@ -4,7 +4,7 @@ export default {
   env: {
     // BASE_URL: 'https://test-polimi.herokuapp.com', Production URL
     BASE_URL: 'http://localhost:3000', // Development URL
-    configurationId: 'f553148e-dbf1-4b59-bf3a-f3ad74a61425', // Configuration ID for the chatbot
+    configurationId: '2e290326-a430-4444-b580-783a98789854', // Configuration ID for the chatbot
   },
   serverMiddleware: [
     {

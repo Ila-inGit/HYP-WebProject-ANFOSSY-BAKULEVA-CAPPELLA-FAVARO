@@ -10,8 +10,14 @@
       "end": "The process is completed",
       "steps_v": [
         "/",
+        "/",
+        "/about",
+        "",
+        "/contact_us/form",
+        "/",
+        "/",
         "/contact",
-        "/about"
+        "/"
       ],
       "continue_v": [
         "continue",
@@ -25,6 +31,7 @@
       ],
       "main_exit_v": [
         "no",
+        "No",
         "reset",
         "end",
         "stop"
@@ -33,9 +40,9 @@
       "stay_message": "I don't understand. Do you want to continue?",
       "first_xor": {
         "initials": [
-          "Choose a Guide through the page or to Contact us",
-          "Do you want (1) a Guide through the page or (2) to Contact us?",
-          "Do you want (a) a Guide through the page or (b) to Contact us?"
+          "Hi, this is the chatbot. Choose a Guide through the page or to Contact us",
+          "Hi, this is the chatbot. Do you want (1) a Guide through the page or (2) to Contact us?",
+          "Hi, this is the chatbot. Do you want (a) a Guide through the page or (b) to Contact us?"
         ],
         "choices": [
           {
@@ -52,7 +59,7 @@
             ],
             "payload": {
               "openGuidePopup": true,
-              "customGuide": "/about"
+              "customGuide": "/"
             }
           },
           {
@@ -68,7 +75,7 @@
               "Okay, contact. \n"
             ],
             "payload": {
-              "openGuidePopup": true,
+              "openGuidePopup": false,
               "customGuide": "/"
             }
           }
@@ -95,8 +102,8 @@
               "Okay, so let's go for the form. \n"
             ],
             "payload": {
-              "openGuidePopup": true,
-              "customGuide": "/"
+              "openGuidePopup": false,
+              "customGuide": "guide"
             }
           },
           {
@@ -113,7 +120,7 @@
             ],
             "payload": {
               "openGuidePopup": true,
-              "customGuide": "/contact_us"
+              "customGuide": "guide"
             }
           }
         ],
