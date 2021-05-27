@@ -53,17 +53,19 @@ export default {
   },
   methods: {
     sendMessage() {
-      const { WebSocketEventBus } = require('mmcc/WebSocketEventBus')
-      this.$store.commit('addMessage', {
-        sender: false,
-        content: this.messageToSend,
-      })
-      const packet = {
-        message: { type: 'data', payload: { data: this.messageToSend } },
-        configurationId: process.env.configurationId,
+      if (this.messageToSend !== '') {
+        const { WebSocketEventBus } = require('mmcc/WebSocketEventBus')
+        this.$store.commit('addMessage', {
+          sender: false,
+          content: this.messageToSend,
+        })
+        const packet = {
+          message: { type: 'data', payload: { data: this.messageToSend } },
+          configurationId: process.env.configurationId,
+        }
+        WebSocketEventBus.$emit('send', packet)
+        this.messageToSend = ''
       }
-      WebSocketEventBus.$emit('send', packet)
-      this.messageToSend = ''
     },
   },
   metaInfo: {
@@ -131,7 +133,10 @@ export default {
   }
 }
 .chat-window {
-  overflow-y: scroll;
+  /* to have a simple autoscroll of the chat */
+  overflow: auto;
+  transform: rotate(180deg);
+  direction: rtl;
   max-height: 450px;
   min-height: 200px;
   width: -webkit-fill-available;
@@ -170,6 +175,9 @@ export default {
   width: calc(100% - 8px);
   display: flex;
   justify-content: flex-end;
+  /* to have a simple autoscroll of the chat */
+  transform: rotate(180deg);
+  direction: ltr;
 }
 .message.sender {
   justify-content: flex-start;

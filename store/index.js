@@ -11,7 +11,10 @@ export const state = () => {
 export const mutations = {
   addMessage(state, message) {
     const messages = state.messages
-    messages.push(message)
+    // messages.push(message)
+
+    // append at the beginning of the chat to have a simple auto scroll
+    messages.unshift(message)
     Vue.set(state, 'messages', messages)
   },
 }
