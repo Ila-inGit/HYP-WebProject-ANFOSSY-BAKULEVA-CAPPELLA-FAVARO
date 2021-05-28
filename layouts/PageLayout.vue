@@ -5,9 +5,9 @@
 
 <!--Show the pages wrapped between header and footer with the added chatbot-->
 <template>
-  <div>
+  <div class="page-container">
     <the-topbar />
-    <Nuxt class="page" />
+    <Nuxt class="content-wrap" />
     <chat :chat-list="list" />
     <the-footer />
   </div>
@@ -48,9 +48,14 @@ html {
   }
 }
 
-.page {
+.page-container {
+  min-height: 100vh;
+  position: relative;
+}
+.content-wrap {
   max-width: 1000px;
   margin: auto;
+  padding-bottom: 4rem;
 }
 
 a {

@@ -90,6 +90,7 @@ export default {
   cursor: pointer;
   bottom: 10px;
   right: 5px;
+  z-index: 1;
 }
 .chat-button img {
   width: 100%;

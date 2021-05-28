@@ -55,7 +55,7 @@
           </a>
         </div>
       </div>
-      <div class="footer" style="padding: 5px">{{ popupData.footer }}</div>
+      <div class="footer-pop" style="padding: 5px">{{ popupData.footer }}</div>
     </div>
   </div>
 </template>
@@ -155,6 +155,12 @@ export default {
     display: flex;
     flex-direction: column;
   }
+}
+.footer-pop {
+  overflow: hidden;
+  background-color: #333;
+  flex: auto;
+  color: white;
 }
 .close-button {
   display: block;

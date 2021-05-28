@@ -1,9 +1,11 @@
 <template>
   <div class="footer">
-    <NuxtLink class="a" to="/">Home page</NuxtLink>
-    <div>
-      <a @click="openpopup">Share</a>
-      <popup :popup-data="popupData"></popup>
+    <div class="flex-box-foot">
+      <NuxtLink class="a" to="/">Home page</NuxtLink>
+      <div>
+        <a @click="openpopup">Share</a>
+        <popup :popup-data="popupData"></popup>
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +50,10 @@ export default {
 .footer {
   overflow: hidden;
   background-color: #333;
-  flex: auto;
+  position: absolute;
+  bottom: 0%;
+  height: 4rem;
+  width: 100%;
   color: white;
 }
 /* footer links */
@@ -57,22 +62,23 @@ export default {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 1% 2%;
+  padding: 1.5rem;
   text-decoration: none;
-  flex: auto;
   font-size: 1.3rem;
+  height: 4rem;
 }
 
-@media screen and (max-width: 400px) {
-  .footer a {
-    float: none;
-    width: 100%;
-    padding: 3%;
-  }
-}
 /* Links - change color on hover */
 .footer a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.flex-box-foot {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: center;
 }
 </style>
