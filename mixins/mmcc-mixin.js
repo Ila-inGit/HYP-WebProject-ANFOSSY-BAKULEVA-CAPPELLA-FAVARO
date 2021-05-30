@@ -36,6 +36,9 @@ export default {
         if (message.payload.guide) {
           this.$router.push(message.payload.guide)
         }
+        if (message.payload.openGuidePopup) {
+          this.$router.push(message.payload.customGuide)
+        }
       }
     })
   },

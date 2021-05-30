@@ -132,7 +132,7 @@ label {
   color: white;
 }
 .clear:hover {
-  background-color: red;
+  background-color: #ff5252;
   color: black;
 }
 </style>

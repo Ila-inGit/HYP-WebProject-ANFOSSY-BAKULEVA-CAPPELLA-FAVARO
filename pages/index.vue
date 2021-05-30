@@ -67,7 +67,7 @@ export default {
   flex-direction: column;
   flex-wrap: nowrap;
   align-self: center;
-  align-items: center;
+  align-items: stretch;
   flex-shrink: 0;
 }
 /** row1 made of section columns */
@@ -77,8 +77,8 @@ export default {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: stretch;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 /** row2 made of company columns */
 .row2 {

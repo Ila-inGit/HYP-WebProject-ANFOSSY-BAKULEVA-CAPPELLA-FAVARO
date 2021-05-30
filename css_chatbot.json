@@ -2,22 +2,17 @@
   "name": "CSS group chatbot",
   "data": {
     "kb": {
-      "guide": "Do you want to start the guide?",
-      "home": "I will guide you through the site. Welcome to the homepage",
-      "about": "Welcome to the About page of our website. Here you can find all the information about our company",
-      "form": "Contact us is really simple through this form",
-      "page": "Contact us looking at all the information in this page",
-      "end": "The process is completed",
+      "guide": "Do you want to start the guide right now?",
+      "home": "I will guide you through the site. Welcome to the homepage, your starting point to choose to see our working areas, our prodcts, our people, about the company or how to contact us",
+      "about": "Welcome to the About page of our website. Here you can find all the information about our company, like what we do, what we have done and what others say about us",
+      "form": "Contact us is really simple through this form, fill in your information as asked and click Send",
+      "page": "Check all the information we have for you to choose any way to contact us",
+      "end": "The process is completed, thank you and goodbye",
       "steps_v": [
         "/",
         "/",
         "/about",
-        "",
-        "/contact_us/form",
-        "/",
-        "/",
-        "/contact",
-        "/"
+        ""
       ],
       "continue_v": [
         "continue",
@@ -76,7 +71,7 @@
             ],
             "payload": {
               "openGuidePopup": false,
-              "customGuide": "/"
+              "customGuide": ""
             }
           }
         ],
@@ -102,8 +97,8 @@
               "Okay, so let's go for the form. \n"
             ],
             "payload": {
-              "openGuidePopup": false,
-              "customGuide": "guide"
+              "openGuidePopup": true,
+              "customGuide": "/contact_us/_form"
             }
           },
           {
@@ -120,7 +115,7 @@
             ],
             "payload": {
               "openGuidePopup": true,
-              "customGuide": "guide"
+              "customGuide": "/contact_us"
             }
           }
         ],
@@ -177,13 +172,13 @@
           "my_id": "form",
           "next_id": null,
           "my_type": "TASK",
-          "callback": "guide"
+          "callback": "nothing"
         },
         {
           "my_id": "page",
           "next_id": null,
           "my_type": "TASK",
-          "callback": "guide"
+          "callback": "nothing"
         },
         {
           "my_id": "end",

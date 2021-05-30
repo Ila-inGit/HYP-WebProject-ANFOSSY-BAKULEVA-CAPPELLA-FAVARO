@@ -65,8 +65,8 @@ export default {
 }
 @media screen and (min-width: 992px) {
   .slider {
-    height: 40vh;
-    width: 20vw;
+    height: 25vh;
+    width: 15vw;
   }
 }
 /** previous button pointing up */
