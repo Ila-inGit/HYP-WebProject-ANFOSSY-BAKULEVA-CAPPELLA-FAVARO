@@ -30,7 +30,7 @@ export default {
 
 <style>
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu';
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -53,7 +53,7 @@ html {
   position: relative;
 }
 .content-wrap {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: auto;
   padding-bottom: 4rem;
 }
