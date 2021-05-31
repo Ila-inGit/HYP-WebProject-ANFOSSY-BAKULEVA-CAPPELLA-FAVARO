@@ -13,7 +13,7 @@
         <img class="logo" src="~/static/letter-c-icon-8.png" alt="logo" />
       </nuxt-link>
       <h1 class="title">Comc company</h1>
-      <button class="button" @click="invertVisibility">&#9776;</button>
+      <button class="menu-button" @click="invertVisibility">&#9776;</button>
     </div>
     <div :hidden="!showMenu">
       <TopbarMenu @close="invertVisibility" />
@@ -88,7 +88,7 @@ export default {
   padding-top: 1%;
 }
 
-.button {
+.menu-button {
   display: flex;
   align-self: center;
   font-size: 5vh;
@@ -97,7 +97,7 @@ export default {
   color: #0f0f0f;
 }
 
-.button:hover {
+.menu-button:hover {
   background-color: black;
   color: white;
 }

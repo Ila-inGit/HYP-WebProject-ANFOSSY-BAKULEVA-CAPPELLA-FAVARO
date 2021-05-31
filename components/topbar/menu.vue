@@ -58,6 +58,7 @@ export default {
   flex-direction: row;
   justify-content: space-around;
 }
+
 @media screen and (max-width: 600px) {
   .menu {
     flex-direction: column;
@@ -65,12 +66,16 @@ export default {
     align-items: center;
   }
 }
+
 .menuTitle {
   color: black;
   text-decoration-thickness: 3;
 }
+
 .menuTitle:hover {
   cursor: pointer;
+  color: #008cba;
+  text-decoration-thickness: 5;
 }
 
 .textMenu {
@@ -79,6 +84,17 @@ export default {
 }
 .textMenu:hover {
   background-color: #fff;
-  color: black;
+}
+
+.anim-t-b {
+  animation: top_to_bottom 3s ease;
+}
+@keyframes top_to_bottom {
+  from {
+    margin-bottom: 100%;
+  }
+  to {
+    margin-bottom: 0;
+  }
 }
 </style>

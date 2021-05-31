@@ -43,7 +43,7 @@ export default {
   max-height: 200px;
   max-width: 400px;
   z-index: 10;
-  padding: 10px;
+  padding: 0.1%;
 }
 .btn {
   padding: 5px;

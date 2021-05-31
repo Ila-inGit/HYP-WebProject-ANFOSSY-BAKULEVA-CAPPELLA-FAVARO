@@ -81,7 +81,7 @@ export default {
 .chat-button {
   height: 40px;
   width: 40px;
-  background-color: #34bdeb;
+  background-color: white;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6),
     0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   border-radius: 100%;
@@ -149,7 +149,7 @@ export default {
   background-color: #f5f5f5;
 }
 .chat-window::-webkit-scrollbar-thumb {
-  background-color: #34bdeb;
+  background-color: #008cba;
 }
 
 .chat-window::-webkit-scrollbar-track {
@@ -162,7 +162,7 @@ export default {
   cursor: pointer;
 }
 .chat-box-header {
-  background: #34bdeb;
+  background: #008cba;
   height: 5%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -185,7 +185,7 @@ export default {
 }
 .message-content {
   padding: 1% 2% 2% 2%;
-  background: #34bdeb;
+  background: #008cba;
   color: white;
   max-width: 75%;
   float: left;
@@ -196,7 +196,7 @@ export default {
 }
 .message-content.sender {
   background: white;
-  color: #666;
+  color: black;
   max-width: 75%;
   float: left;
   margin-left: 10px;
@@ -217,7 +217,7 @@ export default {
   resize: none;
   outline: none;
   border: 1px solid #ccc;
-  color: #888;
+  color: black;
   border-top: none;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -230,12 +230,16 @@ export default {
   color: #ccc;
 }
 .chat-submit {
-  background: transparent;
+  height: 100%;
+  background-color: rgb(80, 80, 80);
   box-shadow: none;
   cursor: pointer;
   border: none;
-  border-radius: 50%;
-  color: #34bdeb;
+  border-radius: 10px;
+  color: white;
   padding: 3%;
+}
+.chat-submit:hover {
+  background-color: #008cba;
 }
 </style>

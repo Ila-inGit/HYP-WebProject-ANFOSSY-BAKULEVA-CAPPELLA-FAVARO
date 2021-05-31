@@ -2,8 +2,8 @@
   <div>
     <SectionTitle title="Contact us" subtitle="We are happy to talk to you" />
     <!-- <nuxt-link :to="$route.path + '/the game'"> ciao </nuxt-link> -->
-    <div class="row">
-      <div class="card-contacts">
+    <div class="row-of-side-columns">
+      <div class="column bordered" style="width: 20%">
         <div>
           <h2>Contact Information</h2>
         </div>
@@ -12,13 +12,13 @@
           <ButtonWithText :title="'Contact Form'" />
         </button>
       </div>
-      <div class="card-contacts">
+      <div class="column bordered" style="width: 20%">
         <div>
           <h2>Our offices</h2>
         </div>
         <ContactCard :first="firstAddress" :second="secondAddress" />
       </div>
-      <div class="card-contacts">
+      <div class="column bordered" style="width: 35%">
         <div>
           <h2>Maps</h2>
         </div>
@@ -72,28 +72,15 @@ export default {
 </script>
 
 <style scoped>
+@import '~/assets/style.css';
+
 .map {
-  height: 250px;
+  height: 30vh;
   min-width: 30vw;
   border: 1;
   border-style: solid;
   border-color: #999;
   border-radius: 5px;
-}
-.card-contacts {
-  border: 1;
-  border-style: solid;
-  border-color: #999;
-  padding: 15px;
-  flex: auto;
-  margin: 10px;
-}
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
 }
 .but {
   background-color: transparent;

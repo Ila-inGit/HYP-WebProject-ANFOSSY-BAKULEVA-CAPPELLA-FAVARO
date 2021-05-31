@@ -4,17 +4,16 @@
 -->
 <template>
   <div>
-    <div class="main-container" :style="style">
+    <div class="column bordered">
       <div class="title-video-container">
-        <!-- video (optional) -->
+        <!-- video (optional) 
         <div v-if="showVideo">
           <iframe
             class="video"
             src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
           />
-        </div>
+        </div> -->
         <!-- Title of the section -->
-
         <h1>{{ title }}</h1>
       </div>
       <!-- Preview of the elements -->
@@ -119,7 +118,7 @@ export default {
   width: 90%;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 5%;
+  padding: 2%;
 }
 .table {
   display: flex;
@@ -127,15 +126,17 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: stretch;
-  padding-top: 2.5%;
+  align-items: center;
+  padding-top: 0.5%;
+  padding-left: 3%;
+  padding-right: 1%;
   padding-bottom: 2.5%;
 }
 
 .video {
   display: flex;
-  width: 50vw;
-  height: 50vw;
+  width: 20vw;
+  height: 10vw;
   max-width: 500px;
   max-height: 500px;
 }

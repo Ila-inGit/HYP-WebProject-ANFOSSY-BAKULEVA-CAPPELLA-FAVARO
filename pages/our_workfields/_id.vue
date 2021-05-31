@@ -12,13 +12,12 @@
         :text-color="'#0f0f0f'"
       ></section-title
       ><related-items-preview
+        style="margin-top: -100px"
         :parent-id="area.ID"
         :parent-type="'area'"
         :child-type="'product'"
-        :bg-color="'#12253f'"
-        :text-color="'#f0f8ff'"
         :title="'Products in this area'"
-        :show-video="true"
+        :show-video="false"
       />
       <related-items-preview
         :parent-id="area.ID"

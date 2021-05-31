@@ -23,10 +23,12 @@ export default {
   margin: auto;
   max-width: 50%;
 }
+
 /* The navbar container */
 .topnav {
   overflow: hidden;
-  background-color: #ddd;
+  background-color: white;
   flex: auto;
+  padding: 1% 0.5% 0.5% 0%;
 }
 </style>

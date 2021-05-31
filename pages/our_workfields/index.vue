@@ -3,8 +3,8 @@
 -->
 
 <template>
-  <main class="container">
-    <section-title
+  <div>
+    <SectionTitle
       :title="'Our workfields'"
       :subtitle="'Find out about our areas of expertise'"
     />
@@ -18,7 +18,7 @@
         @click="goToArea(area.ID)"
       />
     </div>
-  </main>
+  </div>
 </template>
 
 <script>

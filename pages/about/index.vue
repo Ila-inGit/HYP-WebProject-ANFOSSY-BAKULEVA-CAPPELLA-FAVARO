@@ -7,38 +7,49 @@
       title="About us"
       subtitle="Know more about our history, reviews and what moves us"
     />
+    <div>
+      <div
+        class="row"
+        style="
+          top: 50%;
+          left: 50%;
+          padding: 12px 24px;
+          background-color: black;
+          display: flex;
+          flex-direction: row;
+        "
+      >
+        <div class="column" style="background-color: black">
+          <h1 class="light-text">Who we are</h1>
+          <h3 class="light-text">
+            We help businesses catch the wave of Conversational AI with the
+            right technologies, tools, and expertise.
+          </h3>
+          <h3 class="light-text">
+            As part of a major IT group, we have access to the expertise of our
+            sister companies in industries like e-payments, food tech, retail,
+            game publishing, and cloud technologies to build exceptional
+            products and solutions.
+          </h3>
+        </div>
+        <card-with-carousel></card-with-carousel>
+      </div>
+    </div>
     <div class="row">
-      <div class="card">
+      <div class="column bordered">
         <div class="cardTitle">
-          <h1>Our history</h1>
+          <h2>Our history</h2>
         </div>
         <div class="card-info">
           <history-card-with-carousel />
         </div>
       </div>
-      <div class="card">
+      <div class="column bordered">
         <div class="cardTitle">
-          <h1>Who we are</h1>
-        </div>
-        <div class="card-info">
-          <p>
-            We help businesses catch the wave of Conversational AI with the
-            right technologies, tools, and expertise.
-          </p>
-          <p>
-            As part of a major IT group, we have access to the expertise of our
-            sister companies in industries like e-payments, food tech, retail,
-            game publishing, and cloud technologies to build exceptional
-            products and solutions.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="cardTitle">
-          <h1>Our reviews</h1>
+          <h2>Our reviews</h2>
         </div>
         <div>
-          <div class="card-bordered">
+          <div class="internal-card bordered">
             <div class="card-info">
               <p>
                 Best company we have ever worked with. Their expertise is
@@ -47,7 +58,7 @@
               <p>Lada Cars, Head of Marketing of CSSO.</p>
             </div>
           </div>
-          <div class="card-bordered">
+          <div class="internal-card bordered">
             <div class="card-info">
               <p>
                 The Conversational Framework is the best tool that you can use
@@ -63,10 +74,11 @@
 </template>
 
 <script>
+import CardWithCarousel from '~/components/Carousel/CardWithCarousel'
 import HistoryCardWithCarousel from '~/components/HistCarousel/HistoryCardWithCarousel.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
 export default {
-  components: { SectionTitle, HistoryCardWithCarousel },
+  components: { SectionTitle, CardWithCarousel, HistoryCardWithCarousel },
   layout: 'PageLayout',
   props: {
     title: {
@@ -103,6 +115,8 @@ export default {
 </script>
 
 <style scoped>
+@import '~/assets/style.css';
+
 .row {
   display: flex;
   width: 100%;
@@ -112,32 +126,35 @@ export default {
   align-items: stretch;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
+  margin-top: -100px;
 }
-.card {
-  padding-right: 2.5%;
-  padding-left: 2.5%;
+
+.internal-card {
+  height: auto;
+  width: 85%;
+  padding-right: 5%;
+  padding-left: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
-  border-style: solid;
-  border: 1% #999;
-  border-radius: 10px;
+  border: 1% px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 1%;
 }
+
 @media screen and (max-width: 600px) {
-  .card {
+  .column {
     width: 100%;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
-  .card {
+  .column {
     width: 40%;
   }
 }
 @media screen and (min-width: 1000px) {
-  .card {
-    width: 25%;
+  .column {
+    width: 30%;
   }
 }
 
@@ -147,20 +164,6 @@ export default {
   width: 90%;
   overflow-wrap: break-word;
   padding: 1%;
-  margin: 1%;
-}
-.card-bordered {
-  height: auto;
-  width: 85%;
-  padding-right: 5%;
-  padding-left: 5%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  border-style: solid;
-  border: 1% px #999;
-  border-radius: 10px;
-  flex-direction: column;
-  justify-content: flex-end;
   margin: 1%;
 }
 </style>

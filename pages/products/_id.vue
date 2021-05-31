@@ -4,20 +4,22 @@
 
 <template>
   <div>
-    <section-title :title="product.Title" :subtitle="product.Long" />
-    <related-items-preview
-      :parent-id="product.ID"
-      :parent-type="'product'"
-      :child-type="'area'"
-      :title="'More about this area'"
-      :show-video="true"
-    />
-    <related-items-preview
-      :parent-id="product.ID"
-      :parent-type="'product'"
-      :child-type="'person'"
-      :title="'People involved'"
-    />
+    <SectionTitle :title="product.Title" :subtitle="product.Long" />
+    <div class="row-of-side-columns">
+      <related-items-preview
+        :parent-id="product.ID"
+        :parent-type="'product'"
+        :child-type="'area'"
+        :title="'More about this area'"
+        :show-video="false"
+      />
+      <related-items-preview
+        :parent-id="product.ID"
+        :parent-type="'product'"
+        :child-type="'person'"
+        :title="'People involved'"
+      />
+    </div>
   </div>
 </template>
 

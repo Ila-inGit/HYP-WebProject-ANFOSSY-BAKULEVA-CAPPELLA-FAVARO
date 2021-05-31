@@ -32,12 +32,12 @@
       </div>
       <div class="form-wrap">
         <input
-          class="clicks send"
+          class="clicks button select-button"
           type="reset"
           onclick="alert('Thank you for contacting us, please wait for our answer')"
           value="Send"
         />
-        <input class="clicks clear" type="reset" value="Clear" />
+        <input class="clicks button warn-button" type="reset" value="Clear" />
       </div>
     </form>
   </div>
@@ -56,6 +56,8 @@ export default {
 </script>
 
 <style scoped>
+@import '~/assets/style.css';
+
 form {
   display: flex;
   flex-direction: column;
@@ -109,7 +111,6 @@ label {
   color: #008cba;
 }
 .clicks {
-  background-color: rgb(80, 80, 80);
   width: 30%;
   position: relative;
   height: 10%;
@@ -119,20 +120,10 @@ label {
   padding-left: 1vw;
   resize: inherit;
   outline: none;
-  border: 1px solid #ccc;
-  color: white;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   overflow: visible;
-}
-.send:hover {
-  background-color: #008cba;
-  color: white;
-}
-.clear:hover {
-  background-color: #ff5252;
-  color: black;
 }
 </style>

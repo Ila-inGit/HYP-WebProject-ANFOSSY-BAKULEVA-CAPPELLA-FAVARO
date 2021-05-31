@@ -1,5 +1,5 @@
 <template>
-  <button class="button-with-text button1">{{ title }}</button>
+  <button class="button-with-text button select-button">{{ title }}</button>
 </template>
 
 <script>
@@ -14,6 +14,8 @@ export default {
 </script>
 
 <style>
+@import '~/assets/style.css';
+
 .button-with-text {
   border: none;
   color: white;
@@ -23,18 +25,5 @@ export default {
   display: block;
   margin: 4px 2px;
   transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: rgb(80, 80, 80);
-  color: white;
-  border: 2px solid white;
-  border-radius: 5%;
-}
-
-.button1:hover {
-  background-color: #008cba;
-  color: white;
 }
 </style>

@@ -59,6 +59,7 @@ export default {
 }
 .card:hover {
   color: #008cba;
+  cursor: pointer;
 }
 .cardInfo {
   display: flex;
