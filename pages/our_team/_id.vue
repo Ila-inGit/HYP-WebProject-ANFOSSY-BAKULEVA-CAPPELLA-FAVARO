@@ -93,8 +93,7 @@ export default {
 </script>
 
 <style scoped>
-h1,
-h2 {
+h1 {
   align-self: center;
   text-align: center;
   font-size: x-large;
@@ -102,6 +101,7 @@ h2 {
   border-bottom: 1px solid #403d3d;
   color: #202021;
   padding-bottom: 8px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h5 {
