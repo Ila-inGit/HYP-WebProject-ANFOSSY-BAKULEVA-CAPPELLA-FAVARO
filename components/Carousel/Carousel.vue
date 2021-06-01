@@ -51,4 +51,25 @@ export default {
   },
 }
 </script>
-<style></style>
+<style>
+@media screen and (max-width: 600px) {
+  .btn.btn-next {
+    width: 30%;
+    height: 30%;
+  }
+  .btn.btn-prev {
+    width: 30%;
+    height: 30%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .btn.btn-next {
+    width: 50%;
+    height: 50%;
+  }
+  .btn.btn-prev {
+    width: 50%;
+    height: 50%;
+  }
+}
+</style>

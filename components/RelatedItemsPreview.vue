@@ -6,7 +6,7 @@
   <div>
     <div class="column bordered">
       <div class="title-video-container">
-        <!-- video (optional) 
+        <!-- video (optional)
         <div v-if="showVideo">
           <iframe
             class="video"
@@ -70,7 +70,7 @@ export default {
     goToPage(id) {
       let url = '/'
       if (this.childType === 'person') {
-        url = `/our_team/presentation/`
+        url = `/our_team/`
       } else if (this.childType === 'area') {
         url = `/our_workfields/`
       } else if (this.childType === 'product') {

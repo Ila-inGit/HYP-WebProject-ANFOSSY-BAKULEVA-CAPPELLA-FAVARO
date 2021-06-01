@@ -1,11 +1,13 @@
 <template>
-  <div class="person-card">
+  <div>
+    <SectionTitle :title="'Meet the team'" />
     <div>
       <!-- go to previous person -->
       <nuxt-link
         :to="{
-          path: `${$route.path}`,
-          query: { id: person.ID - 1 },
+          path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
+            person.ID - 1
+          }`,
         }"
       >
         <div class="previous-button">
@@ -16,30 +18,43 @@
           />
         </div>
       </nuxt-link>
+      <!-- go to next person -->
+      <nuxt-link
+        :to="{
+          path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
+            person.ID + 1
+          }`,
+        }"
+      >
+        <div class="next-button">
+          <button-with-text
+            v-if="person.ID + 1 !== 21"
+            class="border-next"
+            :title="'Next'"
+          />
+        </div>
+      </nuxt-link>
     </div>
-
-    <!-- show person info -->
-    <div class="person-card">
-      <div class="img-and-desc">
-        <h1>
-          <b>{{ person.Name }}</b>
-        </h1>
-        <h2 style="text-align: center">{{ person.Role }}</h2>
-        <img :src="person.Picture" alt="person image" class="imageCard" />
-        <p>
-          <b>{{ person.Bio }}</b>
-        </p>
-        <related-items-list
-          :parent-id="person.ID"
+    <div class="box">
+      <div class="box-full">
+        <h1>Team member</h1>
+        <h5>{{ person.Name }}</h5>
+        <img :src="person.Picture" alt="person-picture" :border="0" />
+        <h1>Role</h1>
+        <h5>{{ person.Role }}</h5>
+        <h1>Bio</h1>
+        <h5>{{ person.Bio }}</h5>
+      </div>
+      <div class="box-full">
+        <related-items-preview
           :title="'Working area'"
+          :parent-id="person.ID"
           :parent-type="'person'"
           :child-type="'area'"
           :bg-color="'#dddddd'"
           :text-color="'#000000'"
         />
-      </div>
-      <div class="card-info">
-        <related-items-small-preview
+        <related-items-preview
           :parent-id="person.ID"
           :title="'Developed products'"
           :parent-type="'person'"
@@ -49,21 +64,6 @@
         />
       </div>
     </div>
-    <!-- go to next person -->
-    <nuxt-link
-      :to="{
-        path: `${$route.path}`,
-        query: { id: person.ID + 1 },
-      }"
-    >
-      <div class="next-button">
-        <button-with-text
-          v-if="person.ID + 1 !== 21"
-          class="border-next"
-          :title="'Next'"
-        />
-      </div>
-    </nuxt-link>
   </div>
 </template>
 
@@ -93,36 +93,84 @@ export default {
 </script>
 
 <style scoped>
-.person-card {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.img-and-desc {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
-  max-width: 20vw;
-  height: 100%;
-  background: #dddddd;
-}
-
-h1 {
-  text-align: left;
-  color: black !important;
-}
-
+h1,
 h2 {
-  text-align: left;
-  margin: 15px;
-  padding: 0;
-  color: black !important;
+  align-self: center;
+  text-align: center;
+  font-size: x-large;
+  margin: auto;
+  border-bottom: 1px solid #403d3d;
+  color: #202021;
+  padding-bottom: 8px;
 }
 
+h5 {
+  font-size: large;
+}
+
+.box {
+  margin: auto;
+  width: 1500px;
+  text-align: center;
+  align-self: center;
+  align-content: center;
+}
+
+.box-full {
+  margin: auto;
+  text-align: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+}
+
+.column {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  align-content: center;
+}
+@media screen and (max-width: 600px) {
+  .box {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .box {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .box {
+    display: flex;
+    width: 80%;
+    align-items: stretch;
+  }
+}
+
+img {
+  margin: 5px;
+  width: 30vw;
+  align-self: center;
+  border: black solid 2px;
+}
+
+@media screen and (max-width: 600px) {
+  img {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  img {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  img {
+    width: 80%;
+  }
+}
 p {
   text-align: center;
   font-style: normal;
@@ -132,30 +180,16 @@ p {
   padding: 0;
   color: black !important;
 }
-.card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+
+.previous-button {
+  position: fixed;
+  left: 0;
+  top: 50%;
 }
 
-.card-info {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: normal;
-  margin: 0;
-  padding: 0;
-}
-
-.imageCard {
-  height: 35vh;
-  width: auto;
-  margin: 10%;
-}
-
-.button-with-text {
-  width: auto;
-  height: auto;
-  position: relative;
+.next-button {
+  position: fixed;
+  right: 0;
+  top: 50%;
 }
 </style>

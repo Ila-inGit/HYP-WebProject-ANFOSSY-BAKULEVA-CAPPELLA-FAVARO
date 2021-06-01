@@ -47,7 +47,7 @@ export default {
     goToPage(id) {
       let url = ''
       if (this.childType === 'person') {
-        url = `/our_team/presentation/`
+        url = `/our_team/our_team/`
       } else if (this.childType === 'area') {
         url = `/our_workfields/`
       } else if (this.childType === 'product') {
@@ -128,6 +128,24 @@ h1 {
   padding: 10px;
   align-items: center;
   margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .item-card {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .item-card {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .item-card {
+    display: flex;
+    width: 33%;
+    align-items: stretch;
+  }
 }
 
 .small {
