@@ -11,13 +11,13 @@
       <div
         class="row-of-side-columns"
         style="
-          width: 90%;
-          padding: 2% 10%;
+          width: 79.5vw;
+          padding: 2vh 10% 5vh;
           background-color: black;
           align-items: center;
         "
       >
-        <div class="column" style="background-color: black; padding: 2%">
+        <div class="column" style="background-color: black; padding: 2% 5%">
           <h1 class="light-text">Who we are</h1>
           <h3 class="light-text">
             We help businesses catch the wave of Conversational AI with the
@@ -30,7 +30,7 @@
             products and solutions.
           </h3>
         </div>
-        <card-with-carousel></card-with-carousel>
+        <card-with-carousel class="limited"></card-with-carousel>
       </div>
     </div>
     <div class="row-of-side-columns" style="align-items: stretch">
@@ -132,10 +132,16 @@ export default {
   .column {
     width: 100%;
   }
+  .limited {
+    display: none;
+  }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .column {
     width: 40%;
+  }
+  .limited {
+    display: none;
   }
 }
 @media screen and (min-width: 1000px) {

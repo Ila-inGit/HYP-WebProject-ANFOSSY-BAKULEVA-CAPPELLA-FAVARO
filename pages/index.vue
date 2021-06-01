@@ -4,39 +4,7 @@
 
 <template>
   <div>
-    <div
-      class="w3-display-container w3-content w3-center"
-      style="position: relative; text-align: center; z-index: -5"
-    >
-      <img
-        class="w3-image"
-        src="~/static/hexTech.jpg"
-        alt="backgroundImageTech"
-        style="
-          max-width: 100%;
-          height: auto;
-          vertical-align: middle;
-          filter: brightness(30%);
-        "
-        width="1500"
-        height="600"
-      />
-      <div
-        class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center light-text"
-        style="
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          padding: 12px 24px;
-          border: 1px solid #ccc;
-        "
-      >
-        <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">IT Consulting</h1>
-        <h3 class="w3-hide-medium w3-hide-small">& Services</h3>
-      </div>
-    </div>
+    <SectionTitle :title="'IT Consulting'" :subtitle="'and Services'" />
     <div class="row-of-side-columns">
       <div class="column bordered">
         <h1>Our workfields</h1>
@@ -102,7 +70,9 @@
 </template>
 
 <script>
+import SectionTitle from '~/components/SectionTitle.vue'
 export default {
+  components: { SectionTitle },
   layout: 'PageLayout',
   methods: {
     goTo(place) {
@@ -137,10 +107,6 @@ export default {
 /* column contains the sections */
 /* the size of the columns is based on the screen size */
 @media screen and (max-width: 600px) {
-  .row-of-side-columns {
-    margin-top: 0px;
-    position: relative;
-  }
   .row2 {
     width: 100%;
     flex-direction: row;
@@ -150,9 +116,6 @@ export default {
   }
 }
 @media screen and (min-width: 600px) and (max-width: 992px) {
-  .row-of-side-columns {
-    margin-top: -50px;
-  }
   .row2 {
     width: 100%;
     flex-direction: row;

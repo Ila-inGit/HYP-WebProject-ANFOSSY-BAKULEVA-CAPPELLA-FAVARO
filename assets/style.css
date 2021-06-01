@@ -13,7 +13,19 @@
     padding-top: 2%;
     margin-top: -100px;
     width: 100%;
-  }
+}
+
+@media screen and (max-width: 600px) {
+    .row-of-side-columns {
+      margin-top: -20px;
+      position: relative;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) {
+    .row-of-side-columns {
+      margin-top: -50px;
+    }
+}
 
 .column {
     display: flex;

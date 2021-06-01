@@ -3,7 +3,7 @@
     <SectionTitle title="Contact us" subtitle="We are happy to talk to you" />
     <!-- <nuxt-link :to="$route.path + '/the game'"> ciao </nuxt-link> -->
     <div class="row-of-side-columns">
-      <div class="column bordered" style="width: 20%">
+      <div class="column bordered c">
         <div>
           <h2>Contact Information</h2>
         </div>
@@ -12,18 +12,18 @@
           <ButtonWithText :title="'Contact Form'" />
         </button>
       </div>
-      <div class="column bordered" style="width: 20%">
+      <div class="column bordered c">
         <div>
           <h2>Our offices</h2>
         </div>
         <ContactCard :first="firstAddress" :second="secondAddress" />
       </div>
-      <div class="column bordered" style="width: 35%">
+      <div class="column bordered m">
         <div>
           <h2>Maps</h2>
         </div>
         <div>
-          <Map class="map" />
+          <Map class="map bordered" />
         </div>
       </div>
     </div>
@@ -77,17 +77,62 @@ export default {
 .map {
   height: 30vh;
   min-width: 30vw;
-  border: 1;
-  border-style: solid;
-  border-color: #999;
-  border-radius: 5px;
 }
+
 .but {
   background-color: transparent;
   border: transparent;
   padding-top: 4%;
 }
+
 .but:focus {
   outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  .row-of-side-columns {
+    margin-top: 0px;
+    position: relative;
+    justify-content: center;
+  }
+  .m {
+    width: 90%;
+  }
+  .c {
+    width: 90%;
+  }
+  .map {
+    width: 100%;
+    left: 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .row-of-side-columns {
+    margin-top: -50px;
+    justify-content: center;
+  }
+  .m {
+    width: 100%;
+  }
+  .c {
+    width: 45%;
+    height: 80vh;
+  }
+  .map {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .m {
+    width: 40%;
+    align-items: center;
+    margin: auto;
+    height: 40vh;
+  }
+  .c {
+    width: 20%;
+    height: 40vh;
+  }
 }
 </style>
