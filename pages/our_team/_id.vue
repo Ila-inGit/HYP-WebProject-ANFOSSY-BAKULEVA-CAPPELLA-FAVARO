@@ -154,7 +154,6 @@ img {
   width: 30vw;
   align-self: center;
   border: black solid 2px;
-  border-radius: 100px;
 }
 
 @media screen and (max-width: 600px) {
@@ -165,11 +164,13 @@ img {
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   img {
     width: 40vw;
+    border-radius: 40vw;
   }
 }
 @media screen and (min-width: 1000px) {
   img {
     width: 10vw;
+    border-radius: 10vw;
   }
 }
 p {
