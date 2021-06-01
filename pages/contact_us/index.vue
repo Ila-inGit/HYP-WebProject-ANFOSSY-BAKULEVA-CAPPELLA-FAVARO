@@ -8,9 +8,6 @@
           <h2>Contact Information</h2>
         </div>
         <ContactCard :first="firstContact" :second="secondContact" />
-        <button class="but" @click="goTo('/_form')">
-          <ButtonWithText :title="'Contact Form'" />
-        </button>
       </div>
       <div class="column bordered c">
         <div>
@@ -22,10 +19,18 @@
         <div>
           <h2>Maps</h2>
         </div>
-        <div>
+        <div style="width: 90%">
           <Map class="map bordered" />
         </div>
       </div>
+    </div>
+    <div class="cont-div">
+      <h2 style="padding: 1.5%; color: rgb(63, 63, 63)">
+        Reach us if you have some questions
+      </h2>
+      <button class="but" @click="goTo('/_form')">
+        <ButtonWithText :title="'Contact Form'" />
+      </button>
     </div>
   </div>
 </template>
@@ -77,12 +82,12 @@ export default {
 .map {
   height: 30vh;
   min-width: 30vw;
+  margin-bottom: 2%;
 }
 
 .but {
   background-color: transparent;
   border: transparent;
-  padding-top: 4%;
 }
 
 .but:focus {
@@ -101,11 +106,6 @@ export default {
   .c {
     width: 90%;
   }
-  .map {
-    width: 100%;
-    left: 0;
-    margin: 0;
-  }
 }
 @media screen and (min-width: 600px) and (max-width: 992px) {
   .row-of-side-columns {
@@ -117,22 +117,23 @@ export default {
   }
   .c {
     width: 45%;
-    height: 80vh;
-  }
-  .map {
-    width: 70%;
   }
 }
 @media screen and (min-width: 992px) {
   .m {
     width: 40%;
     align-items: center;
-    margin: auto;
     height: 40vh;
   }
   .c {
     width: 20%;
     height: 40vh;
   }
+}
+.cont-div {
+  background-image: linear-gradient(to top, #3774df9a, white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

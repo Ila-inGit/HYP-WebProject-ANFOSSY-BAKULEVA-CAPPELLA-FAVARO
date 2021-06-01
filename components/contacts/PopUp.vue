@@ -43,7 +43,13 @@
             ></iframe>
           </div>
           <a
-            style="padding: 0%; float: none; width: 30px; flex: none"
+            style="
+              padding: 0%;
+              float: none;
+              width: 30px;
+              flex: none;
+              height: fit-content;
+            "
             href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com."
             title="Share by Email"
           >

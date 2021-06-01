@@ -1,7 +1,7 @@
 <template>
   <div>
     <SectionTitle :title="'Meet the team'" />
-    <div>
+    <div class="box">
       <!-- go to previous person -->
       <nuxt-link
         :to="{
@@ -18,24 +18,6 @@
           />
         </div>
       </nuxt-link>
-      <!-- go to next person -->
-      <nuxt-link
-        :to="{
-          path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
-            person.ID + 1
-          }`,
-        }"
-      >
-        <div class="next-button">
-          <button-with-text
-            v-if="person.ID + 1 !== 21"
-            class="border-next"
-            :title="'Next'"
-          />
-        </div>
-      </nuxt-link>
-    </div>
-    <div class="box">
       <div class="box-full short">
         <h1>Team member</h1>
         <h5>{{ person.Name }}</h5>
@@ -63,6 +45,22 @@
           :text-color="'#000000'"
         />
       </div>
+      <!-- go to next person -->
+      <nuxt-link
+        :to="{
+          path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
+            person.ID + 1
+          }`,
+        }"
+      >
+        <div class="next-button">
+          <button-with-text
+            v-if="person.ID + 1 !== 21"
+            class="border-next"
+            :title="'Next'"
+          />
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -192,13 +190,13 @@ p {
 }
 
 .previous-button {
-  position: fixed;
+  position: relative;
   left: 0;
   top: 50%;
 }
 
 .next-button {
-  position: fixed;
+  position: relative;
   right: 0;
   top: 50%;
 }

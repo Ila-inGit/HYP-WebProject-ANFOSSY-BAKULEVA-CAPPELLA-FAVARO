@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 90%">
     <div class="flex-box">
       <div>
         <h3>{{ first.title }}</h3>
