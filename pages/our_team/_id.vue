@@ -154,6 +154,7 @@ img {
   width: 30vw;
   align-self: center;
   border: black solid 2px;
+  border-radius: 100px;
 }
 
 @media screen and (max-width: 600px) {
