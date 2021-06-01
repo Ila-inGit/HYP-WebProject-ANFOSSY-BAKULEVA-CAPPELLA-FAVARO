@@ -36,7 +36,7 @@
       </nuxt-link>
     </div>
     <div class="box">
-      <div class="box-full">
+      <div class="box-full short">
         <h1>Team member</h1>
         <h5>{{ person.Name }}</h5>
         <img :src="person.Picture" alt="person-picture" :border="0" />
@@ -122,6 +122,12 @@ h5 {
   align-self: center;
   align-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .short {
+    width: 100vw;
+  }
 }
 
 .column {
