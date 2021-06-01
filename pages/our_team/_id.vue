@@ -138,7 +138,7 @@ h5 {
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .box {
-    width: 50%;
+    width: 90%;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -158,17 +158,17 @@ img {
 
 @media screen and (max-width: 600px) {
   img {
-    width: 60%;
+    width: 40vw;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   img {
-    width: 50%;
+    width: 40vw;
   }
 }
 @media screen and (min-width: 1000px) {
   img {
-    width: 80%;
+    width: 10vw;
   }
 }
 p {
