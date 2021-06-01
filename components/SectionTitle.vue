@@ -13,7 +13,7 @@
       style="
         vertical-align: top;
         filter: brightness(30%);
-        width: 99vw;
+        width: 100%;
         object-fit: cover;
       "
     />

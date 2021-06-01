@@ -123,11 +123,9 @@ export default {
   .m {
     width: 40%;
     align-items: center;
-    height: 40vh;
   }
   .c {
     width: 20%;
-    height: 40vh;
   }
 }
 .cont-div {

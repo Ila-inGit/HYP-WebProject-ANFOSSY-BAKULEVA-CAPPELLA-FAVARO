@@ -51,10 +51,7 @@
         <h1 class="anim-r-l light-text" style="padding-left: 50%">
           Contact us
         </h1>
-        <p
-          class="anim-r-l light-text"
-          style="padding-left: 50%; text-align: right"
-        >
+        <p class="anim-r-l light-text" style="padding-left: 50%">
           Find our contact information
         </p>
         <button
