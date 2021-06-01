@@ -33,7 +33,7 @@
             <iframe
               title="facebook-link"
               src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&width=87&height=20&appId"
-              width="87"
+              width="67"
               height="20"
               style="border: none; overflow: hidden"
               scrolling="no"
@@ -124,15 +124,35 @@ export default {
 #popup > #popup .inner {
   position: fixed;
 }
-
+@media (max-width: 640px) {
+  #popup .inner {
+    width: 80%;
+    margin: auto;
+    top: 20%;
+  }
+}
 #popup .inner .body-pop {
   height: fit-content;
   text-align: center;
   vertical-align: middle;
 }
+@media (max-width: 640px) {
+  #popup .inner .body-pop {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
 .link-to-share {
   padding: 20px;
   overflow: auto;
+}
+@media (max-width: 640px) {
+  .link-to-share {
+    font-size: 2rem;
+  }
 }
 .mail {
   padding: 0%;
@@ -156,10 +176,11 @@ export default {
   align-content: flex-start;
   align-items: center;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .flex-box-pop-up {
     display: flex;
     flex-direction: column;
+    transform: scale(2.5);
   }
 }
 .footer-pop {
@@ -215,5 +236,6 @@ span.close-icon > img {
 .flex-box-pop-up-h {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 </style>
