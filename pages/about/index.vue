@@ -9,17 +9,15 @@
     />
     <div>
       <div
-        class="row"
+        class="row-of-side-columns"
         style="
-          top: 50%;
-          left: 50%;
-          padding: 12px 24px;
+          width: 90%;
+          padding: 2% 10%;
           background-color: black;
-          display: flex;
-          flex-direction: row;
+          align-items: center;
         "
       >
-        <div class="column" style="background-color: black">
+        <div class="column" style="background-color: black; padding: 2%">
           <h1 class="light-text">Who we are</h1>
           <h3 class="light-text">
             We help businesses catch the wave of Conversational AI with the
@@ -35,7 +33,7 @@
         <card-with-carousel></card-with-carousel>
       </div>
     </div>
-    <div class="row">
+    <div class="row-of-side-columns" style="align-items: stretch">
       <div class="column bordered">
         <div class="cardTitle">
           <h2>Our history</h2>
@@ -116,18 +114,6 @@ export default {
 
 <style scoped>
 @import '~/assets/style.css';
-
-.row {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: stretch;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  margin-top: -100px;
-}
 
 .internal-card {
   height: auto;

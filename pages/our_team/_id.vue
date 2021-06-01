@@ -114,6 +114,7 @@ h5 {
   text-align: center;
   align-self: center;
   align-content: center;
+  padding: 2.5% 0%;
 }
 
 .box-full {
@@ -122,6 +123,7 @@ h5 {
   align-self: center;
   align-content: center;
   align-items: center;
+  padding-right: 2.5%;
 }
 
 @media screen and (min-width: 1000px) {

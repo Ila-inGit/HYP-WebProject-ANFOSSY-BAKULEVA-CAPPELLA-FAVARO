@@ -53,8 +53,8 @@
               "Perfect. The guide it is. \n"
             ],
             "payload": {
-              "openGuidePopup": true,
-              "customGuide": "/"
+              "openGuidePopup": false,
+              "customGuide": ""
             }
           },
           {
