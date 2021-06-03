@@ -55,7 +55,7 @@ export default {
   width: 50px;
   position: absolute;
   margin-top: -25px;
-  font-size: small;
+  font-size: 1rem;
   font-style: italic;
   z-index: 2;
 }

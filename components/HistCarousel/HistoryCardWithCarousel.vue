@@ -53,22 +53,29 @@ export default {
 }
 @media screen and (max-width: 600px) {
   .slider {
-    height: 20vh;
+    height: 35vh;
     width: 75vw;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 992px) {
+@media screen and (min-width: 600px) and (max-width: 992px) and (max-height: 1000px) {
   .slider {
-    height: 20vh;
+    height: 55vh;
+    width: 30vw;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) and (min-height: 1000px) {
+  .slider {
+    height: 25vh;
     width: 30vw;
   }
 }
 @media screen and (min-width: 992px) {
   .slider {
-    height: 20vh;
-    width: 20vw;
+    height: 25vh;
+    width: 22.5vw;
   }
 }
+
 /** previous button pointing up */
 .btn-p {
   position: absolute;
@@ -85,7 +92,6 @@ export default {
 .btn-p:hover {
   border-bottom: 1vh solid #008cba;
   cursor: pointer;
-  color: #0f0f0f;
 }
 
 /** next button pointing down */
@@ -104,7 +110,6 @@ export default {
 .btn-n:hover {
   border-top: 1vh solid #008cba;
   cursor: pointer;
-  color: #0f0f0f;
 }
 
 /** bordered cards with the contect of each event */
@@ -117,17 +122,16 @@ export default {
   padding-right: 0.5%;
   padding-left: 5%;
   padding-top: 0.5%;
-  padding-bottom: 0%;
+  padding-bottom: 1%;
   border-style: solid;
   border: 1% px #999;
 }
 
 .cards p {
-  color: #000;
-  padding: 5% 40% 0 0;
+  padding: 0% 20% 0% 0%;
 }
 
 .wrapper {
-  padding: 10%;
+  padding: 0% 2.5%;
 }
 </style>

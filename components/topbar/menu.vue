@@ -80,7 +80,7 @@ export default {
 
 .textMenu {
   color: #fff;
-  padding: 6px;
+  padding: 15px 6px;
 }
 .textMenu:hover {
   background-color: #fff;

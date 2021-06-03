@@ -97,7 +97,7 @@ h2 {
   text-align: right;
   right: 80px;
   top: 140px;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .column {

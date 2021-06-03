@@ -43,7 +43,6 @@ export default {
 }
 
 h3 {
-  font-size: 15px;
   padding: 5%;
 }
 .p-descr {

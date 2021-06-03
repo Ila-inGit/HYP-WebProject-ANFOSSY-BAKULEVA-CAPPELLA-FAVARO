@@ -39,7 +39,7 @@ html {
 }
 @media screen and (max-width: 400px) {
   html {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 @media screen and (min-width: 400px) {

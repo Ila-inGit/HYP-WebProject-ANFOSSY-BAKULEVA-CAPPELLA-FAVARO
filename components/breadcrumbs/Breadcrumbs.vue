@@ -106,7 +106,8 @@ li {
 }
 li a {
   color: rgb(63, 63, 63);
-  font-size: 16px;
+  padding: 1% 0%;
+  font-size: 1.5rem;
 }
 .nuxt-link-exact-active.nuxt-link-active {
   color: rgb(63, 63, 63);
@@ -131,7 +132,7 @@ li a {
   display: inline-block;
   position: relative;
   color: rgb(63, 63, 63);
-  font-size: 20px;
+  font-size: 1.25rem;
   transition: 0.5s;
 }
 

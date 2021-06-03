@@ -36,11 +36,9 @@
         class="about-contact-homePage"
         style="background-image: linear-gradient(to right, #008080, #6a5acd)"
       >
-        <h1 class="anim-l-r light-text" style="padding-right: 50%">About us</h1>
-        <p class="anim-l-r light-text" style="padding-right: 50%">
-          Know more about our company
-        </p>
-        <button class="but" style="padding-right: 50%" @click="goTo('about')">
+        <h1 class="anim-l-r light-text">About us</h1>
+        <p class="anim-l-r light-text">Know more about our company</p>
+        <button class="but anim-l-r" @click="goTo('about')">
           <ButtonWithText :title="'See more'" />
         </button>
       </div>
@@ -48,17 +46,9 @@
         class="about-contact-homePage"
         style="background-image: linear-gradient(to left, #191970, #8b008b)"
       >
-        <h1 class="anim-r-l light-text" style="padding-left: 50%">
-          Contact us
-        </h1>
-        <p class="anim-r-l light-text" style="padding-left: 50%">
-          Find our contact information
-        </p>
-        <button
-          class="but"
-          style="padding-left: 50%"
-          @click="goTo('contact_us')"
-        >
+        <h1 class="anim-r-l light-text">Contact us</h1>
+        <p class="anim-r-l light-text">Find our contact information</p>
+        <button class="but anim-r-l" @click="goTo('contact_us')">
           <ButtonWithText :title="'See more'" />
         </button>
       </div>
@@ -111,6 +101,12 @@ export default {
   .column {
     width: 90%;
   }
+  .anim-r-l {
+    padding-left: 50%;
+  }
+  .anim-l-r {
+    padding-right: 50%;
+  }
 }
 @media screen and (min-width: 600px) and (max-width: 992px) {
   .row2 {
@@ -119,6 +115,12 @@ export default {
   }
   .column {
     width: 45%;
+  }
+  .anim-r-l {
+    padding-left: 50%;
+  }
+  .anim-l-r {
+    padding-right: 50%;
   }
 }
 @media screen and (min-width: 992px) {
@@ -131,6 +133,12 @@ export default {
   }
   .column {
     width: 27%;
+  }
+  .anim-r-l {
+    padding-left: 50%;
+  }
+  .anim-l-r {
+    padding-right: 50%;
   }
 }
 

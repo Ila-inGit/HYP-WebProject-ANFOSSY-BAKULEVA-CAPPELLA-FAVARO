@@ -82,7 +82,7 @@ export default {
     width: 70%;
   }
   img {
-    height: 30vh;
+    height: 40vh;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 992px) and (max-height: 1000px) {

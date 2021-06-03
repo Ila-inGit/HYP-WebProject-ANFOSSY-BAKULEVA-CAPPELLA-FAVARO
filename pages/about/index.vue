@@ -137,6 +137,9 @@ export default {
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
+  .row-of-side-columns {
+    margin-top: 0px;
+  }
   .column {
     width: 40%;
   }
@@ -145,6 +148,9 @@ export default {
   }
 }
 @media screen and (min-width: 1000px) {
+  .row-of-side-columns {
+    margin-top: -50px;
+  }
   .column {
     width: 30%;
   }

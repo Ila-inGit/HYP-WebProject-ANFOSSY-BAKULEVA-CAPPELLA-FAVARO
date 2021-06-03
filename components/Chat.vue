@@ -106,6 +106,7 @@ export default {
   border-radius: 50%;
   display: none;
 }
+
 .chat-container {
   background: #efefef;
   position: fixed;
@@ -120,6 +121,7 @@ export default {
   flex-direction: column;
   z-index: 30;
 }
+
 .flex-box-chat {
   display: flex;
   justify-content: flex-start;
@@ -128,11 +130,7 @@ export default {
   align-items: center;
   width: -webkit-fill-available;
 }
-@media screen and (max-width: 600px) {
-  .chat-container {
-    width: 70vw;
-  }
-}
+
 .chat-window {
   /* to have a simple autoscroll of the chat */
   overflow: auto;
@@ -142,6 +140,28 @@ export default {
   min-height: 200px;
   width: -webkit-fill-available;
   border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .chat-container {
+    width: 80vw;
+    max-height: 50vh;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) and (max-height: 1000px) {
+  .chat-container {
+    max-height: 40vh;
+  }
+  .chat-window {
+    max-height: 30vh;
+    min-height: 20vh;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) and (min-height: 1000px) {
+  .chat-container {
+    width: 70vw;
+    max-height: 50vh;
+  }
 }
 
 .chat-window::-webkit-scrollbar {
@@ -168,7 +188,7 @@ export default {
   border-top-right-radius: 5px;
   color: white;
   text-align: center;
-  font-size: 20px;
+  font-size: 2rem;
   padding: 3%;
   width: -webkit-fill-available;
 }
@@ -192,7 +212,7 @@ export default {
   margin-left: 10px;
   position: relative;
   margin-bottom: 20px;
-  border-radius: 30px;
+  border-radius: 30%;
 }
 .message-content.sender {
   background: white;
