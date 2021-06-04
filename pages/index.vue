@@ -61,9 +61,69 @@ import SectionTitle from '~/components/SectionTitle.vue'
 export default {
   components: { SectionTitle },
   layout: 'PageLayout',
+  data() {
+    return {
+      scrollOffset: 10,
+      scrollElements_r_l: [],
+      scrollElements_l_r: [],
+    }
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  mounted() {
+    this.scrollElements_r_l = window.document.querySelectorAll('.anim-r-l')
+    this.scrollElements_l_r = window.document.querySelectorAll('.anim-l-r')
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
     goTo(place) {
       this.$router.push({ path: this.$route.path + place })
+    },
+
+    elementInView(el, offset = 0) {
+      const elementTop = el.getBoundingClientRect().top
+
+      return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) - offset
+      )
+    },
+    displayScrollElement_r_l(element) {
+      element.classList.add('scrolled-r-l')
+    },
+    hideScrollElement_r_l(element) {
+      element.classList.remove('scrolled-r-l')
+    },
+
+    displayScrollElement_l_r(element) {
+      element.classList.add('scrolled-l-r')
+    },
+    hideScrollElement_l_r(element) {
+      element.classList.remove('scrolled-l-r')
+    },
+
+    handleScroll() {
+      if (this.scrollElements_r_l) {
+        this.scrollElements_r_l.forEach((element) => {
+          if (this.elementInView(element, this.scrollOffset)) {
+            this.displayScrollElement_r_l(element)
+          } else {
+            this.hideScrollElement_r_l(element)
+          }
+        })
+      }
+      if (this.scrollElements_l_r) {
+        this.scrollElements_l_r.forEach((element) => {
+          if (this.elementInView(element, this.scrollOffset)) {
+            this.displayScrollElement_l_r(element)
+          } else {
+            this.hideScrollElement_l_r(element)
+          }
+        })
+      }
     },
   },
 }
@@ -157,10 +217,23 @@ export default {
 }
 
 .anim-r-l {
-  animation: right_to_left 3s ease;
+  opacity: 0;
 }
+.anim-r-l.scrolled-r-l {
+  opacity: 1;
+}
+
 .anim-l-r {
-  animation: left_to_right 3s ease;
+  opacity: 0;
+}
+.anim-l-r.scrolled-l-r {
+  opacity: 1;
+}
+.scrolled-r-l {
+  animation: right_to_left 2s ease;
+}
+.scrolled-l-r {
+  animation: left_to_right 2s ease;
 }
 @keyframes right_to_left {
   from {
