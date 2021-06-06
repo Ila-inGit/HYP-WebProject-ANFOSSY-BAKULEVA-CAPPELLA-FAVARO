@@ -2,26 +2,46 @@
   <div>
     <SectionTitle :title="'Meet the team'" />
     <div class="box">
-      <!-- go to previous person -->
-      <nuxt-link
-        :to="{
-          path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
-            person.ID - 1
-          }`,
-        }"
-      >
-        <div class="previous-button">
-          <button-with-text
-            v-if="person.ID - 1 !== 0"
-            class="border-previous"
-            :title="'Previous'"
-          />
-        </div>
-      </nuxt-link>
       <div class="box-full short">
+        <!-- go to previous person -->
+        <nuxt-link
+          class="previous-button"
+          :to="{
+            path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
+              person.ID - 1
+            }`,
+          }"
+        >
+          <div>
+            <button-with-text
+              v-if="person.ID - 1 !== 0"
+              class="border-previous"
+              :title="'Previous'"
+            />
+          </div>
+        </nuxt-link>
+        <!-- go to next person -->
+        <nuxt-link
+          class="next-button"
+          :to="{
+            path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
+              person.ID + 1
+            }`,
+          }"
+        >
+          <div>
+            <button-with-text
+              v-if="person.ID + 1 !== 21"
+              class="border-next"
+              :title="'Next'"
+            />
+          </div>
+        </nuxt-link>
         <h1>Team member</h1>
         <h5>{{ person.Name }}</h5>
-        <img :src="person.Picture" alt="person-picture" :border="0" />
+        <div>
+          <img :src="person.Picture" alt="person-picture" :border="0" />
+        </div>
         <h1>Role</h1>
         <h5>{{ person.Role }}</h5>
         <h1>Bio</h1>
@@ -45,22 +65,6 @@
           :text-color="'#000000'"
         />
       </div>
-      <!-- go to next person -->
-      <nuxt-link
-        :to="{
-          path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
-            person.ID + 1
-          }`,
-        }"
-      >
-        <div class="next-button">
-          <button-with-text
-            v-if="person.ID + 1 !== 21"
-            class="border-next"
-            :title="'Next'"
-          />
-        </div>
-      </nuxt-link>
     </div>
   </div>
 </template>
@@ -112,7 +116,7 @@ h5 {
   text-align: center;
   align-self: center;
   align-content: center;
-  padding: 2.5% 0%;
+  padding: 2.5% 0;
 }
 
 .box-full {
@@ -188,16 +192,13 @@ p {
   padding: 0;
   color: black !important;
 }
-
 .previous-button {
-  position: relative;
-  left: 0;
-  top: 50%;
+  float: left;
+  margin-top: -1.5vh;
 }
 
 .next-button {
-  position: relative;
-  right: 0;
-  top: 50%;
+  float: right;
+  margin-top: -1.5vh;
 }
 </style>
