@@ -29,7 +29,7 @@ export default {
     // Breadcrumbs,
   },
   data: () => ({
-    showMenu: false,
+    showMenu: false, // Boolean(window.innerWidth > 1000) has ref error
   }),
 
   methods: {

@@ -7,7 +7,7 @@
     <SectionTitle :title="'IT Consulting'" :subtitle="'and Services'" />
     <div class="row-of-side-columns">
       <div class="column bordered">
-        <h1>Our workfields</h1>
+        <h1>Our areas</h1>
         <p>Find out about our areas of expertise</p>
         <img class="img-card" src="~/static/areas.jpg" alt="go to areas" />
         <button class="but" @click="goTo('our_workfields')">

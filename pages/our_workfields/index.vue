@@ -5,7 +5,7 @@
 <template>
   <div>
     <SectionTitle
-      :title="'Our workfields'"
+      :title="'Our areas'"
       :subtitle="'Find out about our areas of expertise'"
     />
     <div class="table">

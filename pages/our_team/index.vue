@@ -6,7 +6,7 @@ export
 <template>
   <div>
     <SectionTitle
-      :title="'People'"
+      :title="'Our team'"
       :subtitle="'Meet the people behind all this work for you to improve your business'"
     />
     <div class="table">

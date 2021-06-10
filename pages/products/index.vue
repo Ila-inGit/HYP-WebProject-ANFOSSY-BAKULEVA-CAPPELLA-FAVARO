@@ -5,7 +5,7 @@ export
 <template>
   <div>
     <SectionTitle
-      :title="'Products'"
+      :title="'Our products'"
       :subtitle="'Our products are amazing! Have a look'"
     />
     <div class="table">

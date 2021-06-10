@@ -27,11 +27,11 @@ export default {
       },
       {
         key: '/our_workfields',
-        displayText: 'Our Workfields',
+        displayText: 'Our Areas',
       },
       {
         key: '/products',
-        displayText: 'What we offer',
+        displayText: 'Our Products',
       },
       {
         key: '/our_team',
