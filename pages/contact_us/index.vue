@@ -29,10 +29,17 @@
       </div>
     </div>
     <div class="cont-div">
-      <h2 style="padding: 1.5%; color: rgb(63, 63, 63); text-align: center">
+      <h2
+        style="
+          padding: 1.5%;
+          padding-bottom: 0%;
+          color: rgb(63, 63, 63);
+          text-align: center;
+        "
+      >
         Reach us if you have some questions
       </h2>
-      <button class="but" @click="goTo('/_form')">
+      <button class="but" style="padding-bottom: 2%" @click="goTo('/_form')">
         <ButtonWithText :title="'Contact Form'" />
       </button>
     </div>
@@ -133,7 +140,7 @@ export default {
   }
 }
 .cont-div {
-  background-image: linear-gradient(to top, rgba(90, 90, 90, 0.604), white);
+  background-image: linear-gradient(to top, rgba(0, 20, 85, 0.45), white);
   display: flex;
   flex-direction: column;
   align-items: center;

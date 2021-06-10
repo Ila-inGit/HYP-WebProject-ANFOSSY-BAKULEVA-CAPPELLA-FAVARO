@@ -62,9 +62,9 @@ export default {
     goToPage(id) {
       let url = '/'
       if (this.childType === 'person') {
-        url = `/our_team/`
+        url = `/team/`
       } else if (this.childType === 'area') {
-        url = `/our_workfields/area`
+        url = `/areas/area`
       } else if (this.childType === 'product') {
         url = `/products/product_presentation`
       }

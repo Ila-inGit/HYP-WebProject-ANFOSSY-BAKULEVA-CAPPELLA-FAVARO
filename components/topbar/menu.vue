@@ -26,7 +26,7 @@ export default {
         displayText: 'About us',
       },
       {
-        key: '/our_workfields',
+        key: '/areas',
         displayText: 'Our Areas',
       },
       {
@@ -34,7 +34,7 @@ export default {
         displayText: 'Our Products',
       },
       {
-        key: '/our_team',
+        key: '/team',
         displayText: 'Our Team',
       },
       {

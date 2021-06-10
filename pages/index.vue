@@ -10,7 +10,7 @@
         <h1>Our areas</h1>
         <p>Find out about our areas of expertise</p>
         <img class="img-card" src="~/static/areas.jpg" alt="go to areas" />
-        <button class="but" @click="goTo('our_workfields')">
+        <button class="but" @click="goTo('areas')">
           <ButtonWithText :title="'See more'" />
         </button>
       </div>
@@ -26,7 +26,7 @@
         <h1>Our team</h1>
         <p>Discover the people behind this company</p>
         <img class="img-card" src="~/static/people.jpg" alt="go to people" />
-        <button class="but" @click="goTo('our_team')">
+        <button class="but" @click="goTo('team')">
           <ButtonWithText :title="'See more'" />
         </button>
       </div>

@@ -1,6 +1,6 @@
 # STORE
 
-**This directory is not required, you can delete it if you don't want to use it.**
+**Exclusively used for the storage of the chatbot's messages.**
 
 This directory contains your Vuex Store files.
 Vuex Store option is implemented in the Nuxt.js framework.
