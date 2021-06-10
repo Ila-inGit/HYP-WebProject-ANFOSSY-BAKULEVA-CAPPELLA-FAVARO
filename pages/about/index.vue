@@ -147,9 +147,14 @@ export default {
     display: none;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
   .row-of-side-columns {
-    margin-top: -50px;
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .row-of-side-columns {
+    margin-top: -30px;
   }
   .column {
     width: 30%;

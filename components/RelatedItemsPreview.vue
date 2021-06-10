@@ -3,32 +3,30 @@
 > displays the essential data: title/name, image, short description
 -->
 <template>
-  <div>
-    <div class="column bordered">
-      <div class="title-video-container">
-        <!-- video (optional)
+  <div class="column bordered">
+    <div class="title-video-container">
+      <!-- video (optional)
         <div v-if="showVideo">
           <iframe
             class="video"
             src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
           />
         </div> -->
-        <!-- Title of the section -->
-        <h1>{{ title }}</h1>
-      </div>
-      <!-- Preview of the elements -->
-      <div class="table">
-        <div v-for="it in items" :key="it.ID" class="item-card">
-          <div class="img-and-desc">
-            <img v-if="it.Image" :src="it.Image" :alt="'image'" />
-            <div>
-              <h3>{{ it.Title }}</h3>
-              <p>{{ it.Short }}</p>
-              <button-with-text
-                :title="'Learn more'"
-                @click.native="goToPage(it.ID)"
-              />
-            </div>
+      <!-- Title of the section -->
+      <h1>{{ title }}</h1>
+    </div>
+    <!-- Preview of the elements -->
+    <div class="table">
+      <div v-for="it in items" :key="it.ID" class="item-card">
+        <div class="img-and-desc">
+          <img v-if="it.Image" :src="it.Image" :alt="'image'" />
+          <div>
+            <h3>{{ it.Title }}</h3>
+            <p>{{ it.Short }}</p>
+            <button-with-text
+              :title="'Learn more'"
+              @click.native="goToPage(it.ID)"
+            />
           </div>
         </div>
       </div>

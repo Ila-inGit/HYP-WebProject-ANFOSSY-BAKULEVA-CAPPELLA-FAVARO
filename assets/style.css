@@ -11,7 +11,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
-  margin-top: -100px;
+  margin-top: -80px;
   align-items: stretch;
   width: 100%;
 }
@@ -22,9 +22,9 @@
     position: relative;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 992px) {
+@media screen and (min-width: 600px) and (max-width: 1200px) {
   .row-of-side-columns {
-    margin-top: -50px;
+    margin-top: -60px;
   }
 }
 

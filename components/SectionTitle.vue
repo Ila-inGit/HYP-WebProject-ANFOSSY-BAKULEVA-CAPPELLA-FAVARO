@@ -8,7 +8,7 @@
   >
     <img
       class="w3-image"
-      src="~/static/hexTech.jpg"
+      :src="image"
       alt="backgroundImageTech"
       style="
         vertical-align: top;
@@ -40,8 +40,7 @@ export default {
     },
     image: {
       type: String,
-      default: () =>
-        'https://www.stoneycreekwinepress.com/assets/images/labels/large/medium-square.png',
+      default: () => '/hexTechResized.jpg',
     },
     bgColor: {
       type: String,
@@ -92,7 +91,7 @@ export default {
     width: 70%;
   }
   img {
-    height: 60vh;
+    height: 50vh;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 992px) and (min-height: 1000px) {
@@ -102,7 +101,7 @@ export default {
     width: 70%;
   }
   img {
-    height: 30vh;
+    height: 40vh;
   }
 }
 @media screen and (min-width: 1000px) {

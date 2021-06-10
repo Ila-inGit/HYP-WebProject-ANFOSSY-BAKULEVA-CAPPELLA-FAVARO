@@ -194,11 +194,13 @@ p {
 }
 .previous-button {
   float: left;
+  text-decoration: none;
   margin-top: -1.5vh;
 }
 
 .next-button {
   float: right;
+  text-decoration: none;
   margin-top: -1.5vh;
 }
 </style>

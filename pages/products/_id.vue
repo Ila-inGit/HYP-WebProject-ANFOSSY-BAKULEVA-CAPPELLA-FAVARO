@@ -4,7 +4,11 @@
 
 <template>
   <div>
-    <SectionTitle :title="product.Title" :subtitle="product.Long" />
+    <SectionTitle
+      :title="product.Title"
+      :subtitle="product.Long"
+      image="/hexTech.jpg"
+    />
     <div class="row-of-side-columns">
       <related-items-preview
         :parent-id="product.ID"
@@ -42,3 +46,11 @@ export default {
   },
 }
 </script>
+
+<style>
+@import '~/assets/style.css';
+
+.column {
+  width: -webkit-fill-available;
+}
+</style>

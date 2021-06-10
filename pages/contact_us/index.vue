@@ -1,6 +1,10 @@
 <template>
   <div>
-    <SectionTitle title="Contact us" subtitle="We are happy to talk to you" />
+    <SectionTitle
+      title="Contact us"
+      subtitle="We are happy to talk to you"
+      image="/contactUsResized.jpg"
+    />
     <!-- <nuxt-link :to="$route.path + '/the game'"> ciao </nuxt-link> -->
     <div class="row-of-side-columns">
       <div class="column bordered c">
@@ -25,7 +29,7 @@
       </div>
     </div>
     <div class="cont-div">
-      <h2 style="padding: 1.5%; color: rgb(63, 63, 63)">
+      <h2 style="padding: 1.5%; color: rgb(63, 63, 63); text-align: center">
         Reach us if you have some questions
       </h2>
       <button class="but" @click="goTo('/_form')">
@@ -109,7 +113,7 @@ export default {
 }
 @media screen and (min-width: 600px) and (max-width: 992px) {
   .row-of-side-columns {
-    margin-top: -50px;
+    margin-top: -90px;
     justify-content: center;
   }
   .m {
@@ -129,7 +133,7 @@ export default {
   }
 }
 .cont-div {
-  background-image: linear-gradient(to top, #3774df9a, white);
+  background-image: linear-gradient(to top, rgba(90, 90, 90, 0.604), white);
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -10,23 +10,26 @@
         :subtitle="area.Long"
         :bg-color="'#f0f8ff'"
         :text-color="'#0f0f0f'"
-      ></section-title
-      ><related-items-preview
-        style="margin-top: -100px"
-        :parent-id="area.ID"
-        :parent-type="'area'"
-        :child-type="'product'"
-        :title="'Products in this area'"
-        :show-video="false"
-      />
-      <related-items-preview
-        :parent-id="area.ID"
-        :parent-type="'area'"
-        :child-type="'person'"
-        :bg-color="'#1e0045'"
-        :text-color="'#f0f8ff'"
-        :title="'Working Team'"
-      />
+        image="/hexTech.jpg"
+      ></section-title>
+      <div class="row-of-side-columns">
+        <related-items-preview
+          :parent-id="area.ID"
+          :parent-type="'area'"
+          :child-type="'product'"
+          :title="'Products in this area'"
+          :show-video="false"
+        />
+
+        <related-items-preview
+          :parent-id="area.ID"
+          :parent-type="'area'"
+          :child-type="'person'"
+          :bg-color="'#1e0045'"
+          :text-color="'#f0f8ff'"
+          :title="'Working Team'"
+        />
+      </div>
     </div>
   </main>
 </template>
@@ -65,4 +68,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+@import '~/assets/style.css';
+</style>

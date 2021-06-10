@@ -7,6 +7,7 @@ export
     <SectionTitle
       :title="'Our products'"
       :subtitle="'Our products are amazing! Have a look'"
+      image="/team2.jpg"
     />
     <div class="table">
       <intro-card
