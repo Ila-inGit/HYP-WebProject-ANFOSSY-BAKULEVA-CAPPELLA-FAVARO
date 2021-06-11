@@ -31,10 +31,18 @@ export default {
   data: () => ({
     showMenu: false, // Boolean(window.innerWidth > 1000) has ref error
   }),
+  beforeMount() {
+    window.addEventListener('resize', this.handleResize)
+  },
 
   methods: {
     invertVisibility() {
-      this.showMenu = !this.showMenu
+      if (window.innerWidth <= 600) this.showMenu = !this.showMenu
+    },
+    handleResize() {
+      if (window.innerWidth > 600 && this.showMenu === false)
+        this.showMenu = true
+      else if (window.innerWidth <= 600) this.showMenu = false
     },
   },
   metaInfo: {
@@ -95,6 +103,12 @@ export default {
   background-color: transparent;
   border-color: transparent;
   color: #0f0f0f;
+}
+
+@media screen and (min-width: 600px) {
+  .menu-button {
+    display: none;
+  }
 }
 
 .menu-button:hover {
