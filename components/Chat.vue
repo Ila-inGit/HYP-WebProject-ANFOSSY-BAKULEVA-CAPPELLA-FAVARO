@@ -141,11 +141,33 @@ export default {
   width: -webkit-fill-available;
   border: 1px solid #ccc;
 }
+.chat-submit {
+  height: 100%;
+  background-color: rgb(80, 80, 80);
+  box-shadow: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 4%;
+  margin: 2px;
+}
+.chat-submit:hover {
+  background-color: #008cba;
+}
 
 @media screen and (max-width: 600px) {
   .chat-container {
-    width: 80vw;
+    width: 90vw;
+    max-width: 90vw;
+    right: 10px;
     max-height: 50vh;
+  }
+  .chat-input {
+    font-size: large;
+  }
+  .chat-submit {
+    font-size: large;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 992px) and (max-height: 1000px) {
@@ -159,8 +181,13 @@ export default {
 }
 @media screen and (min-width: 600px) and (max-width: 992px) and (min-height: 1000px) {
   .chat-container {
-    width: 70vw;
-    max-height: 50vh;
+    width: 100vw;
+    max-height: 70vh;
+    min-height: 50vh;
+  }
+
+  .message-content {
+    font-size: large;
   }
 }
 
@@ -224,15 +251,16 @@ export default {
   margin-bottom: 20px;
   border-radius: 30px;
 }
+@media screen and (max-width: 600px) {
+  .message-content {
+    font-size: large;
+  }
+}
 .chat-input {
   background: #f4f7f9;
   width: 90%;
   position: relative;
-  height: 30px;
-  padding-top: 10px;
-  padding-right: 50px;
-  padding-bottom: 10px;
-  padding-left: 15px;
+  padding: 4%;
   border: none;
   resize: none;
   outline: none;
@@ -248,18 +276,5 @@ export default {
 }
 .chat-input::-webkit-input-placeholder {
   color: #ccc;
-}
-.chat-submit {
-  height: 100%;
-  background-color: rgb(80, 80, 80);
-  box-shadow: none;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 3%;
-}
-.chat-submit:hover {
-  background-color: #008cba;
 }
 </style>
