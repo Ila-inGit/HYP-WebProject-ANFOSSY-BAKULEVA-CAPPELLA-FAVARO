@@ -3,49 +3,65 @@
     <SectionTitle :title="'Meet the team'" />
     <div class="box">
       <div class="box-full short">
-        <!-- go to previous person -->
-        <nuxt-link
-          class="previous-button"
-          :to="{
-            path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
-              person.ID - 1
-            }`,
-          }"
-        >
-          <div>
-            <button-with-text
-              v-if="person.ID - 1 !== 0"
-              class="border-previous"
-              :title="'Previous'"
-            />
-          </div>
-        </nuxt-link>
-        <!-- go to next person -->
-        <nuxt-link
-          class="next-button"
-          :to="{
-            path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
-              person.ID + 1
-            }`,
-          }"
-        >
-          <div>
-            <button-with-text
-              v-if="person.ID + 1 !== 21"
-              class="border-next"
-              :title="'Next'"
-            />
-          </div>
-        </nuxt-link>
-        <h1>Team member</h1>
-        <h5>{{ person.Name }}</h5>
-        <div>
-          <img :src="person.Picture" alt="person-picture" :border="0" />
+        <div class="flex-box-pers">
+          <!-- go to previous person -->
+          <nuxt-link
+            class="previous-button"
+            :to="{
+              path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
+                person.ID - 1
+              }`,
+            }"
+          >
+            <div>
+              <button-with-text
+                v-if="person.ID - 1 !== 0"
+                class="border-previous"
+                :title="'Previous'"
+              />
+            </div>
+          </nuxt-link>
+          <h1>Team member</h1>
+          <!-- go to next person -->
+          <nuxt-link
+            class="next-button"
+            :to="{
+              path: `${$route.path.substr(0, $route.path.lastIndexOf('/'))}/${
+                person.ID + 1
+              }`,
+            }"
+          >
+            <div>
+              <button-with-text
+                v-if="person.ID + 1 !== 21"
+                class="border-next"
+                :title="'Next'"
+                style="padding-left: 20px; padding-right: 20px"
+              />
+            </div>
+          </nuxt-link>
         </div>
-        <h1>Role</h1>
-        <h5>{{ person.Role }}</h5>
-        <h1>Bio</h1>
-        <h5>{{ person.Bio }}</h5>
+        <div class="box-border">
+          <h5>{{ person.Name }}</h5>
+          <div>
+            <img :src="person.Picture" alt="person-picture" :border="0" />
+          </div>
+        </div>
+        <div class="flex-box-pers">
+          <h1>Role</h1>
+        </div>
+        <div class="box-border">
+          <h5>{{ person.Role }}</h5>
+        </div>
+        <div class="flex-box-pers">
+          <h1>Bio</h1>
+        </div>
+        <div
+          class="box-border"
+          style="border-bottom-color: rgba(0, 0, 0, 0.198)"
+        >
+          <h5>{{ person.Bio }}</h5>
+        </div>
       </div>
       <div class="box-full">
         <related-items-preview
@@ -95,24 +111,27 @@ export default {
 </script>
 
 <style scoped>
+@import '~/assets/style.css';
+
 h1 {
   align-self: center;
   text-align: center;
   font-size: x-large;
   margin: auto;
-  border-bottom: 1px solid #403d3d;
   color: #202021;
   padding-bottom: 8px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h5 {
   font-size: large;
+  padding: 1%;
 }
 
 .box {
   margin: auto;
-  width: 1500px;
+  display: flex;
+  flex-direction: row;
+  max-width: 95%;
   text-align: center;
   align-self: center;
   align-content: center;
@@ -125,37 +144,41 @@ h5 {
   align-self: center;
   align-content: center;
   align-items: center;
-  padding-right: 2.5%;
+  width: 95%;
+}
+
+.box-border {
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to bottom,
+      rgba(82, 60, 60, 0),
+      rgba(0, 0, 0, 0.335)
+    )
+    1 2%;
 }
 
 @media screen and (min-width: 1000px) {
   .short {
-    width: 100vw;
+    max-width: 30%;
   }
 }
 
 .column {
-  margin: auto;
-  width: 100%;
   text-align: center;
   align-self: center;
   align-content: center;
 }
 @media screen and (max-width: 600px) {
   .box {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .box {
-    width: 90%;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .box {
     display: flex;
-    width: 80%;
-    align-items: stretch;
+    flex-direction: column;
   }
 }
 
@@ -195,12 +218,35 @@ p {
 .previous-button {
   float: left;
   text-decoration: none;
-  margin-top: -1.5vh;
 }
 
 .next-button {
   float: right;
   text-decoration: none;
-  margin-top: -1.5vh;
 }
+.flex-box-pers {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 4px;
+  padding: 3%;
+  box-shadow: 0 4px 8px 0 #0000004d;
+  border-bottom: 2px solid #403d3d;
+}
+
+/* @media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .flex-box-pers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .previous-button {
+    order: 1;
+  }
+  .next-button {
+    order: 2;
+  }
+  h1 {
+    order: 3;
+  }
+} */
 </style>

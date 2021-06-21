@@ -138,7 +138,6 @@ export default {
   max-width: 500px;
   max-height: 500px;
 }
-
 .item-card {
   display: flex;
   flex-direction: column;
