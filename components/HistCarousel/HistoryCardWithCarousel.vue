@@ -6,8 +6,8 @@
         :key="elem.year"
         class="cards"
       >
-        <p>{{ elem.year }}</p>
-        <p>{{ elem.text }}</p>
+        <h1>{{ elem.year }}</h1>
+        <p style="font-size: small">{{ elem.text }}</p>
       </history-carousel-slide>
     </history-carousel>
   </div>
@@ -77,7 +77,7 @@ export default {
 }
 
 /** previous button pointing up */
-.btn-p {
+/* .btn-p {
   position: absolute;
   top: 10%;
   right: 0;
@@ -92,24 +92,105 @@ export default {
 .btn-p:hover {
   border-bottom: 1vh solid #008cba;
   cursor: pointer;
+} */
+
+.arrow-up {
+  width: 6vmin;
+  height: 6vmin;
+  box-sizing: border-box;
+  position: relative;
+  /* top: 10%;
+  right: 3%; */
+  transform: rotate(-45deg) scale(0.6);
+}
+.arrow-up::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-width: 0.8vmin 0.8vmin 0 0;
+  border-style: solid;
+  border-color: #1a2e9e;
+  transition: 0.2s ease;
+  display: block;
+  transform-origin: 100% 0;
 }
 
+.arrow-up:after {
+  content: '';
+  float: left;
+  position: relative;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  border-width: 0 0.8vmin 0 0;
+  border-style: solid;
+  border-color: #1a2e9e;
+  transform-origin: 100% 0;
+  transition: 0.2s ease;
+}
+
+.arrow-up:hover::after {
+  transform: rotate(45deg);
+  border-color: orange;
+  height: 120%;
+}
+.arrow-up:hover::before {
+  border-color: orange;
+  transform: scale(0.8);
+}
 /** next button pointing down */
-.btn-n {
-  position: absolute;
-  bottom: 20%;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-left: 1vw solid transparent;
-  border-right: 1vw solid transparent;
-  border-top: 1vh solid #555;
-  background-color: transparent;
+.arrow-down {
+  width: 6vmin;
+  height: 6vmin;
+  box-sizing: border-box;
+  position: relative;
+  /* bottom: 20%;
+  right: 3%; */
+  transform: rotate(135deg) scale(0.6);
+}
+.arrow-down::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-width: 0.8vmin 0.8vmin 0 0;
+  border-style: solid;
+  border-color: #1a2e9e;
+  transition: 0.2s ease;
+  display: block;
+  transform-origin: 100% 0;
 }
 
-.btn-n:hover {
-  border-top: 1vh solid #008cba;
-  cursor: pointer;
+.arrow-down:after {
+  content: '';
+  float: left;
+  position: relative;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  border-width: 0 0.8vmin 0 0;
+  border-style: solid;
+  border-color: #1a2e9e;
+  transform-origin: 100% 0;
+  transition: 0.2s ease;
+}
+
+.arrow-down:hover::after {
+  transform: rotate(45deg);
+  border-color: orange;
+  height: 120%;
+}
+.arrow-down:hover::before {
+  border-color: orange;
+  transform: scale(0.8);
+}
+
+@media screen and (max-width: 600px) {
+  .arrow-down {
+    transform: rotate(135deg) scale(1);
+  }
+  .arrow-up {
+    transform: rotate(-45deg) scale(1);
+  }
 }
 
 /** bordered cards with the contect of each event */
@@ -124,7 +205,9 @@ export default {
   padding-top: 0.5%;
   padding-bottom: 1%;
   border-style: solid;
-  border: 1% px #999;
+  border-color: #1a2e9e;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  border-radius: 10px;
 }
 
 .cards p {

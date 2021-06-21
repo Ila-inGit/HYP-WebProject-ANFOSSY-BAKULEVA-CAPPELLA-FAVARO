@@ -3,10 +3,14 @@
 -->
 
 <template>
-  <div class="slider" tabindex="0" @keydown="checkSlide($event)">
-    <button class="btn-n" @click.prevent="next"></button>
-    <slot></slot>
-    <button class="btn-p" @click.prevent="prev"></button>
+  <div class="flex">
+    <div class="slider" tabindex="0" @keydown="checkSlide($event)">
+      <slot></slot>
+    </div>
+    <div class="flex-arrow">
+      <div class="arrow-up" @click.prevent="next"></div>
+      <div class="arrow-down" @click.prevent="prev"></div>
+    </div>
   </div>
 </template>
 <script>
@@ -55,4 +59,19 @@ export default {
   },
 }
 </script>
-<style></style>
+<style>
+.flex {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 4px;
+  padding: 3%;
+}
+.flex-arrow {
+  display: flex;
+  padding: 2%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+}
+</style>
