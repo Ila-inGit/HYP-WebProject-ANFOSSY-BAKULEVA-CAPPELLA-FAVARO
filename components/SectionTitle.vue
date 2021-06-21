@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 <!--
   title of the section + short description of it
 -->
@@ -7,19 +8,15 @@
     style="position: relative; text-align: center; z-index: -5"
   >
     <img
+      id="imagetores"
       class="w3-image"
       :src="image"
       alt="backgroundImageTech"
-      style="
-        vertical-align: top;
-        filter: brightness(30%);
-        width: 100%;
-        object-fit: cover;
-      "
     />
+
     <div
+      id="bar"
       class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center light-text bar"
-      style="border: 1px solid #ccc; position: absolute"
     >
       <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">{{ title }}</h1>
       <h3 class="w3-hide-medium w3-hide-small">{{ subtitle }}</h3>
@@ -50,12 +47,44 @@ export default {
       type: String,
       default: () => '#0f0f0f',
     },
+    needSpace: {
+      type: Boolean,
+      default: () => false,
+    },
   },
-  computed: {
-    style() {
-      return {
-        'background-color': this.bgColor,
-        color: this.textColor,
+  data() {
+    return {
+      need: this.needSpace,
+    }
+  },
+  beforeMount() {
+    window.addEventListener('resize', this.handleResize)
+  },
+  mounted() {
+    this.handleResize()
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      console.log(this.need)
+      const bar = window.document.getElementById('bar')
+      const imagetores = window.document.getElementById('imagetores')
+      if (window.innerWidth <= 499 && this.need) {
+        if (bar) {
+          bar.classList.add('bartores')
+        }
+        if (imagetores) {
+          imagetores.classList.add('imgtores')
+        }
+      } else if (window.innerWidth > 499 && this.need) {
+        if (bar) {
+          bar.classList.remove('bartores')
+        }
+        if (imagetores) {
+          imagetores.classList.remove('imgtores')
+        }
       }
     },
   },
@@ -73,6 +102,17 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+.bar {
+  border: 1px solid #ccc;
+  position: absolute;
+}
+
+.w3-image {
+  vertical-align: top;
+  filter: brightness(30%);
+  width: 100%;
+  object-fit: cover;
+}
 
 @media screen and (max-width: 600px) {
   .bar {
@@ -80,7 +120,7 @@ export default {
     left: 15%;
     width: 70%;
   }
-  img {
+  .w3-image {
     height: 40vh;
   }
 }
@@ -90,7 +130,7 @@ export default {
     left: 15%;
     width: 70%;
   }
-  img {
+  .w3-image {
     height: 50vh;
   }
 }
@@ -100,7 +140,7 @@ export default {
     left: 15%;
     width: 70%;
   }
-  img {
+  .w3-image {
     height: 40vh;
   }
 }
@@ -114,5 +154,14 @@ export default {
     padding: 12px 24px;
     border: 1px solid #ccc;
   }
+}
+
+.imgtores {
+  height: 70vh;
+}
+.bartores {
+  width: 80%;
+  left: 10%;
+  top: 10%;
 }
 </style>

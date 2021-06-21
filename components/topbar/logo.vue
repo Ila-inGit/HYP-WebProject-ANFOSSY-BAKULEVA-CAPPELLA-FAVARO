@@ -34,7 +34,9 @@ export default {
   beforeMount() {
     window.addEventListener('resize', this.handleResize)
   },
-
+  mounted() {
+    if (window.innerWidth > 600 && this.showMenu === false) this.showMenu = true
+  },
   methods: {
     invertVisibility() {
       if (window.innerWidth <= 600) this.showMenu = !this.showMenu

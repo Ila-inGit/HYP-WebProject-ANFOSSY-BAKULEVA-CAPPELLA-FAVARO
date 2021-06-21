@@ -1,6 +1,10 @@
 <template>
   <div>
-    <SectionTitle title="Contact form" subtitle="Send us a message!" />
+    <SectionTitle
+      title="Contact form"
+      subtitle="Send us a message!"
+      image="/hexTechResized.jpg"
+    />
     <form>
       <div class="form-wrap">
         <label for="fname">Name:</label>
@@ -86,6 +90,11 @@ label {
   outline: none;
   color: #0f0f0f;
   overflow: hidden;
+}
+@media screen and (max-width: 640px) {
+  label {
+    font-size: large;
+  }
 }
 .fill {
   background: #fff;

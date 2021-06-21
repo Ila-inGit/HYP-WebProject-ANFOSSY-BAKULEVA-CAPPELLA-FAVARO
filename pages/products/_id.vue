@@ -8,6 +8,7 @@
       :title="product.Title"
       :subtitle="product.Long"
       image="/hexTech.jpg"
+      :need-space="true"
     />
     <div class="row-of-side-columns">
       <related-items-preview

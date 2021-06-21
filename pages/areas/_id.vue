@@ -11,6 +11,7 @@
         :bg-color="'#f0f8ff'"
         :text-color="'#0f0f0f'"
         image="/hexTech.jpg"
+        :need-space="true"
       ></section-title>
       <div class="row-of-side-columns">
         <related-items-preview
