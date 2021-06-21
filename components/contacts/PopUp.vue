@@ -176,19 +176,29 @@ export default {
   align-content: flex-start;
   align-items: center;
 }
-@media screen and (max-width: 640px) {
-  .flex-box-pop-up {
-    display: flex;
-    flex-direction: column;
-    transform: scale(2.5);
-  }
-}
 .footer-pop {
   overflow: hidden;
   background-color: #333;
   flex: auto;
   color: white;
 }
+@media screen and (max-width: 640px) {
+  .flex-box-pop-up {
+    display: flex;
+    flex-direction: column;
+    transform: scale(2.5);
+  }
+  #popup .inner .header {
+    font-size: large;
+  }
+  #popup .inner .body-pop {
+    overflow: scroll;
+  }
+  .footer-pop {
+    font-size: large;
+  }
+}
+
 .close-button {
   display: block;
   position: relative;
