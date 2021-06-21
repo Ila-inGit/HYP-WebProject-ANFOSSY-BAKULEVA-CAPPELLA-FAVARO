@@ -104,7 +104,19 @@ export default {
 .but:focus {
   outline: none;
 }
+.c {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to top, #9e9e9e, #3ad5c0);
+}
 
+.m {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to top, #9e9e9e, #3ad5c0);
+}
 @media screen and (max-width: 600px) {
   .row-of-side-columns {
     margin-top: 0px;

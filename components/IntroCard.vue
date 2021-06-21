@@ -4,7 +4,7 @@
 -->
 <template>
   <div class="card" @click="$emit('click')">
-    <div class="card-info">
+    <div class="card-info" style="background: white">
       <h1>{{ title }}</h1>
       <p>{{ description }}</p>
     </div>

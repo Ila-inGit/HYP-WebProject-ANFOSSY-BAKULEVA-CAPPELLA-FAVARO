@@ -54,4 +54,10 @@ export default {
   padding-top: 2.5%;
   padding-bottom: 2.5%;
 }
+.table > .card {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
 </style>
