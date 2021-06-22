@@ -4,7 +4,10 @@
     "kb": {
       "guide": "Do you want to start the guide right now?",
       "home": "I will guide you through the site. Welcome to the homepage, your starting point to choose to see our working areas, our prodcts, our people, about the company or how to contact us",
-      "about": "Welcome to the About page of our website. Here you can find all the information about our company, like what we do, what we have done and what others say about us",
+      "about": "This is the About page, where you can find all the information about our company: what we do, what we have done and what others say about us",
+      "areas": "This is the Areas page, where you can find our main types of services we offer, click any to see more details",
+      "products": "This is the Products page, where you can find each individual product we offer, click any to see more details",
+      "team": "Finally, the Team page, where you can find each working member behind this work, click any to see more details",
       "form": "Contact us is really simple through this form, fill in your information as asked and click Send",
       "page": "Check all the information we have for you to choose any way to contact us",
       "end": "The process is completed, thank you and goodbye",
@@ -12,6 +15,9 @@
         "/",
         "/",
         "/about",
+        "/areas",
+        "/products",
+        "/team",
         ""
       ],
       "continue_v": [
@@ -154,6 +160,24 @@
         },
         {
           "my_id": "about",
+          "next_id": "areas",
+          "my_type": "TASK",
+          "callback": "guide"
+        },
+        {
+          "my_id": "areas",
+          "next_id": "products",
+          "my_type": "TASK",
+          "callback": "guide"
+        },
+        {
+          "my_id": "products",
+          "next_id": "team",
+          "my_type": "TASK",
+          "callback": "guide"
+        },
+        {
+          "my_id": "team",
           "next_id": null,
           "my_type": "TASK",
           "callback": "guide"

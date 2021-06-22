@@ -32,6 +32,16 @@ Used PostgreSQL for the DB
 
 ## Components
 
+The generic page has a layout with the following elements:
+
+1. The top bar: Consists on a navigation bar with the company logo to go to the home page, and a dropdown menu with the main (introductory) pages to visit. When out of the home page, breadcrumbs are also displayed in the lower part of this bar.
+
+2. The chat bot: Consists on a chat icon to display a chat that interacts with the user to offer a guide through the page or only make the transition to a contact medium.
+
+3. The footer: Has a button to return to the home page quickly instead of scrolling up to return, and has a share button to interact with other social media. The share button activates a pop up component with these elements.
+
+In addition, every page counts with a page title that is customized for the content type. More details of the single components below or in the Readme of components, and more details of the components under the context of each page in the Readme of pages.
+
 #### Component: Breadcrumbs
 
 ###### Functionalities and structure:

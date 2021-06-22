@@ -230,7 +230,7 @@ p {
   border-radius: 4px;
   padding: 3%;
   box-shadow: 0 4px 8px 0 #0000004d;
-  border-bottom: 2px solid #403d3d;
+  border-top: 2px solid #403d3d;
 }
 
 /* @media screen and (min-width: 1000px) and (max-width: 1200px) {
