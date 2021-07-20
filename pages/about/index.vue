@@ -25,36 +25,37 @@
         <card-with-carousel class="limited"></card-with-carousel>
       </div>
     </div>
-    <div class="row-of-side-columns" style="align-items: stretch">
-      <div class="column bordered">
-        <div class="cardTitle">
-          <h2>Our history</h2>
+    <div class="row-of-side-columns about-us">
+      <div class="column bordered car">
+        <div class="cardTitle history">
+          <h1>Our history</h1>
         </div>
         <div class="card-info" style="width: 100%">
           <history-card-with-carousel />
         </div>
       </div>
-      <div class="column bordered bubbles">
-        <div class="cardTitle">
-          <h2>Our reviews</h2>
+      <div class="column bubbles">
+        <div class="cardTitle reviews">
+          <h1>Our reviews</h1>
         </div>
         <div>
           <div class="bubble-left">
             <div class="card-info">
-              <p>
-                Best company we have ever worked with. Their expertise is
-                priceless.
+              <p class="quote">
+                "Best company we have ever worked with. Their expertise is
+                <span style="color: #ffc400">priceless</span>."
               </p>
-              <p>Lada Cars, Head of Marketing of CSSO.</p>
+              <p class="pers-quoted">Lada Cars, Head of Marketing of CSSO.</p>
             </div>
           </div>
           <div class="bubble-right">
             <div class="card-info">
-              <p>
-                The Conversational Framework is the best tool that you can use
-                to build Conversational AI.
+              <p class="quote">
+                "The Conversational Framework is the
+                <span style="color: #ffc400">best tool</span> that you can use
+                to build Conversational AI."
               </p>
-              <p>Arya Start, programmer.</p>
+              <p class="pers-quoted">Arya Start, programmer.</p>
             </div>
           </div>
         </div>
@@ -107,6 +108,11 @@ export default {
 <style scoped>
 @import '~/assets/style.css';
 
+.about-us {
+  background-color: #906fb8;
+  align-items: stretch;
+}
+
 .internal-card {
   height: auto;
   width: 85%;
@@ -121,19 +127,27 @@ export default {
 }
 
 .bubbles {
-  background-image: linear-gradient(to top, rgba(255, 251, 0, 0.365), white);
+  /* background-image: linear-gradient(to top, rgba(255, 251, 0, 0.365), white); */
+  background-color: #072861f3;
+}
+
+.car {
+  background-color: rgba(255, 255, 255, 0.767);
+  border-color: #072861f3;
+  border-radius: 0%;
 }
 
 .bubble-left {
   position: relative;
   margin: 3% 15% 3% 0%;
   max-width: 30em;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-color: transparent;
   padding: 1.125em 1.5em;
   font-size: 1.25em;
   border-radius: 1rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3),
-    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.774),
+    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.7);
 }
 
 .bubble-left::before {
@@ -145,20 +159,21 @@ export default {
   left: 1.5em;
   border: 0.75rem solid transparent;
   border-top: none;
+  transform: scale(1.5);
 
-  border-bottom-color: #fff;
-  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+  border-bottom-color: rgba(0, 0, 0, 0.37);
+  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.2));
 }
 .bubble-right {
   position: relative;
   margin: 3% 0% 3% 15%;
   max-width: 30em;
-  background-color: #fff;
+  background-color: transparent;
   padding: 1.125em 1.5em;
   font-size: 1.25em;
   border-radius: 1rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3),
-    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.7),
+    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.7);
 }
 
 .bubble-right::before {
@@ -166,13 +181,13 @@ export default {
   position: absolute;
   width: 0;
   height: 0;
-  top: 99%;
+  top: 100%;
   right: 1.5em;
-  transform: rotate(180deg);
+  transform: rotate(180deg) scale(1.5);
   border: 0.75rem solid transparent;
   border-top: none;
 
-  border-bottom-color: #fff;
+  border-bottom-color: rgba(0, 0, 0, 0.37);
   filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 .with-ultra-style {
@@ -220,5 +235,29 @@ export default {
   overflow-wrap: break-word;
   padding: 1%;
   margin: 1%;
+}
+
+.quote {
+  color: rgb(166, 214, 253);
+  font-weight: 700;
+}
+
+.pers-quoted {
+  font-style: italic;
+  color: #fff;
+  font-weight: 900;
+}
+
+.history {
+  color: #ffc400;
+  text-shadow: 1px 1px #b97800;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+.reviews {
+  color: #fff;
+  text-shadow: 1px 1px #000000;
+  letter-spacing: 4px;
+  font-weight: 900;
 }
 </style>

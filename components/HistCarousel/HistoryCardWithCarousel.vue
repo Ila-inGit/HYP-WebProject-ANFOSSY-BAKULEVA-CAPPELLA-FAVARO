@@ -99,6 +99,7 @@ export default {
   height: 6vmin;
   box-sizing: border-box;
   position: relative;
+  margin-right: 2px;
   /* top: 10%;
   right: 3%; */
   transform: rotate(-45deg) scale(0.6);
@@ -144,6 +145,7 @@ export default {
   height: 6vmin;
   box-sizing: border-box;
   position: relative;
+  margin-left: 2px;
   /* bottom: 20%;
   right: 3%; */
   transform: rotate(135deg) scale(0.6);
@@ -212,6 +214,10 @@ export default {
 
 .cards p {
   padding: 0% 20% 0% 0%;
+}
+.cards h1 {
+  text-shadow: 1px 1px #201e1e;
+  letter-spacing: 3px;
 }
 
 .wrapper {
