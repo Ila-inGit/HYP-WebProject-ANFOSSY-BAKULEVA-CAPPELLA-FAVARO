@@ -29,6 +29,6 @@ export default {
   overflow: hidden;
   background-color: white;
   flex: auto;
-  padding: 1% 0.5% 0.5% 0%;
+  padding: 1% 0.5% 0% 0%;
 }
 </style>

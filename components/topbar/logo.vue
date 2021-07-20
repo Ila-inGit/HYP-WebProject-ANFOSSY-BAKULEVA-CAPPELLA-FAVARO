@@ -35,9 +35,14 @@ export default {
   }),
   beforeMount() {
     window.addEventListener('resize', this.handleResize)
+    window.addEventListener('scroll', this.handleScroll)
   },
   mounted() {
     if (window.innerWidth > 650 && this.showMenu === false) this.showMenu = true
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     invertVisibility() {
@@ -47,6 +52,10 @@ export default {
       if (window.innerWidth > 650 && this.showMenu === false)
         this.showMenu = true
       else if (window.innerWidth <= 650) this.showMenu = false
+    },
+    handleScroll() {
+      if (window.pageYOffset > 20 && window.innerWidth <= 650)
+        this.showMenu = false
     },
   },
   metaInfo: {

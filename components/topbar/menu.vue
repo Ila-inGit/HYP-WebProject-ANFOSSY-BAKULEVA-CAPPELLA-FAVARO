@@ -86,7 +86,7 @@ export default {
 }
 .slide:hover,
 .slide:focus {
-  box-shadow: inset 11em 0 0 0 rgb(235, 235, 235);
+  box-shadow: inset 151px 0 0 0 rgb(235, 235, 235);
 }
 
 .menuTitle {

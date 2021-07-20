@@ -1,26 +1,35 @@
 <template>
-  <ol typeof="BreadcrumbList">
-    <li v-for="(item, i) in crumbs" :key="i">
-      <button class="br-button">
-        <span>
-          <nuxt-link
-            :to="{
-              path: item.path,
-              query: item.query,
-            }"
-            style="text-decoration: none"
-            :class="{ 'nuxt-link-active': item.class }"
-          >
-            {{ item.name }}
-          </nuxt-link>
-        </span>
-      </button>
-    </li>
-  </ol>
+  <div class="breadContainer">
+    <ol typeof="BreadcrumbList">
+      <li v-for="(item, i) in crumbs" :key="i">
+        <button class="br-button">
+          <span>
+            <nuxt-link
+              :to="{
+                path: item.path,
+                query: item.query,
+              }"
+              style="text-decoration: none"
+              :class="{ 'nuxt-link-active': item.class }"
+            >
+              {{ item.name }}
+            </nuxt-link>
+          </span>
+        </button>
+      </li>
+    </ol>
+  </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      scrollOffset: 0,
+      scrollBread: [],
+      bar: [],
+    }
+  },
   computed: {
     crumbs() {
       const crumbs = []
@@ -70,6 +79,37 @@ export default {
         })
       }
       return crumbs
+    },
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  mounted() {
+    this.scrollBread = window.document.querySelectorAll('.breadContainer')[0]
+    this.bar = window.document.querySelectorAll('.topnav')[0]
+    this.getOffset()
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    getOffset() {
+      this.scrollOffset = this.scrollBread.offsetTop
+    },
+    fixBread(element) {
+      element.classList.add('fixed')
+    },
+    unFixBread(element) {
+      element.classList.remove('fixed')
+    },
+    handleScroll() {
+      if (this.scrollBread) {
+        if (window.pageYOffset >= this.scrollOffset) {
+          this.fixBread(this.scrollBread)
+        } else {
+          this.unFixBread(this.scrollBread)
+        }
+      }
     },
   },
   metaInfo: {
@@ -152,5 +192,18 @@ li a {
 .br-button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.breadContainer {
+  background-color: white;
+  border-bottom: solid;
+  border-bottom-color: rgb(214, 214, 214);
+  width: 100vw;
+}
+
+.fixed {
+  position: fixed;
+  top: 0%;
+  z-index: 9999;
 }
 </style>
