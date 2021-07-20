@@ -15,9 +15,11 @@
       <h1 class="title">Comc company</h1>
       <button class="menu-button" @click="invertVisibility">&#9776;</button>
     </div>
-    <div :hidden="!showMenu">
-      <TopbarMenu @close="invertVisibility" />
-    </div>
+    <transition name="slide">
+      <div v-if="showMenu">
+        <TopbarMenu @close="invertVisibility" />
+      </div>
+    </transition>
     <breadcrumbs />
   </div>
 </template>
@@ -35,16 +37,16 @@ export default {
     window.addEventListener('resize', this.handleResize)
   },
   mounted() {
-    if (window.innerWidth > 600 && this.showMenu === false) this.showMenu = true
+    if (window.innerWidth > 650 && this.showMenu === false) this.showMenu = true
   },
   methods: {
     invertVisibility() {
-      if (window.innerWidth <= 600) this.showMenu = !this.showMenu
+      if (window.innerWidth <= 650) this.showMenu = !this.showMenu
     },
     handleResize() {
-      if (window.innerWidth > 600 && this.showMenu === false)
+      if (window.innerWidth > 650 && this.showMenu === false)
         this.showMenu = true
-      else if (window.innerWidth <= 600) this.showMenu = false
+      else if (window.innerWidth <= 650) this.showMenu = false
     },
   },
   metaInfo: {
@@ -62,11 +64,12 @@ export default {
   justify-content: flex-start;
   flex-wrap: wrap;
   box-sizing: border-box;
+  padding: 0% 0% 5px 0%;
   height: 10vh;
   width: 100vw;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .titleContainer {
     display: flex;
     justify-content: space-between;
@@ -84,7 +87,7 @@ export default {
   padding-left: 2%;
   padding-right: 2%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .title {
     display: none;
   }
@@ -107,7 +110,7 @@ export default {
   color: #0f0f0f;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
   .menu-button {
     display: none;
   }
@@ -116,5 +119,39 @@ export default {
 .menu-button:hover {
   background-color: black;
   color: white;
+}
+
+.slide-enter-active {
+  -moz-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+.slide-leave-active {
+  -moz-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-enter-to,
+.slide-leave {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.slide-enter,
+.slide-leave-to {
+  overflow: hidden;
+  max-height: 0;
 }
 </style>

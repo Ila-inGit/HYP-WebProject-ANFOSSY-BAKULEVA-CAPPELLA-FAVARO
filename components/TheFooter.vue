@@ -72,6 +72,7 @@ export default {
 .footer a:hover {
   background-color: #ddd;
   color: black;
+  cursor: pointer;
 }
 
 .flex-box-foot {

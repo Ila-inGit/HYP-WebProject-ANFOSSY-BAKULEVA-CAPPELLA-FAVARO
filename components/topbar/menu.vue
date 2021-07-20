@@ -4,7 +4,7 @@
 
 <template>
   <div class="menu">
-    <div v-for="item in sections" :key="item.key">
+    <div v-for="item in sections" :key="item.key" class="fakeButton fill">
       <nuxt-link
         :to="item.key"
         class="menuTitle"
@@ -59,7 +59,7 @@ export default {
   justify-content: space-around;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .menu {
     flex-direction: column;
     display: flex;
@@ -67,34 +67,33 @@ export default {
   }
 }
 
+.fakeButton {
+  background: none;
+  padding: 0% 1.5% 0% 1.5%;
+  transition: 0.25s;
+  min-width: 115px;
+  text-align: center;
+}
+.fakeButton:hover,
+.fakeButton:focus {
+  border-color: rgb(235, 235, 235);
+  color: #fff;
+}
+
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 3em rgb(243, 243, 243);
+}
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 11em 0 0 0 rgb(235, 235, 235);
+}
+
 .menuTitle {
   color: black;
-  text-decoration-thickness: 3;
 }
 
 .menuTitle:hover {
   cursor: pointer;
-  color: #008cba;
-  text-decoration-thickness: 5;
-}
-
-.textMenu {
-  color: #fff;
-  padding: 15px 6px;
-}
-.textMenu:hover {
-  background-color: #fff;
-}
-
-.anim-t-b {
-  animation: top_to_bottom 3s ease;
-}
-@keyframes top_to_bottom {
-  from {
-    margin-bottom: 100%;
-  }
-  to {
-    margin-bottom: 0;
-  }
 }
 </style>

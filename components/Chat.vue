@@ -1,36 +1,41 @@
 <template>
   <div class="chat">
-    <div v-if="isOpen" class="chat-container">
-      <div class="chat-box-header">
-        ChatBot
-        <span class="chat-box-toggle" @click="isOpen = !isOpen"
-          ><img src="/close.webp" alt="close" style="height: 15px; width: 15px"
-        /></span>
-      </div>
-      <div class="chat-bot-overlay"></div>
-      <div id="chat-window" class="chat-window">
-        <div
-          v-for="(message, messageIndex) of chatList"
-          :key="`message-${messageIndex}`"
-          class="message"
-          :class="{ sender: message.sender }"
-        >
-          <div class="message-content" :class="{ sender: message.sender }">
-            {{ message.content }}
+    <transition name="bounce">
+      <div v-if="isOpen" class="chat-container">
+        <div class="chat-box-header">
+          ChatBot
+          <span class="chat-box-toggle" @click="isOpen = !isOpen"
+            ><img
+              src="/close.webp"
+              alt="close"
+              style="height: 15px; width: 15px"
+          /></span>
+        </div>
+        <div class="chat-bot-overlay"></div>
+        <div id="chat-window" class="chat-window">
+          <div
+            v-for="(message, messageIndex) of chatList"
+            :key="`message-${messageIndex}`"
+            class="message"
+            :class="{ sender: message.sender }"
+          >
+            <div class="message-content" :class="{ sender: message.sender }">
+              {{ message.content }}
+            </div>
           </div>
         </div>
+        <div class="flex-box-chat">
+          <input
+            v-model="messageToSend"
+            class="chat-input"
+            type="text"
+            placeholder="Send a message..."
+            @keypress.enter="sendMessage"
+          />
+          <button class="chat-submit" @click="sendMessage">send</button>
+        </div>
       </div>
-      <div class="flex-box-chat">
-        <input
-          v-model="messageToSend"
-          class="chat-input"
-          type="text"
-          placeholder="Send a message..."
-          @keypress.enter="sendMessage"
-        />
-        <button class="chat-submit" @click="sendMessage">send</button>
-      </div>
-    </div>
+    </transition>
     <div class="chat-button" @click="isOpen = !isOpen">
       <img src="https://img.icons8.com/ios-filled/452/chat--v1.png" alt="" />
     </div>
@@ -276,5 +281,23 @@ export default {
 }
 .chat-input::-webkit-input-placeholder {
   color: #ccc;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
