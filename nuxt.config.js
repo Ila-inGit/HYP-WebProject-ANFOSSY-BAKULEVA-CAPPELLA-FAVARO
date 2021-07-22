@@ -2,8 +2,8 @@ export default {
   ssr: true,
   target: 'server',
   env: {
-    // BASE_URL: 'https://test-polimi.herokuapp.com', Production URL
-    BASE_URL: 'http://localhost:3000', // Development URL
+    BASE_URL: 'https://hyp-comc.herokuapp.com', // Production URL
+    // BASE_URL: 'http://localhost:3000', // Development URL
     configurationId: '2e290326-a430-4444-b580-783a98789854', // Configuration ID for the chatbot
   },
   serverMiddleware: [
@@ -14,7 +14,7 @@ export default {
   ],
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Ccomp',
+    title: 'Comc',
     htmlAttrs: {
       lang: 'en',
     },

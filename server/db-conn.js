@@ -9,7 +9,9 @@ const { Sequelize, DataTypes } = require('sequelize')
 // database: 'CSS_project',
 // username: 'postgres',
 // password: 'derp',
-const db = new Sequelize({
+const pg = require('pg')
+pg.defaults.ssl = true
+const db = new Sequelize(process.env.DATABASE_URL, {
   host: 'localhost',
   port: 5432,
   dialect: 'postgres',
@@ -19,6 +21,8 @@ const db = new Sequelize({
   define: {
     freezeTableName: true,
   },
+  ssl: true,
+  dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
 })
 // Production
 // const pg = require('pg')
