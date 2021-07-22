@@ -1,6 +1,7 @@
 <!--
   title of the section + short description of it
 -->
+// i think it is not used
 <template>
   <div class="flex-box" :style="style">
     <div class="row">

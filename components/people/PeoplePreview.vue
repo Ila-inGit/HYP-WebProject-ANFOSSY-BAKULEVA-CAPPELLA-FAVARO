@@ -1,6 +1,7 @@
 <!--
     shows the items passed as props
 -->
+// i think it is not used
 <template>
   <div class="row">
     <div v-for="it in relatedItems" :key="it.id" class="item-card">

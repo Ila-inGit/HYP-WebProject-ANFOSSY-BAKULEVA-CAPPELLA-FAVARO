@@ -40,8 +40,8 @@ export default {
       // remove home from routes
       arrayOfCrumbs.shift()
 
-      console.log(currentRoute)
-      console.log(arrayOfCrumbs.toString())
+      // console.log(currentRoute)
+      // console.log(arrayOfCrumbs.toString())
       // don't want to display breadcrumbs in the home page
       if (currentRoute !== '/') {
         // iterate for each element in the array of subpath
@@ -55,16 +55,16 @@ export default {
           // select the name to display
           crumb.name = item.replace('_', ' ')
           crumb.query = ''
-          console.log(
-            '-> path: ' +
-              crumb.path +
-              '   name: ' +
-              crumb.name +
-              ' length:' +
-              length +
-              ' i:' +
-              i
-          )
+          // console.log(
+          //   '-> path: ' +
+          //     crumb.path +
+          //     '   name: ' +
+          //     crumb.name +
+          //     ' length:' +
+          //     length +
+          //     ' i:' +
+          //     i
+          // )
           // is last item?
           if (i === length - 1) {
             // replace the ids with other more meaningful stuff

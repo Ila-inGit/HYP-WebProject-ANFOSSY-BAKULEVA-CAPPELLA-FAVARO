@@ -1,3 +1,4 @@
+// i think it is not used
 <template>
   <div class="mini-area">
     <div class="card-area">
@@ -46,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.card-area {
+/* .card-area {
   padding: 20px 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
@@ -71,5 +72,5 @@ h3 {
 
 p {
   height: 60px;
-}
+} */
 </style>

@@ -147,6 +147,7 @@ export default {
 }
 .link-to-share {
   padding: 20px;
+  font-style: italic;
   overflow: auto;
 }
 @media (max-width: 640px) {

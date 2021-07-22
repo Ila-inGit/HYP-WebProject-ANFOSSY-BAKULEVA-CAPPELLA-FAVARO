@@ -1,7 +1,7 @@
 <!--
   page of a single person
 -->
-
+// i think it is not used
 <template>
   <main class="container">
     <div>
