@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     getOffset() {
-      if (this.scrollOffset) this.scrollOffset = this.scrollBread.offsetTop
+      if (this.scrollBread) this.scrollOffset = this.scrollBread.offsetTop
     },
     fixBread(element) {
       element.classList.add('fixed')
