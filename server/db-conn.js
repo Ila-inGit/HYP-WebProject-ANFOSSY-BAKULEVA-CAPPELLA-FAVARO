@@ -1,36 +1,34 @@
 /* eslint-disable no-console */
 const { Sequelize, DataTypes } = require('sequelize')
+const proc = require('../nuxt.config.js').default
 
-// Development
-// const db = new Sequelize(
-//   'postgres://postgres:@127.0.0.1:5432/hyp-spider'
-// )
 // DB credentials
 // database: 'CSS_project',
 // username: 'postgres',
 // password: 'derp',
-const pg = require('pg')
-pg.defaults.ssl = true
-const db = new Sequelize(process.env.DATABASE_URL, {
-  host: 'localhost',
-  port: 5432,
-  dialect: 'postgres',
-  database: 'test',
-  username: 'group',
-  password: 'banana',
-  define: {
-    freezeTableName: true,
-  },
-  ssl: true,
-  dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-})
-// Production
-// const pg = require('pg')
-// pg.defaults.ssl = true
-// const db = new Sequelize(process.env.DATABASE_URL, {
-//   ssl: true,
-//   dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-// })
+let db = null
+if (proc.env.dev) {
+  console.log('initializing development db')
+  db = new Sequelize({
+    host: '127.0.0.1',
+    port: 5432,
+    dialect: 'postgres',
+    database: 'test',
+    username: 'postgres',
+    password: 'derp',
+    define: {
+      freezeTableName: true,
+    },
+  })
+} else {
+  console.log('initializing production db ')
+  const pg = require('pg')
+  pg.defaults.ssl = true
+  db = new Sequelize(proc.env.DATABASE_URL, {
+    ssl: true,
+    dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+  })
+}
 
 /**
  * Function to define the structure of the database
@@ -118,6 +116,8 @@ function defineDatabaseStructure() {
  * Function to initialize the database. This is exported and called in the main api.js file
  */
 async function initializeDatabase() {
+  console.log('initializing DB connection')
+
   try {
     await db.authenticate()
     console.log('Connected to DB')
