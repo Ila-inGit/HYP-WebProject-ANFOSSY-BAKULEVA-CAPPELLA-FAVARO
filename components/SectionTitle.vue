@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     handleResize() {
-      console.log(this.need)
+      // console.log(this.need)
       const bar = window.document.getElementById('bar')
       const imagetores = window.document.getElementById('imagetores')
       if (window.innerWidth <= 499 && this.need) {
