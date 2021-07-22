@@ -3,7 +3,7 @@
 > displays the essential data: title/name, image, short description
 -->
 <template>
-  <div class="column bordered">
+  <div class="column bordered" style="align-items: stretch">
     <div class="title-video-container">
       <!-- video (optional)
         <div v-if="showVideo">
@@ -16,7 +16,7 @@
       <h1>{{ title }}</h1>
     </div>
     <!-- Preview of the elements -->
-    <div class="table">
+    <div class="table-preview">
       <div v-for="it in items" :key="it.ID" class="item-card">
         <div class="img-and-desc">
           <img v-if="it.Image" :src="it.Image" :alt="'image'" />
@@ -24,6 +24,7 @@
             <h3>{{ it.Title }}</h3>
             <p>{{ it.Short }}</p>
             <button-with-text
+              class="align-center"
               :title="'Learn more'"
               @click.native="goToPage(it.ID)"
             />
@@ -118,17 +119,17 @@ export default {
   justify-content: space-evenly;
   padding: 2%;
 }
-.table {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+.table-preview {
   padding-top: 0.5%;
-  padding-left: 3%;
-  padding-right: 1%;
   padding-bottom: 2.5%;
+  display: grid;
+  grid: auto / auto auto;
+}
+
+@media screen and (max-width: 700px) {
+  .table-preview {
+    grid: auto / auto;
+  }
 }
 
 .video {
@@ -138,41 +139,35 @@ export default {
   max-width: 500px;
   max-height: 500px;
 }
-.item-card {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  justify-content: space-between;
-  height: auto;
-}
-@media screen and (max-width: 600px) {
-  .item-card {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 600px) and (max-width: 1000px) {
-  .item-card {
-    width: 50%;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .item-card {
-    display: flex;
-    width: 33%;
-    align-items: stretch;
-  }
-}
 
 .img-and-desc {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin: 1%;
+  text-align: left;
 }
+
+@media screen and (max-width: 400px) {
+  .img-and-desc {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 img {
-  display: flex;
   margin: 10px;
-  max-width: 30%;
+  max-width: 140px;
   align-self: center;
+}
+
+@media screen and (max-width: 400px) {
+  img {
+    margin: 30px 10px 0px 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .align-center {
+    margin: auto;
+  }
 }
 </style>
