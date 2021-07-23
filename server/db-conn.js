@@ -6,6 +6,12 @@ const proc = require('../nuxt.config.js').default
 // database: 'CSS_project',
 // username: 'postgres',
 // password: 'derp',
+
+/**
+ * C:\Program` Files\PostgreSQL\13\bin\pg_dump.exe -Fc --no-acl --no-owner -h localhost -p 5432 -U postgres CSS_project > ./Download/shit/db.dump
+ * heroku pg:backups:restore https://raw.githubusercontent.com/marziaf/killmesoon/main/db.dump postgresql-concentric-23065 --app hyp-comc
+ * heroku pg:psql -a hyp-comc< CSS_project.sql
+ */
 let db = null
 if (proc.env.dev) {
   console.log('initializing development db')
@@ -13,7 +19,7 @@ if (proc.env.dev) {
     host: '127.0.0.1',
     port: 5432,
     dialect: 'postgres',
-    database: 'test',
+    database: 'CSS_project',
     username: 'postgres',
     password: 'derp',
     define: {
@@ -126,7 +132,7 @@ async function initializeDatabase() {
   }
   // Call the function for the database structure definition
   defineDatabaseStructure()
-  if (!proc.env.dev) db.import('css.sql')
+  await db.sync({ force: true })
   console.log('DB ready')
   return db
 }
