@@ -145,13 +145,12 @@ export default {
 @media screen and (min-width: 600px) and (max-width: 992px) {
   .row-of-side-columns {
     margin-top: -90px;
-    justify-content: center;
   }
   .m {
-    width: 100%;
+    width: 90%;
   }
   .c {
-    width: 45%;
+    width: 40%;
   }
 }
 @media screen and (min-width: 992px) {
