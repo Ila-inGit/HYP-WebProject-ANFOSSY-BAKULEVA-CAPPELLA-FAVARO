@@ -35,7 +35,7 @@ if (proc.env.dev) {
   console.log('initializing production db ')
   const pg = require('pg')
   pg.defaults.ssl = true
-  db = new Sequelize(proc.env.DATABASE_URL, {
+  db = new Sequelize(process.env.DATABASE_URL, {
     ssl: true,
     dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
   })
