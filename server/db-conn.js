@@ -38,6 +38,9 @@ if (proc.env.dev) {
   db = new Sequelize(process.env.DATABASE_URL, {
     ssl: true,
     dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+    define: {
+      freezeTableName: true,
+    },
   })
 }
 
