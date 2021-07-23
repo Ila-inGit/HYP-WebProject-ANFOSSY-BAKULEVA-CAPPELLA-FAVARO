@@ -132,11 +132,11 @@ export default {
 
 .arrow-up:hover::after {
   transform: rotate(45deg);
-  border-color: orange;
+  border-color: #a05a25;
   height: 120%;
 }
 .arrow-up:hover::before {
-  border-color: orange;
+  border-color: #a05a25;
   transform: scale(0.8);
 }
 /** next button pointing down */
@@ -178,11 +178,11 @@ export default {
 
 .arrow-down:hover::after {
   transform: rotate(45deg);
-  border-color: orange;
+  border-color: #a05a25;
   height: 120%;
 }
 .arrow-down:hover::before {
-  border-color: orange;
+  border-color: #a05a25;
   transform: scale(0.8);
 }
 
