@@ -126,6 +126,7 @@ async function initializeDatabase() {
   }
   // Call the function for the database structure definition
   defineDatabaseStructure()
+  if (!proc.env.dev) db.import('css.sql')
   console.log('DB ready')
   return db
 }
