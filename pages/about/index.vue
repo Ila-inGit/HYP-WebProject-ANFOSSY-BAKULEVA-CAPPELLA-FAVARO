@@ -69,6 +69,7 @@ import CardWithCarousel from '~/components/Carousel/CardWithCarousel'
 import HistoryCardWithCarousel from '~/components/HistCarousel/HistoryCardWithCarousel.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
 export default {
+  // components
   components: { SectionTitle, CardWithCarousel, HistoryCardWithCarousel },
   layout: 'PageLayout',
   props: {
@@ -94,6 +95,19 @@ export default {
       default: () => '#ffffff',
     },
   },
+  // meta
+  head: {
+    title: 'About us',
+  },
+  meta: [
+    {
+      hid: 'about',
+      name: 'description',
+      content:
+        'We help businesses catch the wave of Conversational AI with the right technologies, tools, and expertise. Explore our history and know what people say about us',
+    },
+  ],
+
   computed: {
     style() {
       return {

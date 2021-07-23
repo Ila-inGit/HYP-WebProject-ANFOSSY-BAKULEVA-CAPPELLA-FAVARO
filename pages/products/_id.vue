@@ -45,6 +45,18 @@ export default {
     if (product.Bio) product.Long = product.Bio
     return { product }
   },
+  // meta
+  head: {
+    title: 'Discover our products',
+  },
+  meta: [
+    {
+      hid: 'productid',
+      name: 'description',
+      content:
+        'Know more about our our products and increase your productivity',
+    },
+  ],
 }
 </script>
 

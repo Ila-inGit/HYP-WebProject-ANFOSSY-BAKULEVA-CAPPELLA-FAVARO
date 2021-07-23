@@ -79,6 +79,18 @@ export default {
       },
     }
   },
+  // meta
+  head: {
+    title: 'Contacts',
+  },
+  meta: [
+    {
+      hid: 'constacts',
+      name: 'description',
+      content:
+        'Ring us or send us an email, or come to visit us in our offices',
+    },
+  ],
   methods: {
     goTo(place) {
       this.$router.push({ path: this.$route.path + place })

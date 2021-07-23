@@ -50,6 +50,17 @@
 <script>
 export default {
   layout: 'PageLayout',
+  // meta
+  head: {
+    title: 'Contact us',
+  },
+  meta: [
+    {
+      hid: 'contact form',
+      name: 'description',
+      content: 'Send us an email',
+    },
+  ],
   metaInfo: {
     meta: [
       { charset: 'utf-8' },

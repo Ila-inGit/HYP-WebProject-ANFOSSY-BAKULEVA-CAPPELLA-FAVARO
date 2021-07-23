@@ -66,6 +66,17 @@ export default {
     const area = data
     return { area }
   },
+  // meta
+  head: {
+    title: 'Discover our areas',
+  },
+  meta: [
+    {
+      hid: 'areaid',
+      name: 'description',
+      content: 'Know more about our areas of expertise',
+    },
+  ],
 }
 </script>
 

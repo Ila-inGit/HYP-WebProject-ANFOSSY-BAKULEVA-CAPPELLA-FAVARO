@@ -68,6 +68,18 @@ export default {
       scrollElements_l_r: [],
     }
   },
+  // meta
+  head: {
+    title: 'Comc',
+  },
+  meta: [
+    {
+      hid: 'home',
+      name: 'description',
+      content:
+        'Explore our IT company. Check out our woorkfields and our products, and know our team',
+    },
+  ],
   beforeMount() {
     window.addEventListener('scroll', this.handleScroll)
   },

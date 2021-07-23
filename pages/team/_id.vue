@@ -95,6 +95,17 @@ export default {
     const person = data
     return { person }
   },
+  // meta
+  head: {
+    title: 'Meet the team',
+  },
+  meta: [
+    {
+      hid: 'peoplepresid',
+      name: 'description',
+      content: 'We are proud of our team',
+    },
+  ],
   watch: {
     $route(n) {
       this.$router.go(n)

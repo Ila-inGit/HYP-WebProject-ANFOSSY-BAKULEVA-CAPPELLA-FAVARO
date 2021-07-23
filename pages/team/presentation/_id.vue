@@ -50,6 +50,17 @@ export default {
     const person = data
     return { person }
   },
+  // meta
+  head: {
+    title: 'Meet the team',
+  },
+  meta: [
+    {
+      hid: 'personid',
+      name: 'description',
+      description: 'We are proud of our team',
+    },
+  ],
 }
 </script>
 

@@ -33,6 +33,17 @@ export default {
     const people = data
     return { people }
   },
+  // meta
+  head: {
+    title: 'Our team',
+  },
+  meta: [
+    {
+      hid: 'team',
+      name: 'description',
+      content: 'Meet the people behind our amazing products',
+    },
+  ],
   methods: {
     goToPerson(id) {
       this.$router.push({

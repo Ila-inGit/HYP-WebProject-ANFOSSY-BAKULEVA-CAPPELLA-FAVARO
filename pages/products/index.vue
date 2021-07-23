@@ -37,6 +37,17 @@ export default {
     const products = data
     return { products }
   },
+  // meta
+  head: {
+    title: 'Our products',
+  },
+  meta: [
+    {
+      hid: 'products',
+      name: 'description',
+      content: 'Find the products you need',
+    },
+  ],
   methods: {
     goToProduct(id) {
       this.$router.push({

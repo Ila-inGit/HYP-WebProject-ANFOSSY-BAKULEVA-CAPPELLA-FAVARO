@@ -36,6 +36,17 @@ export default {
     const areas = data
     return { areas }
   },
+  // meta
+  head: {
+    title: 'Our areas of expertise',
+  },
+  meta: [
+    {
+      hid: 'areas',
+      name: 'description',
+      content: 'Explore our areas of expertise',
+    },
+  ],
   methods: {
     goToArea(id) {
       this.$router.push({ path: `${this.$route.path}/${id}` })
