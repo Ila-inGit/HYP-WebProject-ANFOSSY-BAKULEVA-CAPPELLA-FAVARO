@@ -43,7 +43,7 @@
             <div class="card-info">
               <p class="quote">
                 "Best company we have ever worked with. Their expertise is
-                <span style="color: #e88e4b">priceless</span>."
+                <span style="color: #e9afa3">priceless</span>."
               </p>
               <p class="pers-quoted">Lada Cars, Head of Marketing of CSSO.</p>
             </div>
@@ -52,7 +52,7 @@
             <div class="card-info">
               <p class="quote">
                 "The Conversational Framework is the
-                <span style="color: #e88e4b">best tool</span> that you can use
+                <span style="color: #e9afa3">best tool</span> that you can use
                 to build Conversational AI."
               </p>
               <p class="pers-quoted">Arya Start, programmer.</p>
@@ -123,7 +123,7 @@ export default {
 @import '~/assets/style.css';
 
 .about-us {
-  background-color: #906fb8;
+  background-color: #ffffff;
   align-items: stretch;
 }
 
@@ -142,12 +142,12 @@ export default {
 
 .bubbles {
   /* background-image: linear-gradient(to top, rgba(255, 251, 0, 0.365), white); */
-  background-color: #072861f3;
+  background-color: #3a405a;
 }
 
 .car {
-  background-color: rgba(255, 255, 255, 0.767);
-  border-color: #072861f3;
+  background-color: #f9dec9;
+  border-color: #3a405a;
   border-radius: 0;
 }
 
@@ -252,24 +252,24 @@ export default {
 }
 
 .quote {
-  color: rgb(166, 214, 253);
+  color: #aec5eb;
   font-weight: 700;
 }
 
 .pers-quoted {
   font-style: italic;
-  color: #fff;
+  color: #f9dec9;
   font-weight: 900;
 }
 
 .history {
-  color: #a05a25;
+  color: #685044;
   text-shadow: 1px 1px #894e24;
   letter-spacing: 4px;
   font-weight: 900;
 }
 .reviews {
-  color: #fff;
+  color: #e9afa3;
   text-shadow: 1px 1px #000000;
   letter-spacing: 4px;
   font-weight: 900;
