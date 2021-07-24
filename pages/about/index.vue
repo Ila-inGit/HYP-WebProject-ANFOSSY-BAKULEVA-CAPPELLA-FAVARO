@@ -43,7 +43,7 @@
             <div class="card-info">
               <p class="quote">
                 "Best company we have ever worked with. Their expertise is
-                <span style="color: #ffc400">priceless</span>."
+                <span style="color: #e9afa3">priceless</span>."
               </p>
               <p class="pers-quoted">Lada Cars, Head of Marketing of CSSO.</p>
             </div>
@@ -52,7 +52,7 @@
             <div class="card-info">
               <p class="quote">
                 "The Conversational Framework is the
-                <span style="color: #ffc400">best tool</span> that you can use
+                <span style="color: #e9afa3">best tool</span> that you can use
                 to build Conversational AI."
               </p>
               <p class="pers-quoted">Arya Start, programmer.</p>
@@ -123,7 +123,7 @@ export default {
 @import '~/assets/style.css';
 
 .about-us {
-  background-color: #906fb8;
+  background-color: #ffffff;
   align-items: stretch;
 }
 
@@ -142,18 +142,18 @@ export default {
 
 .bubbles {
   /* background-image: linear-gradient(to top, rgba(255, 251, 0, 0.365), white); */
-  background-color: #072861f3;
+  background-color: #3a405a;
 }
 
 .car {
-  background-color: rgba(255, 255, 255, 0.767);
-  border-color: #072861f3;
-  border-radius: 0%;
+  background-color: #f9dec9;
+  border-color: #3a405a;
+  border-radius: 0;
 }
 
 .bubble-left {
   position: relative;
-  margin: 3% 15% 3% 0%;
+  margin: 3% 15% 3% 0;
   max-width: 30em;
   /* background-color: rgb(255, 255, 255); */
   background-color: transparent;
@@ -180,7 +180,7 @@ export default {
 }
 .bubble-right {
   position: relative;
-  margin: 3% 0% 3% 15%;
+  margin: 3% 0 3% 15%;
   max-width: 30em;
   background-color: transparent;
   padding: 1.125em 1.5em;
@@ -205,7 +205,7 @@ export default {
   filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 .with-ultra-style {
-  padding: 2vh 0% 5vh;
+  padding: 2vh 0 5vh;
   background-color: black;
   align-items: center;
 }
@@ -220,7 +220,7 @@ export default {
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .row-of-side-columns {
-    margin-top: 0px;
+    margin-top: 0;
   }
   .column {
     width: 40%;
@@ -231,7 +231,7 @@ export default {
 }
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
   .row-of-side-columns {
-    margin-top: 0px;
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -252,24 +252,24 @@ export default {
 }
 
 .quote {
-  color: rgb(166, 214, 253);
+  color: #aec5eb;
   font-weight: 700;
 }
 
 .pers-quoted {
   font-style: italic;
-  color: #fff;
+  color: #f9dec9;
   font-weight: 900;
 }
 
 .history {
-  color: #ffc400;
-  text-shadow: 1px 1px #b97800;
+  color: #685044;
+  text-shadow: 1px 1px #894e24;
   letter-spacing: 4px;
   font-weight: 900;
 }
 .reviews {
-  color: #fff;
+  color: #e9afa3;
   text-shadow: 1px 1px #000000;
   letter-spacing: 4px;
   font-weight: 900;

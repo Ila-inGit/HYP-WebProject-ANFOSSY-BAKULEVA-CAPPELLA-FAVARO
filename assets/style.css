@@ -47,6 +47,7 @@
 .about-contact-homePage {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   align-items: center;
   width: 100%;
   padding: 3% 0% 3% 0%;

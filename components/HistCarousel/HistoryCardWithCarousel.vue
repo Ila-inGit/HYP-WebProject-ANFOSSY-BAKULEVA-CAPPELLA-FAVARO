@@ -110,7 +110,7 @@ export default {
   height: 100%;
   border-width: 0.8vmin 0.8vmin 0 0;
   border-style: solid;
-  border-color: #1a2e9e;
+  border-color: #3a405a;
   transition: 0.2s ease;
   display: block;
   transform-origin: 100% 0;
@@ -125,18 +125,18 @@ export default {
   height: 100%;
   border-width: 0 0.8vmin 0 0;
   border-style: solid;
-  border-color: #1a2e9e;
+  border-color: #3a405a;
   transform-origin: 100% 0;
   transition: 0.2s ease;
 }
 
 .arrow-up:hover::after {
   transform: rotate(45deg);
-  border-color: orange;
+  border-color: #685044;
   height: 120%;
 }
 .arrow-up:hover::before {
-  border-color: orange;
+  border-color: #685044;
   transform: scale(0.8);
 }
 /** next button pointing down */
@@ -156,7 +156,7 @@ export default {
   height: 100%;
   border-width: 0.8vmin 0.8vmin 0 0;
   border-style: solid;
-  border-color: #1a2e9e;
+  border-color: #3a405a;
   transition: 0.2s ease;
   display: block;
   transform-origin: 100% 0;
@@ -171,18 +171,18 @@ export default {
   height: 100%;
   border-width: 0 0.8vmin 0 0;
   border-style: solid;
-  border-color: #1a2e9e;
+  border-color: #3a405a;
   transform-origin: 100% 0;
   transition: 0.2s ease;
 }
 
 .arrow-down:hover::after {
   transform: rotate(45deg);
-  border-color: orange;
+  border-color: #685044;
   height: 120%;
 }
 .arrow-down:hover::before {
-  border-color: orange;
+  border-color: #685044;
   transform: scale(0.8);
 }
 
@@ -207,7 +207,7 @@ export default {
   padding-top: 0.5%;
   padding-bottom: 1%;
   border-style: solid;
-  border-color: #1a2e9e;
+  border-color: #3a405a;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   border-radius: 10px;
 }
