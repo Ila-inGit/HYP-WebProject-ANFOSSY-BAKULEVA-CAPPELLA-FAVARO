@@ -134,7 +134,7 @@ export default {
   padding-left: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
-  border: 1% px;
+  border: 1px;
   flex-direction: column;
   justify-content: flex-end;
   margin: 1%;
@@ -169,7 +169,7 @@ export default {
   position: absolute;
   width: 0;
   height: 0;
-  bottom: 100%;
+  bottom: 101%;
   left: 1.5em;
   border: 0.75rem solid transparent;
   border-top: none;
@@ -195,7 +195,7 @@ export default {
   position: absolute;
   width: 0;
   height: 0;
-  top: 100%;
+  top: 101%;
   right: 1.5em;
   transform: rotate(180deg) scale(1.5);
   border: 0.75rem solid transparent;
