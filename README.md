@@ -4,31 +4,31 @@
 
 Number: 10719262
 Mail: elena.bakuleva@mail.polimi.it
-Contribution summary: People page
+Contribution summary: people overview page, people details page, realistic content generation
 
 ## Francesca Anfossy
 
 Number: 10789800
 Mail: francesca.anfossy@mail.polimi.it
-Contribution summary: Database, About us page
+Contribution summary: about page, chatbot logic, database creation, realistic content generation
 
 ## Ilaria Cappella
 
 Number: 10620359
 Mail: ilaria.cappella@mail.polimi.it
-Contribution: Areas page, Contact Us page
+Contribution: areas page, contacts page, breadcrumbs, styling and animation, layouts, social features
 
 ## Marzia Favaro
 
 Number: 10749161
 Mail: marzia.favaro@mail.polimi.it
-Contribution: Products page
+Contribution: products page, mobile devices experience, database integration and apis, topbar
 
 # Documentation
 
 ## Server and DB technologies used
 
-Used PostgreSQL for the DB
+We used PostgreSQL for the DB
 
 ## Components
 
@@ -72,7 +72,6 @@ _This component is used inside the Layout(inside the BottomBar) and it is used t
 
 _This component is used inside the About us page to display a list of text cards that can be slided to up or down by the user thanks to triangular buttons on the side. The component is composed by three different sub-comonents: The "HistoryCardWithCarousel" is the wrapper component where are defined all the cards to be shown. The "HistoryCarousel" defines and take care of the events related to the user's actions. The "HistoryCarouselSlide" is the internal component and represent the single card that is shown at the moment and take care of the animation related to the cards._
 
-
 ## Plugins
 
 Routing:
@@ -80,10 +79,45 @@ Store:
 
 ## Best practices
 
-Comments about how your usage of the framework was compliant to the best practices for
-the specific application domain of your website (discussed during the course).
+To develop this project we used the _Vue.js_ framework. The code style consistency is obtained both following the Vue common style practices presented below and thanks to prettier, which improves the readability of the code, homogenizing what could have been our different coding styles.
+
+### Layout
+
+We have a main layout which is kept active in all the pages. This allows the user to always have a frame of reference and gives them the possibility to change the site status easily.\
+Breadcrumbs and the chatbot are the main orientation features. Breadcrumbs allow the user to backtrack their actions and the chatbot allows them to explore.
+
+### File structure
+
+Our files maintain the same structure, demanded by Vue: a pure html template, a scripting component which deals with the logic, and css. The separation of these components improves the readability and allows to focus on the three aspects separately.\
+The components allowed us to get more uniform and coherent pages thanks to component reuse and to have lighter and more readable files.\
+Through the filenames we are implicitely defining the structure of our pages (the directory structure reflects the page hierarchy, index files are the parent), and defining the pages which depend on parameters (will access apis) by using the "underscore notation"
+
+### Communication
+
+Data exchange in the tree hierarchy of components is performed in different ways according to the information direction:
+
+- parent to child: the data is passed through props
+- child to parent: emission of events carry the information upwards. This type of communication is rare, mostly employed for propagating the _click event_.
+
+### Vue in html
+
+Vue allows to simplify the coding of the logic behind the elements to display. In particular, it is direcly embedded in the html code to set the components' props, to define conditional rendering (_v-if_) and to do list rendering (_v-for_).
+
+### Vue for JS logic
+
+In the script section of the code we specify the logic of our component, defining its own _data_ and the methods it uses. The latter can be called directly (_methods_) or automatically during different stages of the page creation (e.g., _computed_, _mounted_...).
+
+### Data storage
+
+Our application is required to store data which persists during the navigation, mainly about the chatbot status. For this reason we used the store functionality.
+
+### Database integration
+
+Sequelize module has been used to integrate the database with the application. The two communicate through apis which access the db and answer to a get request.
 
 # Nuxt Website
+
+You can find the build of the project at [this link](https://hyp-comc.herokuapp.com/)
 
 ## Build Setup
 
@@ -100,11 +134,4 @@ $ npm run start
 
 # generate static project
 $ npm run generate
-
-# for the database connection:
-1)Create the database through PgAdmin
-2)SUSTITUTE THIS LINE IN THE FILE "db-conn" WITH YOUR DATABASE URL
-const db = new Sequelize('postgres://postgres:ADMIN@localhost:PORT/DATABASENAME');
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
