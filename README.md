@@ -2,33 +2,33 @@
 
 ## Elena Bakuleva
 
-Number: 10719262
-Mail: elena.bakuleva@mail.polimi.it
+Number: 10719262\
+Mail: elena.bakuleva@mail.polimi.it\
 Contribution summary: people overview page, people details page, realistic content generation
 
 ## Francesca Anfossy
 
-Number: 10789800
-Mail: francesca.anfossy@mail.polimi.it
+Number: 10789800\
+Mail: francesca.anfossy@mail.polimi.it\
 Contribution summary: about page, chatbot logic, database creation, realistic content generation
 
 ## Ilaria Cappella
 
-Number: 10620359
-Mail: ilaria.cappella@mail.polimi.it
+Number: 10620359\
+Mail: ilaria.cappella@mail.polimi.it\
 Contribution: areas page, contacts page, breadcrumbs, styling and animation, layouts, social features
 
 ## Marzia Favaro
 
-Number: 10749161
-Mail: marzia.favaro@mail.polimi.it
+Number: 10749161\
+Mail: marzia.favaro@mail.polimi.it\
 Contribution: products page, mobile devices experience, database integration and apis, topbar
 
 # Documentation
 
 ## Server and DB technologies used
 
-The database we used for this project is PostgreSQL.
+The database we used for this project is PostgreSQL.\
 The integration with this object-relational database made possible to save information about the company, all the products sold, the work fields and the team working on them.
 
 ## Components
@@ -77,8 +77,8 @@ _This component is used inside the About us page to display a list of text cards
 
 # Routing
 
-The website is composed of many pages (i.e. a home page, about page, contact page etc.) and the best way to handle and show all of them is the Routing mechanism provided by Nuxt.js.
-Nuxt.js automatically generates the Vue-router configuration for you, based on your provided Vue files inside the pages directory, that’s means it is no more necessary (as in a Vue application) to write manually all the routing configurations. To navigate between the pages we used Nuxtlinks component. Finally, as we have also many pages referring to dynamic elements loaded from database we also exploit the possibility to create dynamic routes by using an underscore ( _ ) followed by the parameter name “id” (like users/_id.vue).
+The website is composed of many pages (i.e. a home page, about page, contact page etc.) and the best way to handle and show all of them is the Routing mechanism provided by Nuxt.js.\
+Nuxt.js automatically generates the Vue-router configuration for you, based on your provided Vue files inside the pages directory, that’s means it is no more necessary (as in a Vue application) to write manually all the routing configurations. To navigate between the pages we used Nuxtlinks component. Finally, as we have also many pages referring to dynamic elements loaded from database we also exploit the possibility to create dynamic routes by using an underscore ( _ ) followed by the parameter name “id” (like users/_id.vue).\
 In this way the routing is more secure and also the manipulation of the URLs are more difficult because it is all handle by Nuxt.js routing system. Thanks to this mechanism we could also add a “404 Page not found” page to let the user know there was a problem with the URL and to redirect him to the homepage.
 
 # Store
