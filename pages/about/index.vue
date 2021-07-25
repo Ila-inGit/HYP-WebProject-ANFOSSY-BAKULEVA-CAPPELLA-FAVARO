@@ -195,7 +195,7 @@ export default {
   position: absolute;
   width: 0;
   height: 0;
-  top: 102%;
+  top: 101%;
   right: 1.5em;
   transform: rotate(180deg) scale(1.5);
   border: 0.75rem solid transparent;
