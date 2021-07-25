@@ -1,3 +1,6 @@
+<!--
+Carousel of events (text cards)
+-->
 <template>
   <div class="wrapper">
     <history-carousel>

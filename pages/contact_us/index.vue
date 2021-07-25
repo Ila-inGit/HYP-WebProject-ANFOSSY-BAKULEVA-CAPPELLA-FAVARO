@@ -1,3 +1,6 @@
+<!--
+Contact page with information and map
+-->
 <template>
   <div>
     <SectionTitle

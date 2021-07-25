@@ -1,3 +1,6 @@
+<!--
+Button displaying text
+-->
 <template>
   <button class="button-with-text button select-button">{{ title }}</button>
 </template>

@@ -77,7 +77,7 @@ export default {
       hid: 'home',
       name: 'description',
       content:
-        'Explore our IT company. Check out our woorkfields and our products, and know our team',
+        'Explore our IT company. Check out our workfields and our products, and know our team',
     },
   ],
   beforeMount() {

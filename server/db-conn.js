@@ -1,16 +1,12 @@
+/**
+ * Estabilish a connection to the db
+ */
+
 /* eslint-disable no-console */
 const { Sequelize, DataTypes } = require('sequelize')
 const proc = require('../nuxt.config.js').default
 
-// DB credentials
-// database: 'CSS_project',
-// username: 'postgres',
-// password: 'derp',
-
 /**
- * C:\Program` Files\PostgreSQL\13\bin\pg_dump.exe -Fc --no-acl --no-owner -h localhost -p 5432 -U postgres CSS_project > ./Download/shit/db.dump
- * heroku pg:backups:restore https://raw.githubusercontent.com/marziaf/killmesoon/main/db.dump postgresql-concentric-23065 --app hyp-comc
- *
  * // LOAD DB ON HEROKU
  * heroku pg:psql -a hyp-comc< CSS_project.sql
  *

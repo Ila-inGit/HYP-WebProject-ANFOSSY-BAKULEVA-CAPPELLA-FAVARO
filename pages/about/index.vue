@@ -1,5 +1,5 @@
 <!--
-  about
+  about page
 -->
 <template>
   <div>

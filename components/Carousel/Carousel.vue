@@ -1,3 +1,7 @@
+<!--
+  Carousel of images
+-->
+
 <template>
   <div class="carousel" tabindex="0" @keydown="checkSlide($event)">
     <slot></slot>

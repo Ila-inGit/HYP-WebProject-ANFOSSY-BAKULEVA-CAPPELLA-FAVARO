@@ -1,5 +1,5 @@
 <!--
-  page of a single person
+  page of a single person working fields and products
 -->
 // i think it is not used
 <template>
