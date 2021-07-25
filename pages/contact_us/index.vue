@@ -121,7 +121,7 @@ export default {
 }
 .c {
   border-image-slice: 1;
-  border: 5px solid transparent;
+  border: 5px solid;
   -moz-border-image: -moz-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
   -webkit-border-image: -webkit-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
   border-image: linear-gradient(to top, #9e9e9e 0%, #3ad5c0 100%);
@@ -131,7 +131,7 @@ export default {
 
 .m {
   border-image-slice: 1;
-  border: 5px solid transparent;
+  border: 5px solid;
   -moz-border-image: -moz-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
   -webkit-border-image: -webkit-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
   border-image: linear-gradient(to top, #9e9e9e 0%, #3ad5c0 100%);
