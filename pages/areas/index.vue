@@ -66,9 +66,11 @@ export default {
   padding-bottom: 2.5%;
 }
 .table > .card {
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  border: 5px solid transparent;
+  -moz-border-image: -moz-linear-gradient(left, #743ad5 0%, #d53a9d 100%);
+  -webkit-border-image: -webkit-linear-gradient(left, #743ad5 0%, #d53a9d 100%);
+  border-image: linear-gradient(to left, #743ad5 0%, #d53a9d 100%);
+  -webkit-border-image-slice: 2;
+  border-image-slice: 2;
 }
 </style>

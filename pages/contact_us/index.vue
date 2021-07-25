@@ -120,17 +120,23 @@ export default {
   outline: none;
 }
 .c {
-  border: 10px solid;
   border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: linear-gradient(to top, #9e9e9e, #3ad5c0);
+  border: 5px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
+  -webkit-border-image: -webkit-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
+  border-image: linear-gradient(to top, #9e9e9e 0%, #3ad5c0 100%);
+  -webkit-border-image-slice: 2;
+  border-image-slice: 2;
 }
 
 .m {
-  border: 10px solid;
   border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: linear-gradient(to top, #9e9e9e, #3ad5c0);
+  border: 5px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
+  -webkit-border-image: -webkit-linear-gradient(top, #9e9e9e 0%, #3ad5c0 100%);
+  border-image: linear-gradient(to top, #9e9e9e 0%, #3ad5c0 100%);
+  -webkit-border-image-slice: 2;
+  border-image-slice: 2;
 }
 @media screen and (max-width: 600px) {
   .row-of-side-columns {
