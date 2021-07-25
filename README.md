@@ -28,7 +28,8 @@ Contribution: products page, mobile devices experience, database integration and
 
 ## Server and DB technologies used
 
-We used PostgreSQL for the DB
+The database we used for this project is PostgreSQL.
+The integration with this object-relational database made possible to save information about the company, all the products sold, the work fields and the team working on them.
 
 ## Components
 
@@ -60,7 +61,7 @@ _This component is used inside pages for showing a list of images that can be sl
 
 _This component is used inside the contact page for showing the location of the offices in the world and take advantage of a google api for loading google map(development purpuses only). The component is composed by three different sub-comonents: The "GoogleMapLoader" is the component that import the api and load it in the page. The "GoogleMapMarker" is a separate file to define the script associated to the markers in the maps for showing the location on the map and uses the mapSetting.js file where there are all the configuration of the map(colors, type of marker, etc.). The "Map" is the main component where everything is imported and where the data about the locations are initialized_
 
-#### Component: PopUp
+#### Component: Pop-Up
 
 ###### Functionalities and structure:
 
@@ -74,8 +75,19 @@ _This component is used inside the About us page to display a list of text cards
 
 ## Plugins
 
-Routing:
-Store:
+# Routing
+
+The website is composed of many pages (i.e. a home page, about page, contact page etc.) and the best way to handle and show all of them is the Routing mechanism provided by Nuxt.js.
+Nuxt.js automatically generates the Vue-router configuration for you, based on your provided Vue files inside the pages directory, that’s means it is no more necessary (as in a Vue application) to write manually all the routing configurations. To navigate between the pages we used Nuxtlinks component. Finally, as we have also many pages referring to dynamic elements loaded from database we also exploit the possibility to create dynamic routes by using an underscore ( _ ) followed by the parameter name “id” (like users/_id.vue).
+In this way the routing is more secure and also the manipulation of the URLs are more difficult because it is all handle by Nuxt.js routing system. Thanks to this mechanism we could also add a “404 Page not found” page to let the user know there was a problem with the URL and to redirect him to the homepage.
+
+# Store
+
+The store directory is really useful as in many cases the website needs to manage an internal state, and in big application this can be useful to access data all over the components among different pages. In this project we used the store to deal with the chatbot status and to retrieve the messages exchanged between the user and the bot. Thanks to this feature the chat is accessible among all the pages as also the history of all the exchanged messages in the current session.
+
+# Chatbot
+
+The project also include a chatbot that is accessible from all the pages of the website and that is provided by a Multi-Modal Chatbot framework (MMCC). The process description and all the tasks performed by the bot is created in a json format (uploaded with the project). The bot is also able to interact with the routing system and switch between different pages helping the user to navigate throughout the website.
 
 ## Best practices
 
@@ -114,6 +126,16 @@ Our application is required to store data which persists during the navigation, 
 ### Database integration
 
 Sequelize module has been used to integrate the database with the application. The two communicate through apis which access the db and answer to a get request.
+
+### Nuxt.js usage
+
+1. We could exploit SSR (Server Side Rendering) as the server will be used to deliver HTML based on all the components in the application instead of the pure JavaScript, gaining a large SEO (Search Engine Optimization) boost and better UX (user experience).
+2. It supports generating a static website based on the Vue application, still having an high score in SEO as the framework will pre-render all pages and include the necessary HTML.
+3. It also allows to stick to a more classical approach of web development relying on CSR (Client Side Rendering).
+4. The choice between CSR and SSR depends on the weight of the requests made to the server and some other factor including the type of data that you have to retrieve from the server or the level of security you have to achieve. Server-side rendering allows developers to pre-populate a web page with custom user data directly on the server. It is generally faster to make all the requests within a server and it is great for some search engine that crawl the site for better SEO. The cons are that the server needs to be frequently requested and this can bring to a general slowdown of the website. On the other hand Client-side rendering manages the routing dynamically without refreshing the page every time a user requests a different route and it is generally faster after the rendering of the first page (the first request is a complex bundle of all the information needed). It is great for web applications and relies on a selection of JavaScript libraries. The cons of this approach are the low SEO if it is implemented in the wrong way and in many cases the initial load may be quite heavy.
+5. Given its modularity, it's possible to reuse code all over the website thanks to the concept of the components. This modular architecture makes the development faster and easier and allowed us to guarantee uniformity in the design of all the pages and also to optimized the code making it more readable.
+6. Default Nuxt.js application have also a really useful directory structure so that everything is standardized, but most of all it grants the correct use of some of the functionality offered by this framework as for example the routing or the store function. It also allows the auto detection of the pages, the components (reusable modules) and the page layouts.
+7. It grants the integration with some external API such as databases (we used PostgreSQL).
 
 # Nuxt Website
 
